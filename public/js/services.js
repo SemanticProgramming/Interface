@@ -966,7 +966,7 @@ MDBServices.factory('AuthService', function ($q, $rootScope, $timeout, $cookies,
  */
 MDBServices.factory('WsService', function ($q, $rootScope,  $http, $location, $timeout, $cookies, $websocket) {
     // Open a WebSocket connection
-    var ws_url = 'wss://fuseki.morphdbase.de/javacode/soccomas-web-socket';
+    var ws_url = 'wss://your.domain.com/war-file-name/soccomas-web-socket';
     var ws_protocol = [];
     var ws_options = [];
     // specify ws options if needed
