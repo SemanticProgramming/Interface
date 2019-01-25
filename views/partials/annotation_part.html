@@ -1,0 +1,559 @@
+<div class="mdb_document">
+    <div class="description_widget">
+
+        <!-- Left column -->
+        <div class="description_left_main_panel">
+            <div class="description_breadcrumb_panel">
+                <!--<span class="mdb-icon icon-partonomy-icon"></span>-->
+                <img class="css-icon-partonomy-icon" src="/img/icon_description_partonomy.svg">
+                <input class="mdb-description-breadcrumb-input" style="width: 80%; float: right;" ng-model="breadcrumb"/>
+            </div>
+            <div class="description-bg-white">
+                <div ui-tree id="tree-root">
+                    <ol ui-tree-nodes="" ng-model="data" data-nodrop-enabled="true">
+                        <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"
+                            ng-show="visible(node)"></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="description_property_panel">
+                 <span class="description_property_icon_frame">
+                    <img class="description_property_icon" src="/img/icon_description_property_group.jpg"
+                         title="group of scattered anatomical entities">
+                 </span>
+                <span class="description_property_icon_frame">
+                    <img class="description_property_icon" src="/img/icon_description_property_3D.jpg"
+                         title="structure">
+                 </span>
+                <span class="description_property_icon_frame">
+                    <img class="description_property_icon" src="/img/icon_description_property_surface.jpg"
+                         title="surface area">
+                </span>
+                <span class="description_property_icon_frame">
+                    <img class="description_property_icon" src="/img/icon_description_property_line.jpg" title="line">
+                </span>
+                <span class="description_property_icon_frame">
+                    <img class="description_property_icon" src="/img/icon_description_property_point.jpg" title="point">
+                </span>
+                <span class="description_property_icon_frame">
+                    <img class="description_property_icon" src="/img/icon_description_property_space.jpg" title="space">
+                </span>
+                <span class="description_property_icon_frame">
+                    <img class="description_property_icon" src="/img/icon_description_property_substance.jpg"
+                         title="portion">
+                </span>
+                <span class="description_property_icon_frame">
+                    <img class="description_property_icon" src="/img/icon_description_property_not.jpg"
+                         title="absence of">
+                </span>
+            </div>
+        </div>
+
+        <!-- Main column -->
+        <div class="description_right_main_panel">
+
+            <div class="description-bg-white" ng-hide="selectedItem">
+                <br><br>
+
+                <div class="description-bg-white" ng-hide="selectedItem">
+                    <span class="h4">Please click on an item for details or modification.</span>
+                </div>
+            </div>
+
+            <div class="description_header" ng-if="selectedItem">
+
+                <!-- Top row -->
+                <div class="description_title_panel">
+                    <img ng-style="{'visibility': selectedItem.hasOwnProperty('quality') ? 'visible' : 'hidden'}" src="/img/icon_description_property_{{selectedItem.quality}}.jpg">
+                    <span class="css-headline1">{{selectedItem.title}}</span>
+                </div>
+
+                <div class="description_header_nav">
+                    <div class="description-accordion">
+                        <uib-tabset> <!-- active="activeJustified" justified="true">-->
+
+                        <uib-tab index="0">
+                            <uib-tab-heading>
+                                <div class="description_header_nav_tab_heading">
+                                    <i class="partonomy-icon css-icon-formal-description-icon" title="Formal description"></i>&nbsp;
+                                    <span class='css-paragraph1 hidden-xs hidden-sm hidden-md'>Formal&nbsp;description</span>
+                                </div>
+                            </uib-tab-heading>
+                            <div ng-include="'description_form.html'"></div>
+                        </uib-tab>
+
+                        <uib-tab index="1">
+                            <uib-tab-heading>
+                                <div class="description_header_nav_tab_heading">
+                                    <i class="css-icon-metadata-icon partonomy-icon" title="Metadata"></i>
+                                    <span class='css-paragraph1 hidden-xs hidden-sm hidden-md'>Metadata</span>
+                                </div>
+                            </uib-tab-heading>
+                            <div ng-include="'description_metadata.html'"></div>
+                        </uib-tab>
+
+                        <uib-tab index="2">
+                            <uib-tab-heading>
+                                <div class="description_header_nav_tab_heading">
+                                    <i class="partonomy-icon css-icon-text-icon" title="Text"></i>&nbsp;
+                                    <span class='css-paragraph1 hidden-xs hidden-sm hidden-md'>Text</span>
+                                </div>
+                            </uib-tab-heading>
+                            <div ng-include="'description_text.html'"></div>
+                        </uib-tab>
+
+                        <uib-tab index="3" onclick="window._reloadTool()">
+                            <uib-tab-heading>
+                                <div class="description_header_nav_tab_heading">
+                                    <i class="partonomy-icon css-icon-image-icon" title="Image"></i>&nbsp;
+                                    <span class='css-paragraph1 hidden-xs hidden-sm hidden-md'>Image</span>
+                                </div>
+                            </uib-tab-heading>
+                            <div ng-include="'description_image.html'"></div>
+                        </uib-tab>
+
+                        <uib-tab index="4">
+                            <uib-tab-heading>
+                                <div class="description_header_nav_tab_heading">
+                                    <i class="partonomy-icon css-icon-triple-icon" title="Graph view"></i>&nbsp;
+                                    <span class='css-paragraph1 hidden-xs hidden-sm hidden-md'>Graph</span>
+                                </div>
+                            </uib-tab-heading>
+                            <div ng-include="'description_graph.html'"></div>
+                        </uib-tab>
+                    </uib-tabset>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Nested node template -->
+<script type="text/ng-template" id="nodes_renderer.html">
+
+    <div style="display: flex; width: inherit;">
+
+        <div class="angular-ui-tree-node-content-collapseexpandbtn" ng-if="node.nodes && node.nodes.length > 0"
+             ng-click="toggle(this)">
+            <span class="glyphicon" ng-class="{'glyphicon-plus': collapsed, 'glyphicon-minus': !collapsed}"></span>
+        </div>
+
+        <div class="angular-ui-tree-node-content-collapseexpandbtn" ng-hide="node.nodes && node.nodes.length > 0">
+            <span class="glyphicon glyphicon-minus"></span>
+        </div>
+
+        <div class="angular-ui-tree-node-content" ng-click="setSelectedItem(this, node)"
+             ng-class="{active: node.id === selectedItemID}">
+
+            <!--<span title="drag to move item" class="glyphicon glyphicon-menu-hamburger" ui-tree-handle></span>-->
+
+            <div class="tree-node-icon" ui-tree-handle title="drag to move item" ng-style="{'visibility': node.hasOwnProperty('quality') ? 'visible' : 'hidden'}">
+                <img src="/img/icon_description_property_{{node.quality}}.jpg">
+            </div>
+
+            <div class="tree-node-annotations">
+                <!--<span class="css-icon-text-icon tree-node-annotation-icon"
+                      ng-style="{'visibility': node.text_annotation[0].autoannotations.length ? 'visible' : 'hidden'}"></span>-->
+                <span class="css-icon-text-icon tree-node-annotation-icon" style="margin-top: -1px;"
+                      ng-style="!node.text_annotation[0].text.length && {'color':'#d8d9d8'}"></span>
+                <span class="css-icon-image-icon tree-node-annotation-icon"  style="margin-top: -1px;"
+                      ng-style="!node.image_annotation[0].annotations.length && {'color':'#d8d9d8'}"></span>
+                <!--<span class="css-icon-image-icon tree-node-annotation-icon"
+                      ng-style="{'visibility': node.image_annotation[0].annotations.length ? 'visible' : 'hidden'}"></span>-->
+            </div>
+            <div class="tree-node-title"><span>{{node.title}}</span></div>
+
+        </div>
+    </div>
+
+    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+        </li>
+    </ol>
+
+
+</script>
+
+<!-- template -->
+<script type="text/ng-template" id="description_form.html">
+
+    <div class="row" ng-if="selectedItem">
+
+        <div class="col-sm-12" >
+            <div style="display:block">
+                <div class="description_active_part_panel">
+                    <img src="/img/icon_description_property_{{selectedItem.quality}}.jpg" ng-style="{'visibility': selectedItem.hasOwnProperty('quality') ? 'visible' : 'hidden'}">
+                    <input class="css-data-input" style="margin-left: 10px; margin-top: 2px; " ng-model="selectedItem.title" ng-change="update(selectedItem)">
+                    xxx
+                    <div class="css-label1" style="margin-left: 15px;" title="ontology and class">
+                        [{{selectedItem.label_class}}]
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <uib-accordion close-others="oneAtATime" class="description-formal-description-panels">
+
+                <div uib-accordion-group is-open="panelstatus.isOpen.formal_des_haspart">
+
+                    <uib-accordion-heading>
+                        <i class="pull-left mdb-icon"
+                           ng-class="{'icon-collapse-icon': panelstatus.isOpen.formal_des_haspart, 'icon-expand-icon': !panelstatus.isOpen.formal_des_haspart}">
+                            &nbsp;</i>
+                        has Part
+                    </uib-accordion-heading>
+
+                    <div ng-show="selectedItem.nodes.length > 0" class="col-sm-10" style="display:block">
+                        <div ng-repeat="node in selectedItem.nodes" class="description-formal-description-haspart">
+                            <img src="/img/icon_description_property_{{node.quality}}.jpg">
+                            <span class="css-label1 hasTitle" style="margin-left: 10px;"> {{node.title}} </span>&nbsp;&nbsp;&nbsp;
+                            <span class="css-label1 typeOf" style="margin-left: 115px;">[{{node.label_class}}]</span>
+                            <button ng-click="selectedItem.nodes.splice($index, 1)" class="btn-small removePart">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+                        <br><br>
+                    </div>
+
+                    <div class="col-sm-10">
+                        <form name="forms.addNewPartForm" novalidate="">
+                            <div class="description-formal-description-newpart">
+                                <img src="/img/icon_description_property_3D.jpg">
+                                <input class="css-data-input hasTitle"
+                                       name="hasNewTitle" id="hasNewTitle"
+                                       ng-model="newPart.hasNewTitle"
+                                       required
+                                       autocomplete="off"
+                                       placeholder="Please, choose a label."
+                                       >
+                                <input class="css-search-input_typeOf"
+                                       name="hasNewType" id="hasNewType"
+                                       ng-model="newPart.hasNewType"
+                                       required
+                                       autocomplete="off"
+                                       placeholder="Please, choose a reference."
+                                       uib-typeahead="i as i.label for i in autoComp | filter:{label:$viewValue}"
+                                       typeahead-append-to-body="true"
+                                       >
+                                <button class="btn btn-new"
+                                        title="Choose a name and reference."
+                                        ng-click="newSubItem(selectedItem, forms.addNewPartForm)"
+                                        ng-disabled="forms.addNewPartForm.$invalid">Add part</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div uib-accordion-group is-open="panelstatus.isOpen.formal_des_measurement"
+                     ng-style="{'visibility': !selectedItem.is_root ? 'visible' : 'hidden'}">
+
+                    <uib-accordion-heading>
+                        <i class="pull-left mdb-icon"
+                           ng-class="{'icon-collapse-icon': panelstatus.isOpen.formal_des_measurement, 'icon-expand-icon': !panelstatus.isOpen.formal_des_measurement}">
+                            &nbsp;</i>
+                        Measurements
+                    </uib-accordion-heading>
+                    <div class="sample">
+                        <img style="margin-top: -20px; margin-bottom: -10px;"
+                             src="/img/sample_images/sample_measurements.jpg" title="sample">
+                    </div>
+                </div>
+
+                <div uib-accordion-group is-open="panelstatus.isOpen.formal_des_shapecolor"
+                     ng-style="{'visibility': !selectedItem.is_root ? 'visible' : 'hidden'}">
+
+                    <uib-accordion-heading>
+                        <i class="pull-left mdb-icon"
+                           ng-class="{'icon-collapse-icon': panelstatus.isOpen.formal_des_shapecolor, 'icon-expand-icon': !panelstatus.isOpen.formal_des_shapecolor}">
+                            &nbsp;</i>
+                        Shape and Color
+                    </uib-accordion-heading>
+                    <div class="sample">
+                        <img style="margin-top: -20px; margin-bottom: -10px;"
+                             src="/img/sample_images/sample_shapecolor.jpg" title="sample">
+                    </div>
+                </div>
+
+            </uib-accordion>
+        </div>
+
+    </div>
+</script>
+
+<!-- template -->
+<script type="text/ng-template" id="description_metadata.html">
+
+    <br><br>
+
+    <div class="description-bg-white">
+
+        <div class="sample">
+            <img src="/img/sample_images/sample_metadata.png" title="sample" class="img-responsive">
+        </div>
+
+
+    </div>
+
+</script>
+
+<!-- template -->
+<script type="text/ng-template" id="description_text.html">
+    <form name="forms.annotateText" class="description-text_container-fluid">
+
+        <div class="description-text_top">
+            <input class="checkbox css-check" type="checkbox" ng-model="annotationForm.longest_only">
+            <div class="css-paragraph1">Match Longest Only</div>
+            <input class="checkbox css-check" type="checkbox" ng-model="annotationForm.mappings_all">
+            <div class="css-paragraph1">Include Mappings</div>
+            <input class="checkbox css-check" type="checkbox" ng-model="annotationForm.exclude_numbers">
+            <div class="css-paragraph1">Exclude Numbers</div>
+            <input class="checkbox css-check" type="checkbox" ng-model="annotationForm.exclude_synonyms">
+            <div class="css-paragraph1">Exclude Synonyms</div>
+        </div>
+
+        <div class="description-text_main">
+
+            <div class="description-text_left">
+
+                <div class="description-text_annotation_box_top description-text_annotation_box">
+                    <div class="description-text_annotation_box_header">
+                        <div class="description-text_annotation_textarea_header">
+                            <button class="btn" ng-click="setTestValues()"
+                                    title="Load example text from wikipedia for demonstration">Example text
+                            </button>
+                            &nbsp;&nbsp;
+                            <button class="btn" ng-click="setDefault()">Clear</button>
+                            &nbsp;&nbsp;
+                            <button class="btn"
+                                    id="annotationLoadingButton"
+                                    ng-click="checkAnnotations()"
+                                    data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Loading...">
+                                Annotate!
+                            </button>
+                        </div>
+                    </div>
+
+                    <div contenteditable="true" id="divtextarea"
+                         class="description-text_annotation_box_main description-text_annotation_textarea"></div>
+                    <!--<textarea id="divtextarea" class="description-annotation_textarea" ng-model="selectedItem.text_annotation.text"></textarea>-->
+                </div>
+
+                <div class="description-text_annotation_box_bottom description-text_annotation_box">
+                    <div class="description-text_annotation_box_header" title="leave blank to use all 500+ ontologies"
+                         style="color: #808080">Ontologies in use
+                    </div>
+                    <div class="description-text_annotation_box_main">
+                        <tags-input ng-model="ontologytags"
+                                    display-property="name"
+                                    placeholder="Type to get suggestions for ontologies or leave blank to query all 500+ ontologies"
+                                    replace-spaces-with-dashes="false">
+                            <auto-complete source="loadOntologyTags($query)"
+                                           min-length="0"
+                                           load-on-focus="true"
+                                           load-on-empty="true"
+                                           max-results-to-show="1000"></auto-complete>
+                        </tags-input>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="description-text_right">
+
+                <div ui-grid="gridOptions" ui-grid-selection ui-grid-auto-resize ui-grid-resize-columns
+                     ui-grid-move-columns class="grid"></div>
+
+            </div>
+        </div>
+    </form>
+</script>
+
+<!-- template -->
+<script type="text/ng-template" id="description_graph.html">
+
+    <div class="description-bg-white">
+        <div class="sample">
+            <img src="/img/sample_images/sample_graph_display.jpg" title="sample" class="img-responsive">
+        </div>
+
+
+    </div>
+
+</script>
+
+<!-- template -->
+<script type="text/ng-template" id="description_image.html">
+
+    <!-- The Image Annotation Tool -->
+    <div layout="row">
+        <div class="col-md-4">
+
+            <!--<p>Todo: add am menue to choose different images</p>-->
+            <!--<h3>Tools</h3>-->
+
+
+            <uib-accordion close-others="oneAtATime" class="description-formal-description-panels">
+
+                <div uib-accordion-group is-open="panelstatus.isOpen.image_tools">
+
+                    <uib-accordion-heading>
+                        <i class="pull-left mdb-icon"
+                           ng-class="{'icon-collapse-icon': panelstatus.isOpen.image_tools, 'icon-expand-icon': !panelstatus.isOpen.image_tools}">
+                            &nbsp;</i>
+                        Tools
+                    </uib-accordion-heading>
+                    <div>
+                        <form class="form-inline">
+                            <div id="layers">
+                                <label class="col-md-4">Choose Shape &nbsp;</label>
+                                <fieldset>
+                                    <fieldset class="drawradio">
+                                        <!--<option value="Fhl">Freehand Line</option>
+                                        <option value="Fha">Freehand Area</option>-->
+                                        <input class="drawrb" type="radio" name="drawtype"
+                                               id="dpoint"
+                                               value="Point"/>
+                                        <label class="drawlabel" for="dpoint"><img
+                                                src="/exlibs/img/drawpoints.png"
+                                                width="40px"
+                                                height="40px"
+                                                alt="Points"/></label>
+                                        <input class="drawrb" type="radio" name="drawtype"
+                                               id="dline"
+                                               value="LineString"/>
+                                        <label class="drawlabel" for="dline"><img
+                                                src="/exlibs/img/drawline.png" width="40px"
+                                                height="40px"
+                                                alt="LineString"/></label>
+                                    </fieldset>
+                                    <fieldset class="drawradio">
+                                        <input class="drawrb" type="radio" name="drawtype"
+                                               id="dpolygon"
+                                               value="Polygon" checked="checked"/>
+                                        <label class="drawlabel" for="dpolygon"><img
+                                                src="/exlibs/img/drawpolygon.png"
+                                                width="40px"
+                                                height="40px"
+                                                alt="Polygon"/></label>
+                                        <input class="drawrb" type="radio" name="drawtype"
+                                               id="dcircle"
+                                               value="Circle"/>
+                                        <label class="drawlabel" for="dcircle"><img
+                                                src="/exlibs/img/drawcircle.png"
+                                                width="40px"
+                                                height="40px"
+                                                alt="Circle"/></label>
+                                    </fieldset>
+                                    <fieldset class="drawradio">
+                                        <input class="drawrb" type="radio" name="drawtype"
+                                               id="dsquare"
+                                               value="Square"/>
+                                        <label class="drawlabel" for="dsquare"><img
+                                                src="/exlibs/img/drawsquare.png"
+                                                width="40px"
+                                                height="40px"
+                                                alt="Square"/></label>
+                                        <input class="drawrb" type="radio" name="drawtype"
+                                               id="dbox"
+                                               value="Box"/>
+                                        <label class="drawlabel" for="dbox"><img
+                                                src="/exlibs/img/drawbox.png" width="40px"
+                                                height="40px"
+                                                alt="Box"/></label>
+                                    </fieldset>
+                                    <fieldset class="drawradio">
+                                        <input class="drawrb" type="radio" name="drawtype"
+                                               id="dedit"
+                                               value="Edit"/>
+                                        <label class="drawlabel" for="dedit"><img
+                                                src="/exlibs/img/drawedit.png" width="40px"
+                                                height="40px"
+                                                alt="Edit"/></label>
+                                    </fieldset>
+                                </fieldset>
+
+                            </div>
+                            <div>
+                                <label class="col-md-4">Choose object</label>
+                                <select id="layerlist">
+                                    <option value="0">Object 0</option>
+                                </select>
+                                &nbsp;<span id="colorindicator">&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+
+
+                            <div>
+                                <label class="col-md-4">Add a new object</label>
+                                <button id='addlayer' type="button">new object
+                                </button>
+                            </div>
+
+                            <!--<div>Todo: for some reason new layers can only be added if window was not reloaded. <br>
+                                Try &lt;strg&gt; + &lt;F5&gt;</div>-->
+                        </form>
+                    </div>
+                </div>
+
+                <div uib-accordion-group is-open="panelstatus.isOpen.image_help">
+
+                    <uib-accordion-heading>
+                        <i class="pull-left mdb-icon"
+                           ng-class="{'icon-collapse-icon': panelstatus.isOpen.image_help, 'icon-expand-icon': !panelstatus.isOpen.image_help}">
+                            &nbsp;</i>
+                        Help
+                    </uib-accordion-heading>
+                    <div>
+                        <h4>Image navigation</h4>
+                        <ul>
+                            <li>Pan image: press and hold left mouse button</li>
+                            <li>Zoom image: roll mouse wheel to zoom in and out</li>
+                        </ul>
+                        <h4>Keyboard</h4>
+                        <ul>
+                            <li>Del-key: delete selected shape (active object only)</li>
+                            <li>Esc-key: cancel current drawing, change to 'Edit' mode</li>
+                        </ul>
+                        <h4>Draw freehand:</h4>
+                        <ol>
+                            <li>Choose 'Line String' or 'Polygon' tool</li>
+                            <li>Hold 'Shift'-key while drawing</li>
+                        </ol>
+                        <h4>Edit shapes:</h4>
+                        <ol>
+                            <li>Select 'Edit' mode (Esc-key)</li>
+                            <li>Mark shape by clicking into it</li>
+                            <li>Add nodes by click and drag on line between existing nodes
+                            </li>
+                            <li>Delete node by clicing on it</li>
+                            <li>Move node by cklick and hold mous button while dragging the
+                                node
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </uib-accordion>
+        </div>
+    </div>
+
+
+    <div class="col-md-8">
+        <div id="image-annotator">
+
+            <div id="spinningLoaderDiv" style="padding: 100px;">
+                <div id="spinningLoader" class="loader" style="margin: 0 auto;"></div>
+            </div>
+
+            <div id="map" class="map"></div>
+
+        </div>
+        <div style='clear: both'></div>
+    </div>
+</script>

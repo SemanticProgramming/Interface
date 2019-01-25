@@ -1,0 +1,446 @@
+{
+  "connectSID": "s:42-HALLOHIERALARMEINS1ELF-TTESTT.SANDRASGANZPERSOENLICHEMDBPROTOTYPSESSIONID",
+  "mdbueid": "e47bbe55",
+  "http://www.soccomas.org/Ontologies/SOCCOMAS/SprO#SPRO_0000000148": "http://www.morphdbase.de/resource/e47bbe55#SC_BASIC_0000001483_1",
+  "http://www.soccomas.org/Ontologies/SOCCOMAS/SprO#SPRO_0000000321": "http://www.morphdbase.de/resource/e47bbe55#TimeInterval_1",
+  "data": [
+    {
+      "SPRO_0000000069": [
+        {
+          "SPRO_0000000111": "1",
+          "SPRO_0000000069": [
+            {
+              "SPRO_0000000111": "1",
+              "localID": "SC_BASIC_0000000711_1",
+              "SPRO_0000000414": "MDB_DATASCHEME_0000000731_1",
+              "SPRO_0000000999": "SC_BASIC_0000001173",
+              "SPRO_0000000069": [
+                {
+                  "SPRO_0000000111": "1",
+                  "SPRO_0000000069": [
+                    {
+                      "SPRO_0000000111": "1",
+                      "localID": "MDB_DATASCHEME_0000000712_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000705_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001101"
+                    },
+                    {
+                      "SPRO_0000000820": "USER NAME\nPlease provide a unique user name. User names serve as user-readable identification of users. \n\nThis represents required information for signing up to MDB.\n\n\nRemark: the MDB application itself unambiguously identifies a user through a Unique User ID, which is a string of 16 characters.",
+                      "SPRO_0000000111": "2",
+                      "SPRO_0000000937": "true",
+                      "SC_BASIC_0000001558": "huiui",
+                      "SPRO_0000000791": "SPRO_0000000019",
+                      "localID": "MDB_DATASCHEME_0000000713_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000705_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001093"
+                    },
+                    {
+                      "SPRO_0000000111": "3",
+                      "SPRO_0000000922": "online",
+                      "localID": "MDB_DATASCHEME_0000000714_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001225",
+                      "SPRO_0000000414": "SC_BASIC_0000000705_1"
+                    },
+                    {
+                      "SPRO_0000000111": "4",
+                      "SPRO_0000000080": "last Login:",
+                      "SPRO_0000000353": "06.03.2017",
+                      "localID": "MDB_DATASCHEME_0000000715_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000705_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001051"
+                    },
+                    {
+                      "SPRO_0000000111": "5",
+                      "SPRO_0000000080": "updated:",
+                      "SPRO_0000000353": "06.03.2017",
+                      "localID": "MDB_DATASCHEME_0000000716_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000705_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001051"
+                    },
+                    {
+                      "SPRO_0000000111": "6",
+                      "SPRO_0000000080": "registered:",
+                      "SPRO_0000000353": "06.03.2017",
+                      "localID": "MDB_DATASCHEME_0000000717_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000705_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001051"
+                    }
+                  ],
+                  "localID": "SC_BASIC_0000000705_1",
+                  "SPRO_0000000414": "SC_BASIC_0000000711_1",
+                  "SPRO_0000000999": "SC_BASIC_0000001152"
+                },
+                {
+                  "SPRO_0000000186": "true",
+                  "SPRO_0000000111": "2",
+                  "SPRO_0000000069": [
+                    {
+                      "SPRO_0000000111": "1",
+                      "SPRO_0000000069": [
+                        {
+                          "SPRO_0000000111": "1",
+                          "SPRO_0000000080": "edit",
+                          "SPRO_0000000791": "SPRO_0000000463",
+                          "localID": "MDB_DATASCHEME_0000000707_1",
+                          "SPRO_0000000414": "MDB_DATASCHEME_0000000705_1",
+                          "SPRO_0000000999": "SC_BASIC_0000001037"
+                        }
+                      ],
+                      "SPRO_0000000742": [],
+                      "localID": "MDB_DATASCHEME_0000000705_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000128_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001104"
+                    },
+                    {
+                      "SPRO_0000000111": "2",
+                      "SPRO_0000000069": [
+                        {
+                          "SPRO_0000000738": "Salutation",
+                          "SPRO_0000000820": "Please indicate, how you want to be addressed when other users are contacting you.",
+                          "SPRO_0000000111": "1",
+                          "SPRO_0000000742": [
+                            {
+                              "SPRO_0000000820": "This user wants to be addressed with their professor title followed by their last name.",
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000069",
+                              "selLabel": "Prof. [last name]"
+                            },
+                            {
+                              "SPRO_0000000820": "This user wants to be addressed with their doctor title followed by their last name.",
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000065",
+                              "selLabel": "Dr. [last name]"
+                            },
+                            {
+                              "SPRO_0000000820": "This user wants to be addressed with their professor and their doctor title followed by their last name.",
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000070",
+                              "selLabel": "Prof. Dr. [last name]"
+                            },
+                            {
+                              "SPRO_0000000820": "This user wants to be addressed as Madam.",
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000066",
+                              "selLabel": "Madam"
+                            },
+                            {
+                              "SPRO_0000000820": "This user wants to be addressed as Sir.",
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000071",
+                              "selLabel": "Sir"
+                            },
+                            {
+                              "SPRO_0000000820": "This user wants to be addressed as Mr. followed by his last name.",
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000067",
+                              "selLabel": "Mr. [last name]"
+                            },
+                            {
+                              "SPRO_0000000820": "This user wants to be addressed with their first name.",
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000072",
+                              "selLabel": "[first name]"
+                            },
+                            {
+                              "SPRO_0000000820": "This user wants to be addressed as Ms. followed by her last name.",
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000068",
+                              "selLabel": "Ms. [last name]"
+                            }
+                          ],
+                          "SPRO_0000000791": "MDB_GUI_0000000071",
+                          "localID": "MDB_DATASCHEME_0000000718_1",
+                          "SPRO_0000000414": "SC_BASIC_0000000707_1",
+                          "SPRO_0000000999": "SC_BASIC_0000001204"
+                        },
+                        {
+                          "SPRO_0000000738": "Academic position",
+                          "SPRO_0000000820": "You can specify your academic position.",
+                          "SPRO_0000000111": "2",
+                          "SPRO_0000000742": [
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000057",
+                              "selLabel": "Instructor"
+                            },
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000056",
+                              "selLabel": "Associate Professor"
+                            },
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000063",
+                              "selLabel": "University Professor"
+                            },
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000055",
+                              "selLabel": "Assistant Professor"
+                            },
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000062",
+                              "selLabel": "Student"
+                            },
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000054",
+                              "selLabel": "Adjunct Professor"
+                            },
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000061",
+                              "selLabel": "Research Associate"
+                            },
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000059",
+                              "selLabel": "PhD Student"
+                            },
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000060",
+                              "selLabel": "PostDoc"
+                            },
+                            {
+                              "selValue": "http://www.morphdbase.de/Ontologies/MDB/MDBAgent#MDB_AGENT_0000000058",
+                              "selLabel": "Lecturer"
+                            }
+                          ],
+                          "SPRO_0000000791": "MDB_GUI_0000000071",
+                          "localID": "MDB_DATASCHEME_0000000719_1",
+                          "SPRO_0000000414": "SC_BASIC_0000000707_1",
+                          "SPRO_0000000999": "SC_BASIC_0000001204"
+                        },
+                        {
+                          "SPRO_0000000186": "true",
+                          "SPRO_0000000111": "3",
+                          "SPRO_0000000069": [
+                            {
+                              "SPRO_0000000820": "FIRST NAME\nYour first name.\n\nThis represents required information for signing up to MDB.",
+                              "SPRO_0000000111": "1",
+                              "SPRO_0000000937": "true",
+                              "SC_BASIC_0000001558": "Hui",
+                              "SPRO_0000000791": "SPRO_0000000019",
+                              "localID": "MDB_DATASCHEME_0000000720_1",
+                              "SPRO_0000000414": "SC_BASIC_0000000706_1",
+                              "SPRO_0000000999": "SC_BASIC_0000001093"
+                            },
+                            {
+                              "SPRO_0000000820": "LAST NAME\nYour last (or family) name.\n\nThis represents required information for signing up to MDB.",
+                              "SPRO_0000000111": "2",
+                              "SPRO_0000000937": "true",
+                              "SC_BASIC_0000001558": "Ui",
+                              "SPRO_0000000791": "SPRO_0000000019",
+                              "localID": "MDB_DATASCHEME_0000000721_1",
+                              "SPRO_0000000414": "SC_BASIC_0000000706_1",
+                              "SPRO_0000000999": "SC_BASIC_0000001093"
+                            }
+                          ],
+                          "SPRO_0000000920": "true",
+                          "localID": "SC_BASIC_0000000706_1",
+                          "SPRO_0000000414": "SC_BASIC_0000000707_1",
+                          "SPRO_0000000999": "SC_BASIC_0000001136"
+                        },
+                        {
+                          "SPRO_0000000820": "The name of the institute or organization you are affiliated with.\n\nThis represents required information for signing up to MDB.",
+                          "SPRO_0000000111": "4",
+                          "SPRO_0000000937": "true",
+                          "SPRO_0000000920": "true",
+                          "SC_BASIC_0000001558": "Erde",
+                          "localID": "MDB_DATASCHEME_0000000730_1",
+                          "SPRO_0000000414": "SC_BASIC_0000000707_1",
+                          "SPRO_0000000999": "SC_BASIC_0000001102",
+                          "SPRO_0000000186": "true",
+                          "SPRO_0000000791": "SPRO_0000000019"
+                        },
+                        {
+                          "SPRO_0000000186": "true",
+                          "SPRO_0000000111": "5",
+                          "SPRO_0000000069": [
+                            {
+                              "SPRO_0000000738": "Country",
+                              "SPRO_0000000820": "Select the country you are living in.",
+                              "SPRO_0000000111": "1",
+                              "SPRO_0000000742": [],
+                              "SPRO_0000000791": "MDB_GUI_0000000071",
+                              "localID": "MDB_DATASCHEME_0000000722_1",
+                              "SPRO_0000000414": "SC_BASIC_0000000701_1",
+                              "SPRO_0000000999": "SC_BASIC_0000001204"
+                            },
+                            {
+                              "SPRO_0000000820": "If applicable, specify the state you are living in.",
+                              "SPRO_0000000707": "State",
+                              "SPRO_0000000111": "2",
+                              "SPRO_0000000791": "SPRO_0000000019",
+                              "localID": "MDB_DATASCHEME_0000000723_1",
+                              "SPRO_0000000414": "SC_BASIC_0000000701_1",
+                              "SPRO_0000000999": "SC_BASIC_0000001093"
+                            },
+                            {
+                              "SPRO_0000000820": "Specify the city you are living in.",
+                              "SPRO_0000000707": "City",
+                              "SPRO_0000000111": "3",
+                              "SPRO_0000000791": "SPRO_0000000019",
+                              "localID": "MDB_DATASCHEME_0000000724_1",
+                              "SPRO_0000000414": "SC_BASIC_0000000701_1",
+                              "SPRO_0000000999": "SC_BASIC_0000001093"
+                            }
+                          ],
+                          "SPRO_0000000920": "true",
+                          "localID": "SC_BASIC_0000000701_1",
+                          "SPRO_0000000414": "SC_BASIC_0000000707_1",
+                          "SPRO_0000000999": "SC_BASIC_0000001136"
+                        },
+                        {
+                          "SPRO_0000000186": "true",
+                          "SPRO_0000000111": "6",
+                          "SPRO_0000000069": [
+                            {
+                              "SPRO_0000000820": "If applicable, specify the postal code you are living in.",
+                              "SPRO_0000000707": "Postal code",
+                              "SPRO_0000000111": "1",
+                              "SPRO_0000000791": "SPRO_0000000019",
+                              "localID": "MDB_DATASCHEME_0000000728_1",
+                              "SPRO_0000000414": "MDB_DATASCHEME_0000000955_1",
+                              "SPRO_0000000999": "SC_BASIC_0000001093"
+                            },
+                            {
+                              "SPRO_0000000820": "If applicable, specify the street and house number you are living in.",
+                              "SPRO_0000000707": "Street, No.",
+                              "SPRO_0000000111": "2",
+                              "SPRO_0000000791": "SPRO_0000000019",
+                              "localID": "MDB_DATASCHEME_0000000729_1",
+                              "SPRO_0000000414": "MDB_DATASCHEME_0000000955_1",
+                              "SPRO_0000000999": "SC_BASIC_0000001093"
+                            }
+                          ],
+                          "SPRO_0000000920": "true",
+                          "localID": "MDB_DATASCHEME_0000000955_1",
+                          "SPRO_0000000414": "SC_BASIC_0000000707_1",
+                          "SPRO_0000000999": "SC_BASIC_0000001136"
+                        }
+                      ],
+                      "localID": "SC_BASIC_0000000707_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000128_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001136"
+                    }
+                  ],
+                  "SPRO_0000000920": "true",
+                  "localID": "SC_BASIC_0000000128_1",
+                  "SPRO_0000000414": "SC_BASIC_0000000711_1",
+                  "SPRO_0000000999": "SC_BASIC_0000001140"
+                },
+                {
+                  "SPRO_0000000186": "true",
+                  "SPRO_0000000111": "3",
+                  "SPRO_0000000069": [
+                    {
+                      "SPRO_0000000820": "Specify your phone number.",
+                      "SPRO_0000000707": "Phone number",
+                      "SPRO_0000000111": "1",
+                      "SPRO_0000000791": "MDB_GUI_0000000353",
+                      "localID": "MDB_DATASCHEME_0000000725_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000703_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001093"
+                    },
+                    {
+                      "SPRO_0000000820": "Please provide your email address. It will not be publicly visible to other users.\n\nThis represents required information for signing up to MDB.",
+                      "SPRO_0000000111": "2",
+                      "SPRO_0000000937": "true",
+                      "SC_BASIC_0000001663": "hui@ui.de",
+                      "SPRO_0000000791": "SPRO_0000000189",
+                      "localID": "MDB_DATASCHEME_0000000726_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000703_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001093"
+                    },
+                    {
+                      "SPRO_0000000820": "Specify your personal work info homepage or the homepage of the institute you are working for.",
+                      "SPRO_0000000707": "Website",
+                      "SPRO_0000000111": "3",
+                      "SPRO_0000000791": "MDB_GUI_0000000081",
+                      "localID": "MDB_DATASCHEME_0000000727_1",
+                      "SPRO_0000000414": "SC_BASIC_0000000703_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001093"
+                    }
+                  ],
+                  "SPRO_0000000920": "true",
+                  "localID": "SC_BASIC_0000000703_1",
+                  "SPRO_0000000414": "SC_BASIC_0000000711_1",
+                  "SPRO_0000000999": "SC_BASIC_0000001139"
+                }
+              ]
+            },
+            {
+              "SPRO_0000000186": "true",
+              "SPRO_0000000111": "2",
+              "SPRO_0000000069": [
+                {
+                  "SPRO_0000000820": "If you are not a member of a research facility, please provide some information why you are interested in morphological data. This will help our editors to assess whether you will receive a MDB user account, because the account is only required if you want to upload and create your own content in MDB. \nThe assessment is not an automatic procedure and is required, because we want to prevent misuse of MDB (e.g. spamming the database with improper content).\n\nThis does NOT represents required information for signing up to MDB.",
+                  "SPRO_0000000707": "Comment",
+                  "SPRO_0000000111": "1",
+                  "SPRO_0000000881": "Huiuiuiuiuiuiuiuiuiuiuiuiuiui!",
+                  "SPRO_0000000791": "SPRO_0000000019",
+                  "localID": "MDB_DATASCHEME_0000000788_1",
+                  "SPRO_0000000414": "SC_BASIC_0000000618_1",
+                  "SPRO_0000000999": "SC_BASIC_0000001171"
+                },
+                {
+                  "SPRO_0000000186": "true",
+                  "SPRO_0000000111": "2",
+                  "SPRO_0000000069": [
+                    {
+                      "SPRO_0000000111": "1",
+                      "SPRO_0000000069": [
+                        {
+                          "SPRO_0000000820": "If you accept this registration request, the person will receive an email informing them about your decision. This message will also contain any information you provide in the comments section. The user status of the person will be automatically changed from 'preliminary user' to 'MDB user'.",
+                          "SPRO_0000000111": "1",
+                          "SPRO_0000000080": "Accept",
+                          "SPRO_0000000791": "SPRO_0000000463",
+                          "localID": "MDB_DATASCHEME_0000000796_1",
+                          "SPRO_0000000414": "MDB_DATASCHEME_0000000953_1",
+                          "SPRO_0000000999": "SC_BASIC_0000001180"
+                        },
+                        {
+                          "SPRO_0000000186": "true",
+                          "SPRO_0000000820": "If you decline this registration request, please provide the reasons in the appropriate comments section!\n\nWhen you decline this registration request, the person will receive an email informing them about your decision. This message will also contain the information you provide in the comments section.  Moreover, the person will lose their 'preliminary user' status and can only access MDB through the 'guest' account.",
+                          "SPRO_0000000111": "2",
+                          "SPRO_0000000920": "true",
+                          "SPRO_0000000080": "Decline",
+                          "SPRO_0000000791": "SPRO_0000000463",
+                          "localID": "MDB_DATASCHEME_0000000795_1",
+                          "SPRO_0000000414": "MDB_DATASCHEME_0000000953_1",
+                          "SPRO_0000000999": "SC_BASIC_0000001180"
+                        }
+                      ],
+                      "localID": "MDB_DATASCHEME_0000000953_1",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000000793_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001136"
+                    },
+                    {
+                      "SPRO_0000000820": "Dear Editor,\n\nWe want to protect MDB from being spammed with unrelated content and other abuses. Therefore we do not accept every registration request. The person requesting registration must either show through their email address or their institute/affiliation that they belong to academia (i.e. a research institute) or through the comment field what their interest in MDB is and why they want to use it.\nIf this requirement is not met, the request must be declined. If this is the case, please explain why you have declined the registration request.",
+                      "SPRO_0000000707": "If request is declined, please explain why.",
+                      "SPRO_0000000111": "2",
+                      "SPRO_0000000791": "SPRO_0000000019",
+                      "localID": "MDB_DATASCHEME_0000000790_1",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000000793_1",
+                      "SPRO_0000000999": "SC_BASIC_0000001171"
+                    }
+                  ],
+                  "SPRO_0000000920": "true",
+                  "localID": "MDB_DATASCHEME_0000000793_1",
+                  "SPRO_0000000414": "SC_BASIC_0000000618_1",
+                  "SPRO_0000000999": "SC_BASIC_0000001100"
+                }
+              ],
+              "SPRO_0000000920": "true",
+              "localID": "SC_BASIC_0000000618_1",
+              "SPRO_0000000414": "MDB_DATASCHEME_0000000731_1",
+              "SPRO_0000000999": "SC_BASIC_0000001173"
+            }
+          ],
+          "localID": "MDB_DATASCHEME_0000000731_1",
+          "SPRO_0000000414": "SC_BASIC_0000000708_1",
+          "SPRO_0000000999": "SC_BASIC_0000001081"
+        },
+        {
+          "SPRO_0000000111": "2",
+          "localID": "MDB_DATASCHEME_0000000732_1",
+          "SPRO_0000000414": "SC_BASIC_0000000708_1",
+          "SPRO_0000000999": "SC_BASIC_0000001044"
+        }
+      ],
+      "localID": "SC_BASIC_0000000708_1",
+      "SPRO_0000000999": "SC_BASIC_0000001202"
+    }
+  ],
+  "load_page": "http://www.morphdbase.de/resource/e47bbe55#SC_BASIC_0000000708_1",
+  "load_page_localID": "SC_BASIC_0000000708_1",
+  "html_form": "MY_DUMMY_MDB_0000000001",
+  "localID": "SC_BASIC_0000000134",
+  "mdbueid_uri": "http://www.morphdbase.de/resource/e47bbe55"
+}

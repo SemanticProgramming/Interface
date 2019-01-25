@@ -1,0 +1,1100 @@
+// ********************************************************************************************
+// ** MDB main less file
+// **
+// ** Usage:
+// ** This file defines the general layout an elements of MDB. Do not edit unless you are an
+// ** MDB developer! Do not edit the bootstrap variables.less file, but use the  "Overwriting
+// ** Bootstrap less variables" section of the mdb_theme.less file.
+// **
+// ** Use mdb_theme.less and mdb_custom.less to customize your installation.
+// *********************************************************************************************
+// Info for compiled css file:
+/*
+ * MDB main css file: for better performance and usability all bootstrap-, jQuery-, and custom css
+ * files will be added to this css file (which will be minified in future versions).
+ * Do NOT edit this css file as it will be overwritten in future builds. To customize the
+ * application use the less files (mdb.less, mdb_theme.less and mdb_custom.less)
+*/
+
+// import Bootstrap v3.3.7
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import "../bower_components/bootstrap/less/variables.less";
+// general theming variables (fonts, colors, etc,)for a custom look & feel
+@import "mdb_theme.less";
+
+// styles for the ncbo tree widget
+@import url(http://bioportal.bioontology.org/widgets/minified/jquery.ncbo.tree.min.css);
+
+//
+// MDB custom CSS Code
+// ---------------------------------------------------
+//
+
+body, html, .row-offcanvas {
+  height: 100%;
+  background: @MDB-lighter-grey;
+}
+
+div {
+  //overflow: hidden;
+}
+
+// ************************************
+// MDB Mixins:
+// ************************************
+
+
+//all content container (sidebar, main content, ...)
+.content_container {
+  padding-left: 14px;
+  min-height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  margin-bottom: @gap;
+  overflow-x: hidden;
+}
+
+// ************************************
+// MDB Layout Classes
+// ************************************
+
+body {
+  overflow: hidden;
+  padding-top: 65px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+// Container around sidebar_left and main content to position footer
+#container, #content-container {
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: @footer-height + @gap;
+}
+
+// We need this div only to position the scrollbar correctly for screens > 1200px (otherwise navi/footer rund over it)
+#container_scrollbar_wrapper {
+  height: 100%;
+  padding-top: @gap;
+  overflow-y: scroll;
+}
+
+// content element (all screens)
+#content {
+  margin-bottom: 5px;
+}
+
+//
+// SPECIAL PROPERTIES for screens > 1200 px: fixed sidebar width, etc.
+//
+@media screen and (min-width: 1200px) {
+  //if NOT stacked (screen > 1200px), we hide the outer scrollbar and give the sidebar/container individual scroll bars
+  #container_scrollbar_wrapper {
+    overflow: hidden;
+    padding-bottom: 6px;
+  }
+
+  #content {
+    min-height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+//
+// header and Header Elements
+//
+
+#header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-top: 7px;
+  padding-left: 10px; // subtract padding from image
+  border-bottom: 8px solid @MDB-darker-grey;
+}
+
+#logo {
+  width: 200px; //43px;
+}
+
+/* search bar with components */
+.mdb-searchbar {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 8px 30px 0 30px;
+  min-width: 300px;
+  font-size: 1.2em;
+  ul {
+    font-size: 1em !important;
+    padding-left: 0;
+  }
+}
+
+@media  (max-width: 915px) {
+  .mdb-searchbar {
+    visibility: hidden;
+  }
+}
+
+.mdb-searchbar-left-dropdown {
+  float: left;
+  border: 1px solid @MDB-darker-grey;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: @MDB-turquoise;
+  height: 29px;
+  min-width: 50px;
+  vertical-align: middle;
+  padding-left: 8px;
+  padding-top: 4px;
+}
+
+.mdb-searchbar-left-dropdown .mdb-icon {
+  float: left;
+  font-size: 18pt;
+  margin: 12px;
+  padding-left: 4px;
+}
+
+.mdb-searchbar-left-dropdown .caret {
+  float: right;
+  margin: 8px;
+  color: white;
+}
+
+.mdb-searchbar-input {
+  flex-grow: 1;
+  height: 29px;
+  min-width: 50px;
+  max-width: 900px;
+  border-top: 1px solid @MDB-darker-grey;
+  border-bottom: 1px solid @MDB-darker-grey;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.mdb-searchbar-right-dropdown {
+  line-height: 27px;
+  height: 29px;
+  min-width: 20%;
+  width: auto;
+  float: right;
+  color: @MDB-black;
+  background: linear-gradient(to bottom, @MDB-white, @MDB-dark-grey) !important;
+  border: 1px solid @MDB-darker-grey;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.mdb-searchbar-right-dropdown .mdb-icon {
+  float: left;
+  margin-top: -4px;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+.mdb-searchbar-right-dropdown .caret {
+  float: right;
+  margin: 11px;
+}
+
+.mdb-searchbar-icon {
+  line-height: 1;
+  float: left;
+  margin: 9px 13px;
+  padding-left: 4px;
+}
+
+.mdb-searchbar-icon-ul {
+  min-width: 25px;
+  padding: 2px;
+  margin-top: 29px;
+  width: 80px;
+}
+
+.mdb-searchbar-icon-list {
+  height: 26px;
+  padding: 2px 0 2px 0;
+  a{padding: -2px 0 -2px 0;}
+}
+
+#footer {
+  background-color: @MDB-header;
+  color: @MDB-lighter-grey;
+  height: @footer-height;
+  font-size: 0.9em;
+  padding: 5px 15px 0 15px;
+  text-align: center;
+  margin-top: @gap;
+}
+
+
+.alert {
+  margin-top: 30px;
+  position: absolute;
+  max-width: 325px;
+  flex-grow: 1;
+  padding-bottom: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  border-color: @MDB-dark-grey !important; //overwriting bootstrap
+  border-width: 0 1px 1px 1px;
+  box-shadow: 3px 3px 6px 0 @MDB-dark-grey;
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
+  z-index:@zindex-alert;
+}
+
+.alert-content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  vertical-align: middle;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.alert {
+  // Overwrite bootstrap default close button
+  .close {
+    right: 0;
+    margin: 0;
+    padding: 8px 10px 0 0;
+    color: inherit;
+    opacity: 1;
+  }
+}
+
+.alert-icon {
+  width: 25px;
+}
+
+.alert-message {
+  //width: 95vw;
+}
+
+.alert-type {
+  text-transform: uppercase;
+}
+
+.alert.ng-enter {
+  opacity: 0;
+}
+
+.alert.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.alert.ng-leave {
+  opacity: 1;
+}
+
+.alert.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+@grid-float-breakpoint: 1280px;
+//** Point at which the navbar begins collapsing.
+@grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
+
+// The x to close a modal
+@close-color: @MDB-red;
+
+//== Modals
+//
+//##
+
+//** Background color of modal content area
+@modal-content-bg: #fff;
+//** Modal content border color
+@modal-content-border-color: @MDB-darker-grey;
+//** Modal content border color **for IE8**
+@modal-content-fallback-border-color: @MDB-darker-grey;
+
+//** Modal header border color
+@modal-header-border-color: @modal-content-border-color;
+//** Modal footer border color
+@modal-footer-border-color: @modal-header-border-color;
+
+.modal-header, .modal-footer {
+  background: @MDB-darker-grey;
+  color: @MDB-lighter-grey;
+  height: 35px;
+  padding: @gap;
+  //margin-right: @gap; //Todo: margins for buttons are not defined in design handbook jet
+  .btn-default {
+    background: @MDB-lighter-grey;
+    color: @MDB-red;
+  }
+  .modal-title {
+    padding-left: 15 px-@gap
+  }
+}
+
+.modal-body {
+  background: @MDB-lighter-grey;
+}
+
+.modal-backdrop {
+  top: 65px;
+}
+
+.modal.fade.in {
+  top: 75px;
+}
+
+// Glyphicons
+
+.glyphicon.large {
+  font-size: 1.5em;
+  padding-top: @gap
+}
+
+.glyphicon.x-large {
+  font-size: 3em;
+}
+
+.glyphicon-valid {
+  color: @MDB-valid;
+}
+
+// Content left column (entry)
+.compact {
+  margin: 0;
+  padding: @gap;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+//
+// Overwriting jQuery Theme variables
+//
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: @MDB-lighter-grey
+}
+
+#sidebar {
+  min-width: @sidebar_left-min-width;
+  max-width: @sidebar_left-max-width;
+  background-color: #333333;
+  color: #dddddd;
+  float: left;
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .well, .row {
+    color: black;
+  }
+}
+
+#main {
+  height: 100%;
+  padding-top: 15px overflow: auto;
+}
+
+// the navbar toggle button should have about the same size and shape of the MDB logo
+.navbar-toggle {
+  margin-top: 4px;
+  border-radius: 11px;
+  height: 40px;
+  width: 43px;
+
+}
+
+/*
+ * "off Canvas sidebar" for MDB-fixed-column.html (Christian) - unused
+ * -------------------------------------------------------------------
+ */
+@media screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    width: calc(100% + @sidebar_left-min-width);
+  }
+
+  .row-offcanvas-left {
+    left: -@sidebar_left-min-width;
+  }
+
+  .row-offcanvas-left.active {
+    left: 0;
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+  }
+}
+
+//
+//DEBUG SECTION
+//
+
+//TODO: bitte nicht rauslöschen. :) (Sandra)
+.navbar-brand {
+  padding: 4px; // for mdb logo
+}
+
+/* 150817 - Angular UI Google Maps */
+.angular-google-map-container-div {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.angular-google-map-container {
+  position: absolute;
+  padding: 2.5% 5% 2.5% 5%;
+  height: 95%;
+  width: 95%;
+}
+
+// sidebar element
+.sidebar_container {
+  background-color: #a3a3a3;
+  color: @sidebar_left-color;
+  border-top: 1px solid @border-color;
+  border-bottom: 1px solid @border-color;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar_panel {
+  margin: @gap;
+  padding: @gap;
+  border: 1px solid @MDB-darker-grey;
+}
+
+.sidebar_panel_header {
+  border-bottom: 1px solid @MDB-darker-grey;
+  background-color: @MDB-red;
+  min-height: 20px;
+  padding-top: @gap;
+}
+
+.sidebar_panel_content {
+  background-color: @MDB-red;
+  min-height: 500px;
+  padding-top: @gap;
+}
+
+.sidebar_panel_footer {
+  border-top: 1px solid @MDB-darker-grey;
+  background-color: @MDB-red;
+  min-height: 20px;
+  color: @MDB-red;
+  padding-top: @gap;
+}
+
+.border_top_bottom {
+  border-top: 1px @MDB-darker-grey;
+  border-bottom: @MDB-darker-grey;
+}
+
+// ************************************
+// Indicators and other GUI elements
+// ************************************
+
+// led indicators with a slight "glow" around
+
+.led {
+  margin: 8px;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.led-red {
+  background-color: @MDB-red !important;;
+  box-shadow: #222 0 0 2px 1px, inset #740000 0 0 3px, @MDB-red 0 4px 11px;
+}
+
+.led-orange {
+  background-color: @MDB-orange !important;
+  box-shadow: #222 0 0 2px 1px, inset #805C02 0 3px, @MDB-orange 0 4px 11px;
+}
+
+.led-green {
+  background-color: @MDB-green !important;
+  box-shadow: #222 0 0 2px 1px, inset #0E7133 0 0 3px, @MDB-green 0 4px 11px;
+
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// <Sandras Testzeug> ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* margin for all form items */
+.mdb_form_item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* margin for all authentication form items */
+.mdb_authentication_form_item {
+  .mdb_form_item;
+}
+
+/* special rule for Subelements for "speciemen history". Layout might change in the future so this is ok fot the time being (4/2017)
+   Todo: check, if we still need this in the future */
+#SC_MDB_S_0000000151_1 {
+  margin-left: 25px;
+}
+
+input:disabled {
+  background-color: #ddd;
+}
+
+select:disabled {
+  background-color: #ddd;
+}
+
+textarea:disabled {
+  background-color: #ddd;
+}
+
+/* Show green border when stuff has been typed in, and its valid */
+input.ng-dirty.ng-valid {
+  border-color: @MDB-valid;
+}
+
+/* Show red border when stuff has been typed in, but its invalid */
+input.ng-dirty.ng-invalid {
+  border: 1px solid @MDB-red;
+  background-color: #fee;
+}
+
+.image_panel {
+  background-color: darkgreen;
+  border-top: 1px solid yellowgreen;
+  border-bottom: 1px solid yellowgreen;
+  height: 85px;
+  width: 85px;
+}
+
+.grid {
+  width: 100%;
+  height: 400px;
+}
+
+
+#divtextarea {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  background: @MDB-white;
+  border: 1px solid #b3b3b3;
+  line-height: inherit;
+  height: 100px;
+  overflow: auto;
+  padding: 2px;
+  resize: vertical;
+}
+
+#modaldivtextarea {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  border: 1px solid #b3b3b3;
+  line-height: inherit;
+  height: 100px;
+  overflow: auto;
+  padding: 10px;
+  resize: both;
+}
+
+#modaldivdefinition {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  border: 1px solid #b3b3b3;
+  line-height: inherit;
+  height: 100px;
+  overflow: auto;
+  padding: 10px;
+  resize: both;
+}
+
+.automaticAnnotationText {
+  background: #c9dde1;
+}
+
+.annotatedText {
+  color: #337ab7;
+}
+
+.highlightedText {
+  background: #c9dde1; //@MDB-orange;
+}
+
+// wobble fix (https://github.com/FortAwesome/Font-Awesome/issues/671)
+.fa-spin {
+  -webkit-filter: blur(0);
+}
+
+//loader icon for image annotation
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin: -75px 0 0 -75px;
+  border: 16px solid @MDB-lighter-grey; //transparent; //#f3f3f3; /* Light grey */
+  border-top: 16px solid #7b98bc; //#3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// </Sandras Testzeug> ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// We need this div only to position the scrollbar correctly for screens > 1200px (otherwise navi/footer run over it)
+.mdb_document {
+  height: 100%;
+  //padding-top: @gap;
+  //overflow-y: scroll;
+  overflow: hidden;
+  padding-top:3px;
+  padding-bottom: 6px; //Todo: find out, why we have a 6 px offset. 0px is expected
+}
+
+.top_panel, #SC_BASIC_0000000808_1 {
+  height: 25px;
+  background: @sidebar_left-background-color;
+  margin-top: -2px;
+  .container-fluid;
+}
+
+// sidebar element (all screens) DEPRICATED?
+//// TODO: #SC_BASIC_0000000652_1 is workaround for testuser "test@test.com"
+.left_main_panel, #SC_BASIC_0000000652_1{
+  background-color: @sidebar_left-background-color;
+  color: @sidebar_left-color;
+  margin-bottom: @gap;
+  // is bigger then @grid-float-breakpoint (=1280px)
+  @media screen and (min-width: @grid-float-breakpoint) {
+    float: left;
+    max-width: (@sidebar_left-max-width);
+  }
+
+  position: relative;
+  //.content_container;
+  max-width: 100vw;
+  min-width: @sidebar_left-min-width;
+  .container-fluid;
+  //padding: 0 !important;
+  padding: 0 15px 0 0;
+}
+
+// content element (all screens)
+.right_main_panel {
+  margin-bottom: 5px;
+  overflow-y: scroll;
+  padding: 0;
+  .content_container;
+  // is smaller than 1280px
+  @media screen and (max-width: 1279px) {
+    max-width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 10px !important;
+  }
+}
+
+// content element (all screens)
+#SC_BASIC_0000000575_1, #SC_BASIC_0000000582_1,  #SC_BASIC_0000000576_1 {
+  // #SC_BASIC_0000000818_1, #SC_BASIC_0000000574_1, #SC_BASIC_0000000774_1, #SC_BASIC_0000000113_1{
+  display: block;
+  padding: 0 !important;
+  .content_container;
+  .container-fluid;
+  overflow: hidden;
+}
+
+// ToDo: should be controlled by application ontology?
+// if right_main_panel is below left => scroll both
+#SC_BASIC_0000000575_1, #SC_BASIC_0000000582_1, #SC_BASIC_0000000576_1 {
+  @media screen and (max-width: 1279px) {
+    overflow-y: scroll;
+    .right_main_panel {
+        overflow-y: hidden;
+    }
+  }
+}
+
+
+// annotator
+
+.document_container {
+  //currently no styles
+  div {
+    //background-color: transparent;
+  }
+}
+
+// Annotator demo (temp)
+.annotator-item input {
+  height: 30px;
+}
+
+.annotator-filter {
+  left: 755px !important;
+  right: 0 !important;
+  top: 69px !important;
+  z-index: 1020;
+}
+
+.layout_panel {
+  margin-bottom: @gap;
+  float: left;
+  position: relative;
+  .content_container;
+}
+
+// Image Annotator Styles
+@import url(https://openlayers.org/en/v3.18.2/css/ol.css);
+
+#image-annotator {
+  position: relative;
+}
+
+.drawlabel {
+  margin: 1px;
+}
+
+.drawradio:last-of-type {
+  margin-bottom: 20px;
+}
+
+.drawrb {
+  display: none;
+}
+
+.drawrb:checked + label {
+  background-image: url('/exlibs/img/pressed_40px.png');
+}
+
+#map {
+  height: 600px;
+}
+
+#colorindicator {
+  //background-color: rgba(255, 255, 255, 1.0);
+  height: 20px;
+  width: 20px;
+}
+
+#ia_help {
+  border: 2px solid #000000;
+  margin-bottom: 20px;
+}
+
+ul.dropdown-menu[id^=typeahead] {
+  z-index: 99999; // REALLY high value to stay in front!
+}
+
+#toggle-notification-history, #toggle-notification-history-disabled {
+  cursor: pointer;
+  font-size: 28px !important;
+}
+
+#toggle-notification-history-disabled {
+  color: @MDB-grey;
+}
+
+.notification-menu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  max-height: 70vh;
+  background: black;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  color: white;
+}
+
+.notifications-wrapper {
+  overflow-y: auto;
+
+  text-align: center;
+}
+
+.notification-item {
+  font-size: 16px;
+  max-width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  .nmessage, .ndate {
+    text-align: left;
+  }
+
+  &.notification-success {
+    color: @brand-success;
+  }
+
+  &.notification-info {
+    color: @brand-info;
+  }
+
+  &.notification-warning {
+    color: @brand-warning;
+  }
+
+  &.notification-error {
+    color: @brand-danger;
+  }
+}
+
+.mdb-test-search-overlay {
+  position: absolute;
+  background: black;
+  top: 65px;
+  height: 94vh;
+
+  &:not(.in) {
+    right: -760px; // to be not on screen
+  }
+  &.in {
+    right: 0;
+  }
+
+  width: 760px; //as big as the img if scaled to 100% height
+  z-index: 999999;
+  transition: right .5s linear;
+}
+
+
+.mdb-search-overlay {
+  position: absolute;
+  background: @MDB-darker-grey;
+  top: 65px;
+  height: 92vh;
+  padding: 2px 0 5px 5px;
+  &:not(.in) {
+    right: -722px; // to be not on screen
+  }
+  &.in {
+    right: 0;
+  }
+  width: 760px; //as big as the img if scaled to 100% height
+  z-index: 999999;
+  transition: right .5s linear;
+
+  .nav-tabs {
+    border: none;
+  }
+
+  .tabs-left{
+    margin-top:41px;
+    position: relative;
+    left: -39px;
+    >li{
+      float: none;
+      margin-right: -1px;
+      height: 20px;
+      width: 105px;
+      margin-bottom: 150px;
+      -webkit-transform: rotate(+90deg);
+      -moz-transform: rotate(+90deg);
+      -ms-transform: rotate(+90deg);
+      -o-transform: rotate(+90deg);
+      transform: rotate(+90deg);
+      >a {
+        padding: 0;
+        margin-right: 0;
+        display:block;
+        text-align: center;
+        border-radius: 0 0 15px 15px;
+        border: solid 2px @MDB-black;
+        width: 167px;
+        height: 25px;
+        background: white;
+        font-size: medium;
+        font-weight: bold;
+        color: @MDB-black;
+      }
+      .active>a{
+        background: #777777;
+      }
+      .active>a:hover,
+      .active>a:focus {
+        background: transparent;
+        border-bottom-color: @MDB-light-grey;
+        border-right-color: @MDB-light-grey;
+        border-left-color: @MDB-light-grey;
+        border-top-color: @MDB-light-grey;
+      }
+      >a:hover,
+      >a:focus {
+        background: transparent;
+        border-top-color: transparent;
+        color: #777777;
+      }
+    }
+  }
+  .tab-content{
+    color: @MDB-black;
+    background: @MDB-white;
+    height: 100%;
+    padding-bottom: 10px;
+    .tab-pane{
+      height: 100%;
+    }
+  }
+}
+
+.overlay-close-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 20px;
+  color: red;
+  z-index: 9999999;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
+}
+
+// for preview img
+.mdb-search-overlay img {
+  width: auto;
+  height: 100%;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-required {
+  content: 'required';
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+}
+
+mdb-component > .select-wrapper[required="required"] {
+  &:not(.requirement_fullfilled)::after {
+    content: 'required';
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    color: @MDB-red;
+  }
+
+  &::after {
+    content: 'required';
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    color: @MDB-dark-grey;
+  }
+}
+
+.overlay-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.host .tags input {
+  width: 100% !important;
+}
+
+//
+// Depricated - todo: remove
+//
+
+// UI Layout test
+.layout-mock *:not(.ui-splitbar) {
+  background: @MDB-red no-repeat center;
+}
+
+.layout-mock .center-back {
+  background-image: url("https://placehold.it/400x300/eee/666&text=CENTER");
+  height: 500px;
+  width: 500px;
+}
+
+.layout-mock .north-back {
+  background-image: url("https://placehold.it/400x300/eee/666&text=NORTH");
+  height: 100px;
+  width: 500px;
+}
+
+.layout-mock .south-back {
+  background-image: url("https://placehold.it/400x300/eee/666&text=SOUTH");
+  height: 100px;
+  width: 500px;
+}
+
+.layout-mock .east-back {
+  background-image: url("https://placehold.it/400x300/eee/666&text=EAST");
+  height: 500px;
+  width: 200px;
+}
+
+.layout-mock .west-back {
+  background-image: url("https://placehold.it/400x300/eee/666&text=WEST");
+  height: 500px;
+  width: 200px;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// END ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// special rules for certain elements
+@import "mdb_layout_exceptions";
+
+// special adaptations of a theme should be placed in mdb_custom.less
+@import "mdb_custom.less";
+

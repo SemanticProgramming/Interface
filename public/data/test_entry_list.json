@@ -1,0 +1,167 @@
+{
+  "connectSID": "s:42-HALLOHIERALARMEINS1ELF-TTESTT.SANDRASGANZPERSOENLICHEMDBPROTOTYPSESSIONID",
+  "mdbueid": "272b7f79",
+  "http://www.soccomas.org/Ontologies/SOCCOMAS/SprO#SPRO_0000000148": "http://www.morphdbase.de/resource/272b7f79#SC_BASIC_0000001483_35",
+  "http://www.soccomas.org/Ontologies/SOCCOMAS/SprO#SPRO_0000000321": "http://www.morphdbase.de/resource/272b7f79#TimeInterval_35",
+  "data": [
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "Title changed",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000030",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171018-md-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "SpecimenEntryTest",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "3",
+      "uri": "http://www.morphdbase.de/resource/a3d611c8-20171027-s-3-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "Der Sinn des Lebens ist",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "42",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171023-s-4-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "Specimen Description",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "12",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171023-s-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "this is a new title",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000030",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171019-md-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "fdgd",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "12",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171023-s-3-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "wqeqe",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "12",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171020-s-2-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "test",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "1701",
+      "uri": "http://www.morphdbase.de/resource/272b7f79-20171023-s-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "2CreateOn",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "27102017",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171027-s-3-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "Label was changed afterwards",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000030",
+      "SPRO_0000000400": "Klaus",
+      "SPRO_0000000080": "Maier",
+      "uri": "http://www.morphdbase.de/resource/caab6b18-20171019-md-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "test",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "1",
+      "uri": "http://www.morphdbase.de/resource/a3d611c8-20171025-s-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "A short and meaningful title",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000030",
+      "uri": "http://www.morphdbase.de/resource/272b7f79-20171023-md-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "wq",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "12",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171027-s-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "1teston",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "27102017",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171027-s-2-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "SpecimenEntryTest",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "3",
+      "uri": "http://www.morphdbase.de/resource/a3d611c8-20171027-s-2-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "specimenEntryTest",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "2",
+      "uri": "http://www.morphdbase.de/resource/a3d611c8-20171026-s-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "Sample Specimen",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "2310",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171023-s-2-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "sad",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "12",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171020-s-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "Lycoris aurea entry",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000030",
+      "uri": "http://www.morphdbase.de/resource/272b7f79-20171018-md-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "specimenTest",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "uri": "http://www.morphdbase.de/resource/a3d611c8-20171027-s-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "Multicellular Organism",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000030",
+      "uri": "http://www.morphdbase.de/resource/421701d8-20171020-md-1-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "Klaus Maiers new Entry",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000030",
+      "SPRO_0000000400": "Klaus",
+      "SPRO_0000000080": "Maier",
+      "uri": "http://www.morphdbase.de/resource/caab6b18-20171019-md-2-d_1_1"
+    },
+    {
+      "withStatus": "SC_BASIC_0000001656",
+      "entryLabel": "3CreateOn",
+      "SC_BASIC_0000001383": "SC_MDB_BASIC_0000000033",
+      "entryLabel2": "27102017",
+      "uri": "http://www.morphdbase.de/resource/de46dd64-20171027-s-4-d_1_1"
+    }
+  ],
+  "load_page_localID": "list_entries",
+  "mdbueid_uri": "http://www.morphdbase.de/resource/272b7f79"
+}

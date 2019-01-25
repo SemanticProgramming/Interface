@@ -1,0 +1,2122 @@
+[
+  {
+    "value": "AERO",
+    "name": "Adverse Event Reporting Ontology (AERO)"
+  },
+  {
+    "value": "ABA",
+    "name": "Allen Brain Atlas (ABA)"
+  },
+  {
+    "value": "ABA-AMB",
+    "name": "Allen Brain Atlas (ABA) Adult Mouse Brain Ontology (ABA-AMB)"
+  },
+  {
+    "value": "ALLERGYDETECTOR",
+    "name": "Allergy Detector II (ALLERGYDETECTOR)"
+  },
+  {
+    "value": "ADO",
+    "name": "Alzheimer's disease ontology (ADO)"
+  },
+  {
+    "value": "AMINO-ACID",
+    "name": "Amino Acid Ontology (AMINO-ACID)"
+  },
+  {
+    "value": "AAO",
+    "name": "Amphibian Gross Anatomy Ontology (AAO)"
+  },
+  {
+    "value": "ATO",
+    "name": "Amphibian Taxonomy Ontology (ATO)"
+  },
+  {
+    "value": "EXACT",
+    "name": "An ontology for experimental actions (EXACT)"
+  },
+  {
+    "value": "PATHLEX",
+    "name": "Anatomic Pathology Lexicon (PATHLEX)"
+  },
+  {
+    "value": "AEO",
+    "name": "Anatomical Entity Ontology (AEO)"
+  },
+  {
+    "value": "ATC",
+    "name": "Anatomical Therapeutic Chemical Classification (ATC)"
+  },
+  {
+    "value": "ANCESTRO",
+    "name": "Ancestry Ontology (ANCESTRO)"
+  },
+  {
+    "value": "ADW",
+    "name": "Animal Natural History and Life History Ontology (ADW)"
+  },
+  {
+    "value": "ATOL",
+    "name": "Animal Trait Ontology for Livestock (ATOL)"
+  },
+  {
+    "value": "ABD",
+    "name": "Anthology of Biosurveillance Diseases (ABD)"
+  },
+  {
+    "value": "APANEUROCLUSTER",
+    "name": "APA Neuro Cluster (APANEUROCLUSTER)"
+  },
+  {
+    "value": "APAOCUEMPLOY",
+    "name": "APA Occupational and Employment cluster (APAOCUEMPLOY)"
+  },
+  {
+    "value": "APASTATISTICAL",
+    "name": "APA Statistical Cluster (APASTATISTICAL)"
+  },
+  {
+    "value": "APATANDT",
+    "name": "APA Tests and Testing cluster (APATANDT)"
+  },
+  {
+    "value": "APATREATMENT",
+    "name": "APA Treatment Cluster (APATREATMENT)"
+  },
+  {
+    "value": "LEGALAPATEST2",
+    "name": "apalegal (LEGALAPATEST2)"
+  },
+  {
+    "value": "AI-RHEUM",
+    "name": "Artificial Intelligence Rheumatology Consultant System Ontology(AI-RHEUM)"
+  },
+  {
+    "value": "APO",
+    "name": "Ascomycete Phenotype Ontology (APO)"
+  },
+  {
+    "value": "ASHWINI",
+    "name": "Ashwini (ASHWINI)"
+  },
+  {
+    "value": "AO",
+    "name": "Asthma Ontology (AO)"
+  },
+  {
+    "value": "ADAR",
+    "name": "Autism DSM-ADI-R ontology (ADAR)"
+  },
+  {
+    "value": "ASDPTO",
+    "name": "Autism Spectrum Disorder Phenotype Ontology (ASDPTO)"
+  },
+  {
+    "value": "BFO",
+    "name": "Basic Formal Ontology (BFO)"
+  },
+  {
+    "value": "BCTT",
+    "name": "Behaviour Change Technique Taxonomy (BCTT)"
+  },
+  {
+    "value": "OBI_BCGO",
+    "name": "Beta Cell Genomics Ontology (OBI_BCGO)"
+  },
+  {
+    "value": "ONTOAD",
+    "name": "Bilingual Ontology of Alzheimer's Disease and Related Diseases (ONTOAD)"
+  },
+  {
+    "value": "BAO",
+    "name": "BioAssay Ontology (BAO)"
+  },
+  {
+    "value": "BOF",
+    "name": "Biodiversity Ontology (BOF)"
+  },
+  {
+    "value": "EDAM-BIOIMAGING",
+    "name": "Bioimaging Ontology (EDAM-BIOIMAGING)"
+  },
+  {
+    "value": "OBIWS",
+    "name": "Bioinformatics Web Service Ontology (OBIWS)"
+  },
+  {
+    "value": "BCO",
+    "name": "Biological Collections Ontology (BCO)"
+  },
+  {
+    "value": "FBbi",
+    "name": "Biological Imaging Methods Ontology (FBbi)"
+  },
+  {
+    "value": "BIOMO",
+    "name": "Biological Observation Matrix Ontology (BIOMO)"
+  },
+  {
+    "value": "BHN",
+    "name": "Biologie Hors Nomenclature (BHN)"
+  },
+  {
+    "value": "DIAB",
+    "name": "BioMedBridges Diabetes Ontology (DIAB)"
+  },
+  {
+    "value": "BIM",
+    "name": "Biomedical Image Ontology (BIM)"
+  },
+  {
+    "value": "BIRNLEX",
+    "name": "Biomedical Informatics Research Network Project Lexicon (BIRNLEX)"
+  },
+  {
+    "value": "BRIDG",
+    "name": "Biomedical Research Integrated Domain Group Model (BRIDG)"
+  },
+  {
+    "value": "BRO",
+    "name": "Biomedical Resource Ontology (BRO)"
+  },
+  {
+    "value": "BMT",
+    "name": "Biomedical Topics (BMT)"
+  },
+  {
+    "value": "BIOMODELS",
+    "name": "BioModels Ontology (BIOMODELS)"
+  },
+  {
+    "value": "BNO",
+    "name": "Bionutrition Ontology (BNO)"
+  },
+  {
+    "value": "BP",
+    "name": "BioPAX Ontology of Biological Pathways (BP)"
+  },
+  {
+    "value": "BP-METADATA",
+    "name": "BioPortal Metadata Ontology (BP-METADATA)"
+  },
+  {
+    "value": "BT",
+    "name": "BioTop Ontology (BT)"
+  },
+  {
+    "value": "BHO",
+    "name": "Bleeding History Phenotype Ontology (BHO)"
+  },
+  {
+    "value": "ICD11-BODYSYSTEM",
+    "name": "Body System Terms from ICD11 (ICD11-BODYSYSTEM)"
+  },
+  {
+    "value": "BCTEO",
+    "name": "Bone and Cartilage Tissue Engineering Ontology (BCTEO)"
+  },
+  {
+    "value": "BDO",
+    "name": "Bone Dysplasia Ontology (BDO)"
+  },
+  {
+    "value": "BSAO",
+    "name": "Botryllus schlosseri anatomy and development ontology (BSAO)"
+  },
+  {
+    "value": "BRCT",
+    "name": "Brain Region & Cell Type terminology (BRCT)"
+  },
+  {
+    "value": "BCGO",
+    "name": "Breast Cancer Grading Ontology (BCGO)"
+  },
+  {
+    "value": "MCBCC",
+    "name": "Breast Tissue Cell Lines Ontology (MCBCC)"
+  },
+  {
+    "value": "BTO",
+    "name": "BRENDA Tissue and Enzyme Source Ontology (BTO)"
+  },
+  {
+    "value": "BRO_ACRONYM",
+    "name": "Bro_Name (BRO_ACRONYM)"
+  },
+  {
+    "value": "IDOBRU",
+    "name": "Brucellosis Ontology (IDOBRU)"
+  },
+  {
+    "value": "WB-LS",
+    "name": "C. elegans Development Vocabulary (WB-LS)"
+  },
+  {
+    "value": "WB-BT",
+    "name": "C. elegans Gross Anatomy Vocabulary (WB-BT)"
+  },
+  {
+    "value": "WB-PHENOTYPE",
+    "name": "C. elegans Phenotype Vocabulary (WB-PHENOTYPE)"
+  },
+  {
+    "value": "CAN",
+    "name": "cancer (CAN)"
+  },
+  {
+    "value": "CANCO",
+    "name": "Cancer Chemoprevention Ontology (CANCO)"
+  },
+  {
+    "value": "ACGT-MO",
+    "name": "Cancer Research and Management ACGT Master Ontology (ACGT-MO)"
+  },
+  {
+    "value": "EP",
+    "name": "Cardiac Electrophysiology Ontology (EP)"
+  },
+  {
+    "value": "CARRE",
+    "name": "CARRE Risk Factor ontology (CARRE)"
+  },
+  {
+    "value": "CEDARPC",
+    "name": "CEDAR Provisional Classes (CEDARPC)"
+  },
+  {
+    "value": "CEDARVS",
+    "name": "CEDAR Value Sets (CEDARVS)"
+  },
+  {
+    "value": "CBO",
+    "name": "Cell Behavior Ontology (CBO)"
+  },
+  {
+    "value": "CCONT",
+    "name": "Cell Culture Ontology (CCONT)"
+  },
+  {
+    "value": "CCO",
+    "name": "Cell Cycle Ontology (CCO)"
+  },
+  {
+    "value": "CLO",
+    "name": "Cell Line Ontology (CLO)"
+  },
+  {
+    "value": "MCCL",
+    "name": "Cell Line Ontology [by Mahadevan] (MCCL)"
+  },
+  {
+    "value": "CL",
+    "name": "Cell Ontology (CL)"
+  },
+  {
+    "value": "CMPO",
+    "name": "Cellular microscopy phenotype ontology (CMPO)"
+  },
+  {
+    "value": "GRO-CPD",
+    "name": "Cereal Plant Development Ontology (GRO-CPD)"
+  },
+  {
+    "value": "GRO-CPGA",
+    "name": "Cereal Plant Gross Anatomy Ontology (GRO-CPGA)"
+  },
+  {
+    "value": "CTX",
+    "name": "Cerebrotendinous Xanthomatosis Ontology (CTX)"
+  },
+  {
+    "value": "CCON",
+    "name": "Cerrado concepts and plant community dynamics (CCON)"
+  },
+  {
+    "value": "CHEBI",
+    "name": "Chemical Entities of Biological Interest Ontology (CHEBI)"
+  },
+  {
+    "value": "CHEMINF",
+    "name": "Chemical Information Ontology (CHEMINF)"
+  },
+  {
+    "value": "CHMO",
+    "name": "Chemical Methods Ontology (CHMO)"
+  },
+  {
+    "value": "PROCCHEMICAL",
+    "name": "Chemical Process (PROCCHEMICAL)"
+  },
+  {
+    "value": "CSEO",
+    "name": "Cigarette Smoke Exposure Ontology (CSEO)"
+  },
+  {
+    "value": "CIINTEADO",
+    "name": "Ciona intestinalis Anatomy and Development Ontology (CIINTEADO)"
+  },
+  {
+    "value": "CISAVIADO",
+    "name": "Ciona savignyi Anatomy and Development Ontology (CISAVIADO)"
+  },
+  {
+    "value": "CMO",
+    "name": "Clinical Measurement Ontology (CMO)"
+  },
+  {
+    "value": "CSSO",
+    "name": "Clinical Signs and Symptoms Ontology (CSSO)"
+  },
+  {
+    "value": "CSO",
+    "name": "Clinical Study Ontology (CSO)"
+  },
+  {
+    "value": "CTO",
+    "name": "Clinical Trials Ontology (CTO)"
+  },
+  {
+    "value": "CAO",
+    "name": "Clusters of Orthologous Groups (COG) Analysis Ontology (CAO)"
+  },
+  {
+    "value": "CNO_ACRONYM",
+    "name": "CNO_NAME (CNO_ACRONYM)"
+  },
+  {
+    "value": "COSTART",
+    "name": "Coding Symbols for a Thesaurus of Adverse Reaction Terms (COSTART)"
+  },
+  {
+    "value": "COGAT",
+    "name": "Cognitive Atlas Ontology (COGAT)"
+  },
+  {
+    "value": "COGPO",
+    "name": "Cognitive Paradigm Ontology (COGPO)"
+  },
+  {
+    "value": "CARO",
+    "name": "Common Anatomy Reference Ontology (CARO)"
+  },
+  {
+    "value": "CTCAE",
+    "name": "Common Terminology Criteria for Adverse Events (CTCAE)"
+  },
+  {
+    "value": "COMODI",
+    "name": "COMODI (COMODI)"
+  },
+  {
+    "value": "CDAO",
+    "name": "Comparative Data Analysis Ontology (CDAO)"
+  },
+  {
+    "value": "CNO",
+    "name": "Computational Neuroscience Ontology (CNO)"
+  },
+  {
+    "value": "CABRO",
+    "name": "Computer Assisted Brain Injury Rehabilitation Ontology (CABRO)"
+  },
+  {
+    "value": "APACOMPUTER",
+    "name": "Computer Cluster (APACOMPUTER)"
+  },
+  {
+    "value": "CN",
+    "name": "computer network (CN)"
+  },
+  {
+    "value": "CRISP",
+    "name": "Computer Retrieval of Information on Scientific Projects Thesaurus (CRISP)"
+  },
+  {
+    "value": "CPRO",
+    "name": "Computer-Based Patient Record Ontology (CPRO)"
+  },
+  {
+    "value": "CHD",
+    "name": "Congenital Heart Defects Ontology (CHD)"
+  },
+  {
+    "value": "CARELEX",
+    "name": "Content Archive Resource Exchange Lexicon (CARELEX)"
+  },
+  {
+    "value": "CPTAC",
+    "name": "CPTAC Proteomics Pipeline Infrastructure Ontology (CPTAC)"
+  },
+  {
+    "value": "CO",
+    "name": "Crop Ontology (CO)"
+  },
+  {
+    "value": "CPT",
+    "name": "Current Procedural Terminology (CPT)"
+  },
+  {
+    "value": "CYTO",
+    "name": "CYTOKINE (CYTO)"
+  },
+  {
+    "value": "ONL-DP",
+    "name": "Dataset processing (ONL-DP)"
+  },
+  {
+    "value": "DCO-DEBUGIT",
+    "name": "DebugIT Core Ontology (DCO-DEBUGIT)"
+  },
+  {
+    "value": "IDODEN",
+    "name": "Dengue Fever Ontology (IDODEN)"
+  },
+  {
+    "value": "DLORO",
+    "name": "Dependency Layered Ontology for Radiation Oncology (DLORO)"
+  },
+  {
+    "value": "DERMLEX",
+    "name": "Dermatology Lexicon (DERMLEX)"
+  },
+  {
+    "value": "DDO",
+    "name": "Diabetes Mellitus Diagnosis Ontology (DDO)"
+  },
+  {
+    "value": "DOCCC",
+    "name": "Diagnosis Ontology of Clinical Care Classification (DOCCC)"
+  },
+  {
+    "value": "DIAGONT",
+    "name": "Diagnostic Ontology (DIAGONT)"
+  },
+  {
+    "value": "DCM",
+    "name": "DICOM Controlled Terminology (DCM)"
+  },
+  {
+    "value": "DDANAT",
+    "name": "Dictyostelium Discoideum Anatomy Ontology (DDANAT)"
+  },
+  {
+    "value": "HRDO",
+    "name": "Disease core ontology applied to Rare Diseases (HRDO)"
+  },
+  {
+    "value": "APADISORDERS",
+    "name": "Disorders cluster (APADISORDERS)"
+  },
+  {
+    "value": "DCO",
+    "name": "Dispedia Core Ontology (DCO)"
+  },
+  {
+    "value": "FB-DV",
+    "name": "Drosophila Development Ontology (FB-DV)"
+  },
+  {
+    "value": "FB-BT",
+    "name": "Drosophila Gross Anatomy Ontology (FB-BT)"
+  },
+  {
+    "value": "DIKB",
+    "name": "Drug Interaction Knowledge Base Ontology (DIKB)"
+  },
+  {
+    "value": "ERO",
+    "name": "Eagle-I Research Resource Ontology (ERO)"
+  },
+  {
+    "value": "EDAM",
+    "name": "EDAM bioinformatics operations, data types, formats, identifiers and topics (EDAM)"
+  },
+  {
+    "value": "EDDA_PT",
+    "name": "EDDA Publication Types Taxonomy (EDDA_PT)"
+  },
+  {
+    "value": "EDDA",
+    "name": "EDDA Study Designs Taxonomy (EDDA)"
+  },
+  {
+    "value": "APAEDUCLUSTER",
+    "name": "Educational Cluster (APAEDUCLUSTER)"
+  },
+  {
+    "value": "ECG",
+    "name": "Electrocardiography Ontology (ECG)"
+  },
+  {
+    "value": "ECP",
+    "name": "Electronic Care Plan (ECP)"
+  },
+  {
+    "value": "ELIG",
+    "name": "Eligibility Feature Hierarchy (ELIG)"
+  },
+  {
+    "value": "ONTOLURGENCES",
+    "name": "Emergency care ontology (ONTOLURGENCES)"
+  },
+  {
+    "value": "MFOEM",
+    "name": "Emotion Ontology (MFOEM)"
+  },
+  {
+    "value": "ENM",
+    "name": "eNanoMapper (ENM)"
+  },
+  {
+    "value": "ENVO",
+    "name": "Environment Ontology (ENVO)"
+  },
+  {
+    "value": "EOL",
+    "name": "Environment Ontology for Livestock (EOL)"
+  },
+  {
+    "value": "EMO",
+    "name": "Enzyme Mechanism Ontology (EMO)"
+  },
+  {
+    "value": "PIERO",
+    "name": "Enzyme Reaction Ontology for annotating Partial Information of chemical transformation (PIERO)"
+  },
+  {
+    "value": "ESFO",
+    "name": "Enzyme Structure Function Ontology (ESFO)"
+  },
+  {
+    "value": "EGO",
+    "name": "Epigenome Ontology (EGO)"
+  },
+  {
+    "value": "EPILONT",
+    "name": "Epilepsy Ontology (EPILONT)"
+  },
+  {
+    "value": "ESSO",
+    "name": "Epilepsy Syndrome Seizure Ontology (ESSO)"
+  },
+  {
+    "value": "CTONT",
+    "name": "Epoch Clinical Trial Ontology (CTONT)"
+  },
+  {
+    "value": "EO",
+    "name": "Ethnicity Ontoloy (EO)"
+  },
+  {
+    "value": "ECO",
+    "name": "Evidence and Conclusion Ontology (ECO)"
+  },
+  {
+    "value": "XCO",
+    "name": "Experimental Conditions Ontology (XCO)"
+  },
+  {
+    "value": "EFO",
+    "name": "Experimental Factor Ontology (EFO)"
+  },
+  {
+    "value": "EXO",
+    "name": "Exposure Ontology (EXO)"
+  },
+  {
+    "value": "FHHO",
+    "name": "Family Health History Ontology (FHHO)"
+  },
+  {
+    "value": "IFAR",
+    "name": "Fanconi Anemia Ontology (IFAR)"
+  },
+  {
+    "value": "FO",
+    "name": "Fern Ontology (FO)"
+  },
+  {
+    "value": "FIRE",
+    "name": "Fire Ontology (FIRE)"
+  },
+  {
+    "value": "FYPO",
+    "name": "Fission Yeast Phenotype Ontology (FYPO)"
+  },
+  {
+    "value": "FLOPO",
+    "name": "Flora Phenotype Ontology (FLOPO)"
+  },
+  {
+    "value": "FB-SP",
+    "name": "Fly Taxonomy (FB-SP)"
+  },
+  {
+    "value": "FB-CV",
+    "name": "FlyBase Controlled Vocabulary (FB-CV)"
+  },
+  {
+    "value": "FMA",
+    "name": "Foundational Model of Anatomy (FMA)"
+  },
+  {
+    "value": "FTC",
+    "name": "Functional Therapeutic Chemical Classification System (FTC)"
+  },
+  {
+    "value": "FAO",
+    "name": "Fungal Gross Anatomy Ontology (FAO)"
+  },
+  {
+    "value": "BAO-GPCR",
+    "name": "G Protein-Coupled Receptor BioAssays Ontology (BAO-GPCR)"
+  },
+  {
+    "value": "GALEN",
+    "name": "Galen Ontology (GALEN)"
+  },
+  {
+    "value": "GAZ",
+    "name": "Gazetteer (GAZ)"
+  },
+  {
+    "value": "GEXO",
+    "name": "Gene Expression Ontology (GEXO)"
+  },
+  {
+    "value": "GO",
+    "name": "Gene Ontology (GO)"
+  },
+  {
+    "value": "GO-EXT",
+    "name": "Gene Ontology Extension (GO-EXT)"
+  },
+  {
+    "value": "GRO",
+    "name": "Gene Regulation Ontology (GRO)"
+  },
+  {
+    "value": "GFO",
+    "name": "General Formal Ontology (GFO)"
+  },
+  {
+    "value": "GFO-BIO",
+    "name": "General Formal Ontology for Biology (GFO-BIO)"
+  },
+  {
+    "value": "GTO",
+    "name": "Genetic Test (GTO)"
+  },
+  {
+    "value": "GCO",
+    "name": "Genome Component Ontology (GCO)"
+  },
+  {
+    "value": "GENE-CDS",
+    "name": "Genomic Clinical Decision Support Ontology (GENE-CDS)"
+  },
+  {
+    "value": "GFVO",
+    "name": "Genomic Feature and Variation Ontology (GFVO)"
+  },
+  {
+    "value": "GEOSPECIES",
+    "name": "GeoSpecies Ontology (GEOSPECIES)"
+  },
+  {
+    "value": "GVP",
+    "name": "Getty Vocabulary Program ontology (GVP)"
+  },
+  {
+    "value": "GBM",
+    "name": "Glioblastoma (GBM)"
+  },
+  {
+    "value": "GLYCO",
+    "name": "Glycomics Ontology (GLYCO)"
+  },
+  {
+    "value": "GLYCORDF",
+    "name": "GlycoRDF (GLYCORDF)"
+  },
+  {
+    "value": "GO-PLUS",
+    "name": "go-plus (GO-PLUS)"
+  },
+  {
+    "value": "GMM",
+    "name": "GoMapMan (GMM)"
+  },
+  {
+    "value": "GPML",
+    "name": "Graphical Pathway Markup Language (GPML)"
+  },
+  {
+    "value": "GMO",
+    "name": "Growth Medium Onotology (GMO)"
+  },
+  {
+    "value": "HC",
+    "name": "Habronattus Courtship Ontology (HC)"
+  },
+  {
+    "value": "HAAURAADO",
+    "name": "Halocynthia aurantium Anatomy and Development Ontology (HAAURAADO)"
+  },
+  {
+    "value": "HAROREADO",
+    "name": "Halocynthia roretzi Anatomy and Development Ontology (HAROREADO)"
+  },
+  {
+    "value": "HL7",
+    "name": "Health Level Seven Reference Implementation Model, Version 3 (HL7)"
+  },
+  {
+    "value": "HCPCS",
+    "name": "Healthcare Common Procedure Coding System (HCPCS)"
+  },
+  {
+    "value": "HFO",
+    "name": "Heart Failure Ontology (HFO)"
+  },
+  {
+    "value": "HCODONONT",
+    "name": "HGeneCodonOntology (HCODONONT)"
+  },
+  {
+    "value": "HIV",
+    "name": "HIV ontology (HIV)"
+  },
+  {
+    "value": "HIVO004",
+    "name": "HIVOntologymain.owl (HIVO004)"
+  },
+  {
+    "value": "HPIO",
+    "name": "Host Pathogen Interactions Ontology (HPIO)"
+  },
+  {
+    "value": "DERMO",
+    "name": "Human Dermatological Disease Ontology (DERMO)"
+  },
+  {
+    "value": "EHDAA",
+    "name": "Human Developmental Anatomy Ontology, abstract version 1 (EHDAA)"
+  },
+  {
+    "value": "EHDAA2",
+    "name": "Human Developmental Anatomy Ontology, abstract version 2 (EHDAA2)"
+  },
+  {
+    "value": "EHDA",
+    "name": "Human Developmental Anatomy Ontology, timed version (EHDA)"
+  },
+  {
+    "value": "DOID",
+    "name": "Human Disease Ontology (DOID)"
+  },
+  {
+    "value": "HUGO",
+    "name": "Human Genome Organization Gene Symbols (HUGO)"
+  },
+  {
+    "value": "HINO",
+    "name": "Human Interaction Network Ontology (HINO)"
+  },
+  {
+    "value": "HP",
+    "name": "Human Phenotype Ontology (HP)"
+  },
+  {
+    "value": "HUPSON",
+    "name": "Human Physiology Simulation Ontology (HUPSON)"
+  },
+  {
+    "value": "HAO",
+    "name": "Hymenoptera Anatomy Ontology (HAO)"
+  },
+  {
+    "value": "IDQA",
+    "name": "Image and Data Quality Assessment Ontology (IDQA)"
+  },
+  {
+    "value": "IMMDIS",
+    "name": "Immune Disorder Ontology (IMMDIS)"
+  },
+  {
+    "value": "IMGT-ONTOLOGY",
+    "name": "Immunogenetics Ontology (IMGT-ONTOLOGY)"
+  },
+  {
+    "value": "IDO",
+    "name": "Infectious Disease Ontology (IDO)"
+  },
+  {
+    "value": "FLU",
+    "name": "Influenza Ontology (FLU)"
+  },
+  {
+    "value": "IAO",
+    "name": "Information Artifact Ontology (IAO)"
+  },
+  {
+    "value": "ICO",
+    "name": "Informed Consent Ontology (ICO)"
+  },
+  {
+    "value": "INSECTH",
+    "name": "insectH (INSECTH)"
+  },
+  {
+    "value": "INO",
+    "name": "Interaction Network Ontology (INO)"
+  },
+  {
+    "value": "IXNO",
+    "name": "Interaction Ontology (IXNO)"
+  },
+  {
+    "value": "InterNano",
+    "name": "InterNano Nanomanufacturing Taxonomy (InterNano)"
+  },
+  {
+    "value": "ICNP",
+    "name": "International Classification for Nursing Practice (ICNP)"
+  },
+  {
+    "value": "ICPS",
+    "name": "International Classification for Patient Safety (ICPS)"
+  },
+  {
+    "value": "ICECI",
+    "name": "International Classification of External Causes of Injuries (ICECI)"
+    },
+  {
+    "value": "ICD10",
+    "name": "International Classification of Diseases, Version 10 (ICD10)"
+  },
+  {
+    "value": "ICD10CM",
+    "name": "International Classification of Diseases, Version 10 - Clinical Modification (ICD10CM)"
+    },
+  {
+    "value": "ICD10PCS",
+    "name": "International Classification of Diseases, Version 10 - Procedure Coding System (ICD10PCS)"
+    },
+  {
+    "value": "ICD9CM",
+    "name": "International Classification of Diseases, Version 9 - Clinical Modification (ICD9CM)"
+    },
+  {
+    "value": "ICF",
+    "name": "International Classification of Functioning, Disability and Health (ICF)"
+    },
+  {
+    "value": "ICPC",
+    "name": "International Classification of Primary Care (ICPC)"
+  },
+  {
+    "value": "ICPC2P",
+    "name": "International Classification of Primary Care - 2 PLUS (ICPC2P)"
+  },
+  {
+    "value": "ICW",
+    "name": "International Classification of Wellness (ICW)"
+  },
+  {
+    "value": "INM-NPI",
+    "name": "Interventionnelle Non Médicamenteuse (INM) (INM-NPI)"
+  },
+  {
+    "value": "ISO-ANNOTATIONS",
+    "name": "ISO-15926-2_2003_annotations (ISO-ANNOTATIONS)"
+  },
+  {
+    "value": "ENTITY",
+    "name": "ISO-15926-2_2003_entityMembership (ENTITY)"
+  },
+  {
+    "value": "ENTITYCANDIDATES",
+    "name": "ISO-15926-2_2003_entityMembershipCandidates (ENTITYCANDIDATES)"
+    },
+  {
+    "value": "INVERSEROLES",
+    "name": "ISO-15926-2_2003_inverseRoles (INVERSEROLES)"
+  },
+  {
+    "value": "ISO-15926-2_2003",
+    "name": "ISO-15926-2_2003_oil (ISO-15926-2_2003)"
+  },
+  {
+    "value": "AURA",
+    "name": "KB_Bio_101 (AURA)"
+  },
+  {
+    "value": "KISAO",
+    "name": "Kinetic Simulation Algorithm Ontology (KISAO)"
+  },
+  {
+    "value": "SARANAPOKER",
+    "name": "KONTES SEO (SARANAPOKER)"
+  },
+  {
+    "value": "PUBLICATIONS",
+    "name": "Legal ontology (PUBLICATIONS)"
+  },
+  {
+    "value": "LEGALAPA",
+    "name": "legalapa (LEGALAPA)"
+  },
+  {
+    "value": "LIPRO",
+    "name": "Lipid Ontology (LIPRO)"
+  },
+  {
+    "value": "LBO",
+    "name": "Livestock Breed Ontology (LBO)"
+  },
+  {
+    "value": "LPT",
+    "name": "Livestock Product Trait Ontology (LPT)"
+  },
+  {
+    "value": "LHN",
+    "name": "Loggerhead Nesting Ontology (LHN)"
+  },
+  {
+    "value": "LOINC",
+    "name": "Logical Observation Identifier Names and Codes (LOINC)"
+  },
+  {
+    "value": "ONL-MR-DA",
+    "name": "Magnetic Resonance Dataset Acquisition Ontology (ONL-MR-DA)"
+  },
+  {
+    "value": "ZEA",
+    "name": "Maize Gross Anatomy Ontology (ZEA)"
+  },
+  {
+    "value": "MHC",
+    "name": "Major Histocompatibility Complex Ontology (MHC)"
+  },
+  {
+    "value": "IDOMAL",
+    "name": "Malaria Ontology (IDOMAL)"
+  },
+  {
+    "value": "MP",
+    "name": "Mammalian Phenotype Ontology (MP)"
+  },
+  {
+    "value": "MS",
+    "name": "Mass Spectrometry Ontology (MS)"
+  },
+  {
+    "value": "MDDB",
+    "name": "Master Drug Data Base Clinical Drugs (MDDB)"
+  },
+  {
+    "value": "MATR",
+    "name": "Material (MATR)"
+  },
+  {
+    "value": "MATRCOMPOUND",
+    "name": "Material Compound (MATRCOMPOUND)"
+  },
+  {
+    "value": "MATRELEMENT",
+    "name": "Material Element (MATRELEMENT)"
+  },
+  {
+    "value": "MINERAL",
+    "name": "Material Mineral (MINERAL)"
+  },
+  {
+    "value": "MNR",
+    "name": "Material Natural Resource (MNR)"
+  },
+  {
+    "value": "MOC",
+    "name": "Material Organic Compound (MOC)"
+  },
+  {
+    "value": "MATRROCK",
+    "name": "Material Rock (MATRROCK)"
+  },
+  {
+    "value": "MATRROCKIGNEOUS",
+    "name": "Material Rock Igneouus (MATRROCKIGNEOUS)"
+  },
+  {
+    "value": "MAMO",
+    "name": "Mathematical Modelling Ontology (MAMO)"
+  },
+  {
+    "value": "MMO",
+    "name": "Measurement Method Ontology (MMO)"
+  },
+  {
+    "value": "MFO",
+    "name": "Medaka Fish Anatomy and Development Ontology (MFO)"
+  },
+  {
+    "value": "MEDDRA",
+    "name": "Medical Dictionary for Regulatory Activities (MEDDRA)"
+  },
+  {
+    "value": "MERA",
+    "name": "Medical Educational Resource Aggregator (MERA)"
+  },
+  {
+    "value": "MEDEON",
+    "name": "Medical Error Ontology (MEDEON)"
+  },
+  {
+    "value": "OntoVIP",
+    "name": "Medical image simulation (OntoVIP)"
+  },
+  {
+    "value": "MESH",
+    "name": "Medical Subject Headings (MESH)"
+  },
+  {
+    "value": "MWLA",
+    "name": "Medical Web Lifestyle Aggregator (MWLA)"
+  },
+  {
+    "value": "MEDLINEPLUS",
+    "name": "MedlinePlus Health Topics (MEDLINEPLUS)"
+  },
+  {
+    "value": "TOP-MENELAS",
+    "name": "Menelas Project Top-Level Ontology (TOP-MENELAS)"
+  },
+  {
+    "value": "MF",
+    "name": "Mental Functioning Ontology (MF)"
+  },
+  {
+    "value": "ONL-MSA",
+    "name": "Mental State Assessment (ONL-MSA)"
+  },
+  {
+    "value": "MEO",
+    "name": "Metagenome and Microbes Environmental Ontology (MEO)"
+  },
+  {
+    "value": "MSV",
+    "name": "Metagenome Sample Vocabulary (MSV)"
+  },
+  {
+    "value": "MO",
+    "name": "Microarray and Gene Expression Data Ontology (MO)"
+  },
+  {
+    "value": "MCCV",
+    "name": "Microbial Culture Collection Vocabulary (MCCV)"
+  },
+  {
+    "value": "TYPON",
+    "name": "Microbial Typing Ontology (TYPON)"
+  },
+  {
+    "value": "MIRNAO",
+    "name": "MicroRNA Ontology (MIRNAO)"
+  },
+  {
+    "value": "MAT",
+    "name": "Minimal Anatomical Terminology (MAT)"
+  },
+  {
+    "value": "MIXSCV",
+    "name": "Minimal Information about any Sequence (MIxS) Controlled Vocabularies (MIXSCV)"
+    },
+  {
+    "value": "MIXS",
+    "name": "Minimal Information about any Sequence Ontology (MIXS)"
+  },
+  {
+    "value": "MSTDE",
+    "name": "Minimal Standard Terminology of Digestive Endoscopy (MSTDE)"
+  },
+  {
+    "value": "MSTDE-FRE",
+    "name": "Minimal Standard Terminology of Digestive Endoscopy, French (MSTDE-FRE)"
+    },
+  {
+    "value": "MEGO",
+    "name": "Mobile Genetic Element Ontology (MEGO)"
+  },
+  {
+    "value": "MIM",
+    "name": "Molecular Interaction Map (MIM)"
+  },
+  {
+    "value": "MOOCCIADO",
+    "name": "Molgula occidentalis Anatomy and Development Ontology (MOOCCIADO)"
+    },
+  {
+    "value": "MOOCCUADO",
+    "name": "Molgula occulta Anatomy and Development Ontology (MOOCCUADO)"
+  },
+  {
+    "value": "MOOCULADO",
+    "name": "Molgula oculata Anatomy and Development Ontology (MOOCULADO)"
+  },
+  {
+    "value": "MONO",
+    "name": "Monogenean Ontology (MONO)"
+  },
+  {
+    "value": "TGMA",
+    "name": "Mosquito Gross Anatomy Ontology (TGMA)"
+  },
+  {
+    "value": "MIRO",
+    "name": "Mosquito Insecticide Resistance Ontology (MIRO)"
+  },
+  {
+    "value": "MA",
+    "name": "Mouse Adult Gross Anatomy Ontology (MA)"
+  },
+  {
+    "value": "MEDO",
+    "name": "Mouse Experimental Design Ontology (MEDO)"
+  },
+  {
+    "value": "EMAP",
+    "name": "Mouse Gross Anatomy and Development Ontology (EMAP)"
+  },
+  {
+    "value": "MPATH",
+    "name": "Mouse Pathology Ontology (MPATH)"
+  },
+  {
+    "value": "MUCK",
+    "name": "Muckova (MUCK)"
+  },
+  {
+    "value": "MSO",
+    "name": "Multiple sclerosis ontology (MSO)"
+  },
+  {
+    "value": "FALL",
+    "name": "MyOntoServiceFull_FallDetection (FALL)"
+  },
+  {
+    "value": "RXNO",
+    "name": "Name Reaction Ontology (RXNO)"
+  },
+  {
+    "value": "NPO",
+    "name": "NanoParticle Ontology (NPO)"
+  },
+  {
+    "value": "NCIT",
+    "name": "National Cancer Institute Thesaurus (NCIT)"
+  },
+  {
+    "value": "NCBITAXON",
+    "name": "National Center for Biotechnology Information (NCBI) Organismal Classification (NCBITAXON)"
+    },
+  {
+    "value": "NDDF",
+    "name": "National Drug Data File (NDDF)"
+  },
+  {
+    "value": "NDFRT",
+    "name": "National Drug File - Reference Terminology (NDFRT)"
+  },
+  {
+    "value": "NIHSS",
+    "name": "National Institutes of Health Stroke Scale Ontology (NIHSS)"
+  },
+  {
+    "value": "NATPRO",
+    "name": "Natural Products Ontology (NATPRO)"
+  },
+  {
+    "value": "NTDO",
+    "name": "Neglected Tropical Disease Ontology (NTDO)"
+  },
+  {
+    "value": "NEOMARK3",
+    "name": "Neomark Oral Cancer Ontology, version 3 (NEOMARK3)"
+  },
+  {
+    "value": "NEOMARK4",
+    "name": "Neomark Oral Cancer Ontology, version 4 (NEOMARK4)"
+  },
+  {
+    "value": "NEMO",
+    "name": "Neural ElectroMagnetic Ontology (NEMO)"
+  },
+  {
+    "value": "NEUMORE",
+    "name": "Neural Motor Recovery Ontology (NEUMORE)"
+  },
+  {
+    "value": "NIGO",
+    "name": "Neural-Immune Gene Ontology (NIGO)"
+  },
+  {
+    "value": "NBO",
+    "name": "Neuro Behavior Ontology (NBO)"
+  },
+  {
+    "value": "NMOBR",
+    "name": "NeuroMorpho.Org brain region ontologies (NMOBR)"
+  },
+  {
+    "value": "NMOSP",
+    "name": "NeuroMorpho.Org species ontology (NMOSP)"
+  },
+  {
+    "value": "NIFCELL",
+    "name": "Neuroscience Information Framework (NIF) Cell Ontology (NIFCELL)"
+  },
+  {
+    "value": "NIFDYS",
+    "name": "Neuroscience Information Framework (NIF) Dysfunction Ontlogy (NIFDYS)"
+  },
+  {
+    "value": "NIFSTD",
+    "name": "Neuroscience Information Framework (NIF) Standard Ontology (NIFSTD)"
+  },
+  {
+    "value": "NIFSUBCELL",
+    "name": "Neuroscience Information Framework (NIF) Subcellular Ontology (NIFSUBCELL)"
+  },
+  {
+    "value": "NGSONTO",
+    "name": "NGS ontology (NGSONTO)"
+  },
+  {
+    "value": "NHSQI2009",
+    "name": "NHS Quality Indicators (NHSQI2009)"
+  },
+  {
+    "value": "NIDM-RESULTS",
+    "name": "NIDM-Results (NIDM-RESULTS)"
+  },
+  {
+    "value": "NLMVS",
+    "name": "NIH NLM Value Sets (NLMVS)"
+  },
+  {
+    "value": "NMR",
+    "name": "NMR-Instrument Component of Metabolomics Investigations Ontology (NMR)"
+  },
+  {
+    "value": "NCRO",
+    "name": "Non-coding RNA Ontology (NCRO)"
+  },
+  {
+    "value": "NPI",
+    "name": "Non-Pharmacological Interventions (NPIs) (NPI)"
+  },
+  {
+    "value": "NONRCTO",
+    "name": "Non-Randomized Controlled Trials Ontology (NONRCTO)"
+  },
+  {
+    "value": "NORREG",
+    "name": "Norwegian national quality registries- Variabelbibliotek for medisinske kvalitetsregistre (NORREG)"
+  },
+  {
+    "value": "ADMIN",
+    "name": "Nurse Administrator (ADMIN)"
+  },
+  {
+    "value": "SURGICAL",
+    "name": "Nurse Surgical (SURGICAL)"
+  },
+  {
+    "value": "TRANS",
+    "name": "Nurse Transitional (TRANS)"
+  },
+  {
+    "value": "TRIAGE",
+    "name": "Nurse triage (TRIAGE)"
+  },
+  {
+    "value": "NCCO",
+    "name": "Nursing Care Coordination Ontology (NCCO)"
+  },
+  {
+    "value": "NIC",
+    "name": "Nursing Interventions Classification (NIC)"
+  },
+  {
+    "value": "ONTONEO",
+    "name": "Obstetric and Neonatal Ontology (ONTONEO)"
+  },
+  {
+    "value": "OMIM",
+    "name": "Online Mendelian Inheritance in Man (OMIM)"
+  },
+  {
+    "value": "OF",
+    "name": "OntoFood (OF)"
+  },
+  {
+    "value": "ONTOKBCF",
+    "name": "Ontological Knowledge Base Model for Cystic Fibrosis (ONTOKBCF)"
+  },
+  {
+    "value": "OBIB",
+    "name": "Ontology for Biobanking (OBIB)"
+  },
+  {
+    "value": "OBI",
+    "name": "Ontology for Biomedical Investigations (OBI)"
+  },
+  {
+    "value": "DDI",
+    "name": "Ontology for Drug Discovery Investigations (DDI)"
+  },
+  {
+    "value": "OGMS",
+    "name": "Ontology for General Medical Science (OGMS)"
+  },
+  {
+    "value": "OGDI",
+    "name": "Ontology for Genetic Disease Investigations (OGDI)"
+  },
+  {
+    "value": "OGI",
+    "name": "Ontology for Genetic Interval (OGI)"
+  },
+  {
+    "value": "OGSF",
+    "name": "Ontology for Genetic Susceptibility Factor (OGSF)"
+  },
+  {
+    "value": "OMIT",
+    "name": "Ontology for MicroRNA Target (OMIT)"
+  },
+  {
+    "value": "ONSTR",
+    "name": "Ontology for Newborn Screening Follow-up and Translational Research (ONSTR)"
+  },
+  {
+    "value": "OPL",
+    "name": "Ontology for Parasite LifeCycle (OPL)"
+  },
+  {
+    "value": "OAE",
+    "name": "Ontology of Adverse Events (OAE)"
+  },
+  {
+    "value": "ONTOMA",
+    "name": "Ontology of Alternative Medicine, French (ONTOMA)"
+  },
+  {
+    "value": "OBCS",
+    "name": "Ontology of Biological and Clinical Statistics (OBCS)"
+  },
+  {
+    "value": "OCVDAE",
+    "name": "Ontology of Cardiovascular Drug Adverse Events (OCVDAE)"
+  },
+  {
+    "value": "OCRE",
+    "name": "Ontology of Clinical Research (OCRE)"
+  },
+  {
+    "value": "OCHV",
+    "name": "Ontology of Consumer Health Vocabulary (OCHV)"
+  },
+  {
+    "value": "ONTODM-CORE",
+    "name": "Ontology of Core Data Mining Entities (ONTODM-CORE)"
+  },
+  {
+    "value": "ONTODM-KDD",
+    "name": "Ontology of Data Mining Investigations (ONTODM-KDD)"
+  },
+  {
+    "value": "ONTODT",
+    "name": "Ontology of Datatypes (ONTODT)"
+  },
+  {
+    "value": "ODNAE",
+    "name": "Ontology of Drug Neuropathy Adverse Events (ODNAE)"
+  },
+  {
+    "value": "OOEVV",
+    "name": "Ontology of Experimental Variables and Values (OOEVV)"
+  },
+  {
+    "value": "OGG",
+    "name": "Ontology of Genes and Genomes (OGG)"
+  },
+  {
+    "value": "OGG-MM",
+    "name": "Ontology of Genes and Genomes - Mouse (OGG-MM)"
+  },
+  {
+    "value": "OGR",
+    "name": "Ontology of Geographical Region (OGR)"
+  },
+  {
+    "value": "OGMD",
+    "name": "Ontology of Glucose Metabolism Disorder (OGMD)"
+  },
+  {
+    "value": "HOM",
+    "name": "Ontology of Homology and Related Concepts in Biology (HOM)"
+  },
+  {
+    "value": "LDA",
+    "name": "Ontology of Language Disorder in Autism (LDA)"
+  },
+  {
+    "value": "ONLIRA",
+    "name": "Ontology of Liver for Radiology (ONLIRA)"
+  },
+  {
+    "value": "OMRSE",
+    "name": "Ontology of Medically Related Social Entities (OMRSE)"
+  },
+  {
+    "value": "ONTOTOXNUC",
+    "name": "Ontology of Nuclear Toxicity (ONTOTOXNUC)"
+  },
+  {
+    "value": "OPE",
+    "name": "Ontology of Physical Exercises (OPE)"
+  },
+  {
+    "value": "OPB",
+    "name": "Ontology of Physics for Biology (OPB)"
+  },
+  {
+    "value": "ONTOPNEUMO",
+    "name": "Ontology of Pneumology (ONTOPNEUMO)"
+  },
+  {
+    "value": "OVAE",
+    "name": "Ontology of Vaccine Adverse Events (OVAE)"
+  },
+  {
+    "value": "ONTOPSYCHIA",
+    "name": "OntoPsychia, social module (ONTOPSYCHIA)"
+  },
+  {
+    "value": "OBOREL",
+    "name": "Open Biological and Biomedical Ontologies Relationship Types (OBOREL)"
+    },
+  {
+    "value": "OFSMR",
+    "name": "Open Food Safety Model Repository (OFSMR)"
+  },
+  {
+    "value": "ORDO",
+    "name": "Orphanet Rare Disease Ontology (ORDO)"
+  },
+  {
+    "value": "OGROUP",
+    "name": "Orthologous Group Ontology (OGROUP)"
+  },
+  {
+    "value": "ORTH",
+    "name": "Orthology Ontology (ORTH)"
+  },
+  {
+    "value": "FDSAJFAHSJK",
+    "name": "OWL_XML_Tool5 (FDSAJFAHSJK)"
+  },
+  {
+    "value": "PEO",
+    "name": "Parasite Experiment Ontology (PEO)"
+  },
+  {
+    "value": "PDON",
+    "name": "Parkinson's Disease Ontology (PDON)"
+  },
+  {
+    "value": "PTRANS",
+    "name": "Pathogen Transmission Ontology (PTRANS)"
+  },
+  {
+    "value": "PDO",
+    "name": "Pathogenic Disease Ontology (PDO)"
+  },
+  {
+    "value": "PW",
+    "name": "Pathway Ontology (PW)"
+  },
+  {
+    "value": "PTS",
+    "name": "Pathway Terminology System (PTS)"
+  },
+  {
+    "value": "PAV",
+    "name": "PAV Provenance, Authoring and Versioning (PAV)"
+  },
+  {
+    "value": "PEDTERM",
+    "name": "Pediatric Terminology (PEDTERM)"
+  },
+  {
+    "value": "PHFUMIADO",
+    "name": "Phallusia fumigata Anatomy and Development Ontology (PHFUMIADO)"
+    },
+  {
+    "value": "PHMAMMADO",
+    "name": "Phallusia mammillata Anatomy and Development Ontology (PHMAMMADO)"
+    },
+  {
+    "value": "PHARE",
+    "name": "Pharmacogenomic Relationships Ontology (PHARE)"
+  },
+  {
+    "value": "PVONTO",
+    "name": "Pharmacovigilance Ontology (PVONTO)"
+  },
+  {
+    "value": "PHARMGKB",
+    "name": "PharmGKB Ontology (PHARMGKB)"
+  },
+  {
+    "value": "PHENOMEBLAST",
+    "name": "PhenomeBLAST Ontology (PHENOMEBLAST)"
+  },
+  {
+    "value": "PATO",
+    "name": "Phenotypic Quality Ontology (PATO)"
+  },
+  {
+    "value": "PHENX",
+    "name": "PhenX Phenotypic Terms (PHENX)"
+  },
+  {
+    "value": "PHYLONT",
+    "name": "Phylogenetic Ontology (PHYLONT)"
+  },
+  {
+    "value": "PHAGE",
+    "name": "Phylogenetics Ontology (PHAGE)"
+  },
+  {
+    "value": "PMR",
+    "name": "Physical Medicine and Rehabilitation (PMR)"
+  },
+  {
+    "value": "PDQ",
+    "name": "Physician Data Query (PDQ)"
+  },
+  {
+    "value": "FIX",
+    "name": "Physico-Chemical Methods and Properties (FIX)"
+  },
+  {
+    "value": "REX",
+    "name": "Physico-Chemical Process (REX)"
+  },
+  {
+    "value": "PP",
+    "name": "Pipeline Patterns Ontology (PP)"
+  },
+  {
+    "value": "PAE",
+    "name": "Plant Anatomy (PAE)"
+  },
+  {
+    "value": "PDO_CAS",
+    "name": "Plant Diversity Ontology (PDO_CAS)"
+  },
+  {
+    "value": "PECO",
+    "name": "Plant Environmental Conditions (PECO)"
+  },
+  {
+    "value": "PEAO",
+    "name": "Plant Experimental Assay Ontology (PEAO)"
+  },
+  {
+    "value": "PO",
+    "name": "Plant Ontology (PO)"
+  },
+  {
+    "value": "PSDS",
+    "name": "Plant Structure Development Stage (PSDS)"
+  },
+  {
+    "value": "PTO",
+    "name": "Plant Trait Ontology (PTO)"
+  },
+  {
+    "value": "PLOSTHES",
+    "name": "PLOS Thesaurus (PLOSTHES)"
+  },
+  {
+    "value": "PCO",
+    "name": "Population and Community Ontology (PCO)"
+  },
+  {
+    "value": "PORO",
+    "name": "Porifera Ontology (PORO)"
+  },
+  {
+    "value": "PMA",
+    "name": "Portfolio Management Application (PMA)"
+  },
+  {
+    "value": "PE-O",
+    "name": "Pre-eclampsia Ontology (PE-O)"
+  },
+  {
+    "value": "PXO",
+    "name": "Proteasix Ontology (PXO)"
+  },
+  {
+    "value": "PSIMOD",
+    "name": "Protein Modification Ontology (PSIMOD)"
+  },
+  {
+    "value": "PR",
+    "name": "Protein Ontology (PR)"
+  },
+  {
+    "value": "PLIO",
+    "name": "Protein-ligand interaction ontology (PLIO)"
+  },
+  {
+    "value": "PPIO",
+    "name": "Protein-Protein Interaction Ontology (PPIO)"
+  },
+  {
+    "value": "PROPREO",
+    "name": "Proteomics Data and Process Provenance Ontology (PROPREO)"
+  },
+  {
+    "value": "PROVO",
+    "name": "Provenance Ontology (PROVO)"
+  },
+  {
+    "value": "pseudo",
+    "name": "Pseudogene (pseudo)"
+  },
+  {
+    "value": "APAONTO",
+    "name": "Psychology Ontology (APAONTO)"
+  },
+  {
+    "value": "PE",
+    "name": "Pulmonary Embolism Ontology (PE)"
+  },
+  {
+    "value": "QIBO",
+    "name": "Quantitative Imaging Biomarker Ontology (QIBO)"
+  },
+  {
+    "value": "QUDT",
+    "name": "Quantities, Units, Dimensions, and Types Ontology (QUDT)"
+  },
+  {
+    "value": "ROO",
+    "name": "Radiation Oncology Ontology (ROO)"
+  },
+  {
+    "value": "RADLEX",
+    "name": "Radiology Lexicon (RADLEX)"
+  },
+  {
+    "value": "RCTONT",
+    "name": "Randomized Controlled Trials Ontology (RCTONT)"
+  },
+  {
+    "value": "RS",
+    "name": "Rat Strain Ontology (RS)"
+  },
+  {
+    "value": "RDL",
+    "name": "RDL (RDL)"
+  },
+  {
+    "value": "RCTV2",
+    "name": "Read Clinical Terminology Version 2 (RCTV2)"
+  },
+  {
+    "value": "RCD",
+    "name": "Read Codes, Clinical Terms Version 3 (CTV3) (RCD)"
+  },
+  {
+    "value": "RSA",
+    "name": "Reference Sequence Annotation (RSA)"
+  },
+  {
+    "value": "RB",
+    "name": "RegenBase ontology (RB)"
+  },
+  {
+    "value": "HEIO",
+    "name": "Regional Healthcare System Interoperability and Information Exchange Measurement Ontology (HEIO)"
+    },
+  {
+    "value": "REXO",
+    "name": "Regulation of Gene Expression Ontolology (REXO)"
+  },
+  {
+    "value": "RETO",
+    "name": "Regulation of Transcription Ontology (RETO)"
+  },
+  {
+    "value": "REPO",
+    "name": "Reproductive Trait and Phenotype Ontology (REPO)"
+  },
+  {
+    "value": "RNPRIO",
+    "name": "Research Network and Patient Registry Inventory Ontology (RNPRIO)"
+    },
+  {
+    "value": "RPO",
+    "name": "Resource of Asian Primary Immunodeficiency Diseases (RAPID) Phenotype Ontology (RPO)"
+    },
+  {
+    "value": "RAO",
+    "name": "Rheumatoid Arthritis ontology (RAO)"
+  },
+  {
+    "value": "RNAO",
+    "name": "RNA Ontology (RNAO)"
+  },
+  {
+    "value": "RNRMU",
+    "name": "RNRMU (RNRMU)"
+  },
+  {
+    "value": "RH-MESH",
+    "name": "Robert Hoehndorf Version of MeSH (RH-MESH)"
+  },
+  {
+    "value": "ROLEO",
+    "name": "Role Ontology (ROLEO)"
+  },
+  {
+    "value": "RXNORM",
+    "name": "RxNORM (RXNORM)"
+  },
+  {
+    "value": "SYN",
+    "name": "Sage Bionetworks Synapse Ontology (SYN)"
+  },
+  {
+    "value": "SEP",
+    "name": "Sample Processing and Separation Techniques Ontology (SEP)"
+  },
+  {
+    "value": "OBOE-SBC",
+    "name": "Santa Barbara Coastal Observation Ontology (OBOE-SBC)"
+  },
+  {
+    "value": "SCHEMA",
+    "name": "schema.org (SCHEMA)"
+  },
+  {
+    "value": "IGTO",
+    "name": "Scientific Evidence Based Genetic Testing Ontology (IGTO)"
+  },
+  {
+    "value": "SEDI",
+    "name": "Semantic DICOM Ontology (SEDI)"
+  },
+  {
+    "value": "STY",
+    "name": "Semantic Types Ontology (STY)"
+  },
+  {
+    "value": "SWEET",
+    "name": "Semantic Web for Earth and Environment Technology Ontology (SWEET)"
+    },
+  {
+    "value": "SIO",
+    "name": "Semanticscience Integrated Ontology (SIO)"
+  },
+  {
+    "value": "SO",
+    "name": "Sequence Types and Features Ontology (SO)"
+  },
+  {
+    "value": "SD3",
+    "name": "Simulation Delivery and Documentation Deviations (SD3)"
+  },
+  {
+    "value": "SNPO",
+    "name": "Single-Nucleotide Polymorphism (SNP) Ontology (SNPO)"
+  },
+  {
+    "value": "SITBAC",
+    "name": "Situation-Based Access Control Ontology (SITBAC)"
+  },
+  {
+    "value": "SPO",
+    "name": "Skin Physiology Ontology (SPO)"
+  },
+  {
+    "value": "SDO",
+    "name": "Sleep Domain Ontology (SDO)"
+  },
+  {
+    "value": "SP",
+    "name": "SMART Protocols (SP)"
+  },
+  {
+    "value": "SMASH",
+    "name": "SMASH Ontology (SMASH)"
+  },
+  {
+    "value": "SWO",
+    "name": "Software Ontology (SWO)"
+  },
+  {
+    "value": "SPTO",
+    "name": "Solanaceae Phenotype Ontology (SPTO)"
+  },
+  {
+    "value": "SOY",
+    "name": "Soy Ontology (SOY)"
+  },
+  {
+    "value": "BSPO",
+    "name": "Spatial Ontology (BSPO)"
+  },
+  {
+    "value": "SPD",
+    "name": "Spider Ontology (SPD)"
+  },
+  {
+    "value": "STATO",
+    "name": "Statistics Ontology (STATO)"
+  },
+  {
+    "value": "SHR",
+    "name": "Student Health Record Ontology (SHR)"
+  },
+  {
+    "value": "STUFF",
+    "name": "Stuff Ontology (STUFF)"
+  },
+  {
+    "value": "SAO",
+    "name": "Subcellular Anatomy Ontology (SAO)"
+  },
+  {
+    "value": "SOPHARM",
+    "name": "Suggested Ontology for Pharmacogenomics (SOPHARM)"
+  },
+  {
+    "value": "suicideo",
+    "name": "suicideonto (suicideo)"
+  },
+  {
+    "value": "SSE",
+    "name": "Surgical Secondary Events (SSE)"
+  },
+  {
+    "value": "SYMP",
+    "name": "Symptom Ontology (SYMP)"
+  },
+  {
+    "value": "SSO",
+    "name": "Syndromic Surveillance Ontology (SSO)"
+  },
+  {
+    "value": "SBOL",
+    "name": "Synthetic Biology Open Language Visual Ontology (SBOL)"
+  },
+  {
+    "value": "JERM",
+    "name": "SysMO JERM Ontology of Systems Biology for Micro-Organisms (JERM)"
+  },
+  {
+    "value": "SNOMEDCT",
+    "name": "Systematized Nomenclature of Medicine - Clinical Terms (SNOMEDCT)"
+    },
+  {
+    "value": "SNMI",
+    "name": "Systematized Nomenclature of Medicine, International Version (SNMI)"
+    },
+  {
+    "value": "SBO",
+    "name": "Systems Biology Ontology (SBO)"
+  },
+  {
+    "value": "CHEMBIO",
+    "name": "Systems Chemical Biology and Chemogenomics Ontology (CHEMBIO)"
+  },
+  {
+    "value": "TAXRANK",
+    "name": "Taxonomic Rank Vocabulary (TAXRANK)"
+  },
+  {
+    "value": "TRAK",
+    "name": "Taxonomy for Rehabilitation of Knee Conditions (TRAK)"
+  },
+  {
+    "value": "TAO",
+    "name": "Teleost Anatomy Ontology (TAO)"
+  },
+  {
+    "value": "TTO",
+    "name": "Teleost Taxonomy Ontology (TTO)"
+  },
+  {
+    "value": "TOK",
+    "name": "Terminological and Ontological Knowledge Resources Ontology (TOK)"
+  },
+  {
+    "value": "TEDDY",
+    "name": "Terminology for the Description of Dynamics (TEDDY)"
+  },
+  {
+    "value": "DRON",
+    "name": "The Drug Ontology (DRON)"
+  },
+  {
+    "value": "DINTO",
+    "name": "The Drug-Drug Interactions Ontology (DINTO)"
+  },
+  {
+    "value": "ECSO",
+    "name": "The Ecosystem Ontology (ECSO)"
+  },
+  {
+    "value": "DIDEO",
+    "name": "The Potential Drug-drug Interaction and Potential Drug-drug Interaction Evidence Ontology (DIDEO)"
+    },
+  {
+    "value": "TADS",
+    "name": "Tick Gross Anatomy Ontology (TADS)"
+  },
+  {
+    "value": "TEO",
+    "name": "Time Event Ontology (TEO)"
+  },
+  {
+    "value": "TMA",
+    "name": "Tissue Microarray Ontology (TMA)"
+  },
+  {
+    "value": "TM-CONST",
+    "name": "Traditional Medicine Constitution Value Set (TM-CONST)"
+  },
+  {
+    "value": "TM-MER",
+    "name": "Traditional Medicine Meridian Value Sets (TM-MER)"
+  },
+  {
+    "value": "TM-OTHER-FACTORS",
+    "name": "Traditional Medicine Other Factors Value Set (TM-OTHER-FACTORS)"
+    },
+  {
+    "value": "TM-SIGNS-AND-SYMPTS",
+    "name": "Traditional Medicine Signs and Symptoms Value Set (TM-SIGNS-AND-SYMPTS)"
+    },
+  {
+    "value": "TMO",
+    "name": "Translational Medicine Ontology (TMO)"
+  },
+  {
+    "value": "TRON",
+    "name": "Tribolium Ontology (TRON)"
+  },
+  {
+    "value": "UBERON",
+    "name": "Uber Anatomy Ontology (UBERON)"
+  },
+  {
+    "value": "UO",
+    "name": "Units of Measurement Ontology (UO)"
+  },
+  {
+    "value": "UNITSONT",
+    "name": "Units Ontology (UNITSONT)"
+  },
+  {
+    "value": "CANONT",
+    "name": "Upper-Level Cancer Ontology (CANONT)"
+  },
+  {
+    "value": "VICO",
+    "name": "Vaccination Informed Consent Ontology (VICO)"
+  },
+  {
+    "value": "VO",
+    "name": "Vaccine Ontology (VO)"
+  },
+  {
+    "value": "VARIO",
+    "name": "Variation Ontology (VARIO)"
+  },
+  {
+    "value": "CU-VO",
+    "name": "Venom Ontology (CU-VO)"
+  },
+  {
+    "value": "VHOG",
+    "name": "Vertebrate Homologous Organ Group Ontology (VHOG)"
+  },
+  {
+    "value": "VSAO",
+    "name": "Vertebrate Skeletal Anatomy Ontology (VSAO)"
+  },
+  {
+    "value": "VTO",
+    "name": "Vertebrate Taxonomy Ontology (VTO)"
+  },
+  {
+    "value": "VT",
+    "name": "Vertebrate Trait Ontology (VT)"
+  },
+  {
+    "value": "VANDF",
+    "name": "Veterans Health Administration National Drug File (VANDF)"
+  },
+  {
+    "value": "RELOCATORS",
+    "name": "vijay chauhan (RELOCATORS)"
+  },
+  {
+    "value": "VSO",
+    "name": "Vital Sign Ontology (VSO)"
+  },
+  {
+    "value": "VIVO",
+    "name": "VIVO Ontology for Researcher Discovery (VIVO)"
+  },
+  {
+    "value": "VIVO-ISF",
+    "name": "VIVO-Integrated Semantic Framework (VIVO-ISF)"
+  },
+  {
+    "value": "WSIO",
+    "name": "Web-Service Interaction Ontology (WSIO)"
+  },
+  {
+    "value": "CO-WHEAT",
+    "name": "Wheat Trait Ontology (CO-WHEAT)"
+  },
+  {
+    "value": "WIKIPATHWAYS",
+    "name": "WikiPathways (WIKIPATHWAYS)"
+  },
+  {
+    "value": "WHO-ART",
+    "name": "World Health Organization (WHO) Adverse Reaction Terminology (WHO-ART)"
+    },
+  {
+    "value": "XEO",
+    "name": "XEML Environment Ontology (XEO)"
+  },
+  {
+    "value": "XAO",
+    "name": "Xenopus Anatomy and Development Ontology (XAO)"
+  },
+  {
+    "value": "ZFA",
+    "name": "Zebrafish Anatomy and Development Ontology (ZFA)"
+  }
+]

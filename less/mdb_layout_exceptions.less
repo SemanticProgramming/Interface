@@ -1,0 +1,498 @@
+// ********************************************************************************************
+// ** MDB layout exceptions (version 0.1)
+// **
+// ** Here we collect all special css/less rules we need to overwrite the general css rules
+// ** in order to comply to the proposed layout.
+// **
+// ** In a perfect world this file would be empty. We du our best to reduce this exceptions.
+// **
+// *********************************************************************************************/
+// *********************************************************************************
+// Temporary fixes for conflicts between catalog and used HTML elements in ontology.
+// *********************************************************************************
+@import "mdb_theme.less";
+
+
+////////////////////////////////////////////////////////////
+// Special adjustments for ENTRY panels:
+
+// the panel needs special positioning for the "required" indicator
+.css-entry-header-upper-area, .css-entry-header-lower-area {
+  .required-info::after {
+    margin: 21px 0 0 -28px !important;
+    color: @MDB-white;
+  }
+}
+
+// distribute elements
+.css-entry-header-middle-area{
+  > div:first-of-type {
+    flex-basis: 40%;
+    .css-div {
+      // ToDo: workaround valid until we do have image select dropdowns
+      .css-headline2 {
+        min-width: 0px;
+        padding-top: 6px;
+        margin: 0 !important;
+        overflow: hidden;
+        max-width: 200px;
+        text-overflow: ellipsis;
+      }
+      .css-label2 {
+        line-height: 2.25em;
+        overflow: hidden;
+        max-width: 200px;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  > div:nth-of-type(2) {
+    flex-basis: 30%;
+    .css-div {
+      padding: 5px;
+      margin-left: 10px;
+      input, select {
+        margin-bottom: 9px;
+      }
+      .css-creative-commons-dropdown {
+        width: 150px;
+      }
+      .css-label2 {
+        line-height: 2.25em;
+      }
+    }
+  }
+  > div:last-of-type {
+    flex-basis: 30%;
+    .css-div {
+      min-width: 140px;
+      float: right;
+    }
+  }
+}
+
+
+////////////////////////////////////////////////////////////
+// Special adjustments for SPECIMEN ENTRY panel:
+// - workaround for color adjustments (wip)
+// - display block (needed for lower area)
+
+//.css-entry-header-upper-area of SPECIMEN ENTRY
+#SC_BASIC_0000000764_1 {
+  //background-color: @MDB-color-current-draft;
+}
+
+// Padding for the "Acknowledgements, Provenance, ..." css.div
+#SC_BASIC_0000000265_1 {
+  padding:7px;
+}
+
+//.css-entry-header-lower-area of SPECIMEN ENTRY
+#SC_BASIC_0000000766_1 {
+  //background-color: @MDB-color-current-draft;
+  display: block;
+}
+
+// a random image for the entry panel
+#SC_BASIC_0000000256_1 {
+  width: 100%;
+}
+
+// set a default width for the middle element
+#SC_BASIC_0000000256_1 > div:nth-of-type(2) {
+  flex-basis: 33%;
+}
+
+#SC_BASIC_0000000973_1 {
+  width: 312px;
+}
+
+#SC_BASIC_0000000974_1 {
+  width: 257px;
+}
+
+////////////////////////////////////////////////////////////
+// Special adjustments for USER ENTRY panel:
+// - user image with small edit button
+// - adjusted padding
+// - middle area: height is different from other entry types
+// - middle area: select item width set to same width as input items
+
+// image within user entry
+.panel_with_image_with_button {
+  //div with an image and a div (containing a button) on top of the image (e.g. user image)
+  //margin-left: 10px !important;
+  //margin-bottom: 10px !important; //Todo: temporär
+  position: relative;
+  float: left;
+  background-color: @MDB-dark-grey !important;
+  margin-right: 15px !important;
+  &:hover {
+    img {
+      opacity: 0.3;
+    }
+    mdb-component {
+      display: block;
+    }
+  }
+  img {
+    width: 125px; // TODO: workaround, damit alles in eine Zeile passt
+    margin: 5px;
+    padding-left: 0;
+  }
+  mdb-component {
+    position: absolute;
+    display: none;
+    top: 6px;
+    left: 6px;
+    button {
+      font-size: 11px;
+      font-weight: bold;
+      color: black;
+      background-color: @MDB-lighter-grey;
+      border-radius: 3px;
+      border: none;
+      padding: 2px 6px;
+    }
+  }
+}
+
+// SC_BASIC_0000001037
+.css-labeled-btn-small {
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  background-color: @MDB-lighter-grey;
+  border-radius: 3px;
+  border: none;
+  padding: 3px 8px;
+  &:hover, &:active, &:focus {
+    color: @MDB-dark-red
+  }
+  &:active, &:focus {
+    color: @MDB-dark-grey
+  }
+}
+
+//.css-entry-header-upper-area of USER ENTRY
+#SC_BASIC_0000000705_1 {
+  //background-color: @MDB-color-user-entry;
+  padding: 2px;
+}
+
+//.css-entry-header-middle-area of USER ENTRY
+#SC_BASIC_0000000128_1 {
+  height: auto;
+  //margin-left: -29px; // workaround because of .new_row margin-left
+  padding: 15px;
+  select {
+    width: 135px;
+    min-width: 135px;
+  }
+}
+
+//.css-entry-header-lower-area of USER ENTRY
+#SC_BASIC_0000000703_1 {
+  //margin-left: -29px; // workaround because of .new_row margin-left
+  //background-color: @MDB-color-user-entry;
+  padding: 2px;
+}
+
+
+////////////////////////////////////////////////////////////
+// panels on left side
+//
+
+// hack to position "required" under field "institution": remove flex-basis:100% of class new_row
+#SC_BASIC_0000000707_1 > div {
+  flex-basis: inherit;
+}
+
+// we have no class to position the name in the entry panel correctly
+// Todo: Probably will have to check, if css-entry-header-middle-area uses display:flex correctly
+#SC_BASIC_0000000768_1 div:nth-of-type(2) {
+  padding-left: 12px;
+  height: 20px;
+  margin: -8px;
+  span {
+    font-size: 1em;
+  }
+}
+
+// Entry: the Label next to the entry icon needs special margins to be aligned with the tabs and have some space
+// befor the tabs. A normal css-headline2 has different margins (see design catalog)
+#SC_BASIC_0000000822_1 .css-headline2 {
+  margin: 9px 25px 0 0 !important;
+}
+
+
+
+////////////////////////////////////////////////////////////
+// panels on right side
+//
+
+//place text over sample images
+.sample {
+  position: relative;
+  display: inline-block;
+  &:after {
+    position: absolute;
+    color: @MDB-red;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+    padding: 0 5px 5px 0;
+    bottom: 0;
+    left: 0;
+    content: 'work in progress';
+    transform: rotate(-9deg);
+    //background-color: rgba(255, 255, 255, 0.6);
+    //border:1px solid red;
+  }
+}
+
+// Elements (accordion) in right panel don't have a fixed width but have a background color, resulting in an uneven
+// right border. Therefore the parent div gets a background color. (draft and deleted)
+#SC_BASIC_0000000435_1 > div, #SC_BASIC_0000000437_1 > div {
+  background-color: @MDB-white;
+}
+
+// Elements (accordion) in right panel don't have a fixed width but have a background color, resulting in an uneven
+// right border. Therefore the parent div gets a background color. (published)
+#SC_BASIC_0000000441_1 > div {
+  background-color: @MDB-white;
+}
+
+// we do not have a class to center
+#SC_BASIC_0000000775_1 div div div div div:nth-of-type(2), #SC_BASIC_0000000097_1 div div div div div:nth-of-type(2), #SC_BASIC_0000000091_1 div div div div div:nth-of-type(2) {
+  width: 1px; //why? probably a flex box effect.
+  height: 20px;
+  margin: -8px;
+  text-align: center;
+  span {
+    font-size: 1em;
+  }
+}
+
+//content of version button must be moved ontop of the button (but is described as div AFTER button)
+#SC_BASIC_0000000784_1 div:nth-of-type(3) {
+  span {
+    font-size: 11px;
+    margin: -30px 0 0 -30px;
+    display: grid;
+  }
+}
+
+
+//content of version button must be moved ontop of the button (but is described as div AFTER button)
+#SC_BASIC_0000000232_1 div:nth-of-type(2) {
+  i {
+    margin: 0 0 0 -70px;
+    line-height: 0.4em;
+    color: @MDB-black;
+    text-decoration: none;
+  }
+}
+
+//content of version button must be moved ontop of the button (but is described as div AFTER button)
+#SC_BASIC_0000000232_1 div:nth-of-type(3) {
+  span {
+    font-size: 11px;
+    margin: -50px 0 0 2px;
+    display: grid;
+  }
+}
+
+
+// css-bg-white-bordered does not have a padding, but layout shows padding for content of versions tab.
+#SC_BASIC_0000000775_1, #SC_BASIC_0000000097_1, #SC_BASIC_0000000091_1 {
+  padding: 10px;
+}
+
+//'user sign-up-specific information panel section group' used in entry below user panel
+#SC_BASIC_0000000618_1 {
+  background: @MDB-white;
+  width: 100%;
+  margin: 0 0 15px 0;
+  padding: 10px;
+  //remove unwanted margin left from css-bg-white-bordered > div
+  > div {
+    margin: 0 !important;
+  }
+}
+
+
+//create a sample content area for provenance
+//#SC_BASIC_0000001001_1 {
+//  height: 430px;
+//  border: 1px solid @MDB-grey;
+  //div {
+    //height: 420px;
+    //width: 100%;
+    //padding: 5px;
+    //font-size: 1em;
+    //background-image: url("/img/sample_images/Provenance.jpg");
+    //background-size: 628px 390px;
+    //background-repeat: no-repeat;
+  //}
+  //div div::after {
+  //  content: 'work in progress';
+  //  color: @MDB-red;
+  //  font-style: italic;
+  //  margin-top: 400px;
+  //  margin-left: 77%;
+  //  content: 'work in progress';
+  //  transform: rotate(-9deg);
+  //}
+//}
+
+//version information: a special div with scrollbar (no wrap on overflow)
+#SC_BASIC_0000000775_1, #SC_BASIC_0000000097_1, #SC_BASIC_0000000091_1 {
+
+
+}
+
+/*
+  Standard bootstrap tabs are note an option due to the nested mdb elements. Therefore we build something that looks
+  like the bootstrap navigation tabs, but works with mdb data.
+*/
+
+//Tabs below the navigation tabs get a border (esp. a border top) matching the .css-tab1 class
+#SC_BASIC_0000001001_1,
+#SC_BASIC_0000000775_1,
+#SC_BASIC_0000000097_1,
+#SC_BASIC_0000000091_1,
+#SC_BASIC_0000000876_1,
+#SC_BASIC_0000000874_1,
+#SC_BASIC_0000000877_1,
+#SC_BASIC_0000000867_1 {
+  display: flex; /*make the version buttons here float */
+  flex-wrap: nowrap;
+  //overflow-x: visible;
+  //overflow-y:hidden;
+  //min-height:35px;
+//
+  > div {
+    white-space: nowrap;
+    margin: 0 10px; /*space between version buttons */
+    > div {
+      display: inline-block;
+    }
+  }
+}
+
+//version field and acknowlledgements/provenance, ...: Grey border, scrollbar, etc.
+//#SC_BASIC_0000001001_1  //acknowledgements, provenance, statistics ...
+#SC_BASIC_0000000775_1, // draft versions
+#SC_BASIC_0000000097_1, // deleted versions
+#SC_BASIC_0000000091_1, // published
+
+{
+  border: 1px solid @MDB-grey;
+  //min-height: 70px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  > div {
+    margin:0 0 10px 0;
+  }
+}
+
+//draft versions are special: 1x current draft + itemgroup #SC_BASIC_0000000867_1 with saved drafts
+#SC_BASIC_0000000867_1 {
+  margin-left:10px;
+}
+
+//We need to overwrite the border-top (see above) for the active navigation tab
+.is-active {
+  &:after {
+    content: '-'; // invisible placeholder to give element some height
+    color:transparent;
+    position:absolute;
+    top: 30px;
+    left: 0;
+    height:2px;
+    width:100%;
+    z-index: @zindex-tab-navigation;
+    background: @MDB-white;
+  }
+}
+
+#toggle-notification-history {
+  font-size: 2.8em;
+}
+
+// Special rule: no "required" for login form
+.dropdown-menu .required-info:after {
+  color: @MDB-red;
+  content: '';
+}
+
+// SC_BASIC_0000001173: we don't have a rule to indent content of "accordion" panels. The layout concept might change,
+// so this is good enough for the moment.
+.css-bg-white-bordered > .new_row {
+  margin-left: 29px !important;
+  //Todo: indent content of panels on right side. Not sure if we really want this
+  //TODO: breaks ENTRY PANEL ORDER => WORKAROUND
+
+}
+
+
+//special styling for the "add part" section, when used in text annotation tab
+.description-text_annotation_box {
+  .css-bg-white-bordered > .new_row {
+    margin: 0 !important;
+  }
+  .css-data-input-narrow, .css-dropdown {
+    width: 200px !important;
+    min-width: 100px !important;
+    margin-bottom: 10px;
+    font-size:10px;
+  }
+  .css-search-input {
+    width: 165px !important;
+    min-width: 100px !important;
+    margin-bottom: 10px;
+    font-size:10px;
+  }
+  .css-icon-negated-icon, .css-icon-not-negated-icon {
+    //width: 300px !important;
+  }
+}
+
+////////////////////////////////////////////////////////////////////
+
+// Todo: only hidden for workshop
+#SC_BASIC_0000000620_1 {
+  visibility: hidden;
+}
+
+// SC_BASIC_0000000724
+
+#SC_BASIC_0000000724 {
+  display: -moz-box;
+  display: -webkit-box;
+  flex-wrap: nowrap;
+}
+
+#SC_BASIC_0000000534 {
+  -moz-box-flex: 0;       /* Mozilla */
+  -webkit-box-flex: 0;    /* WebKit */
+}
+
+#SC_BASIC_0000000838 {
+  -moz-box-flex: 1;       /* Mozilla */
+  -webkit-box-flex: 1;    /* WebKit */
+}
+
+#SC_BASIC_0000000140{
+  margin-bottom: 15px;
+}
+
+// make form group a bit more narrow to allow closing "x" to float next to it.
+#SC_MDB_BASIC_0000000198_1 > div:first-of-type {
+  border:0px solid red;
+  width: 98%
+}
+
+

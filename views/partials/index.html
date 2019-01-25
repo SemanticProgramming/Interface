@@ -1,0 +1,313 @@
+<div class="mdb_document">
+
+    <!-- Top row -->
+    <div class="top_panel"></div>
+
+    <div style="height: 100%">
+        <!-- Left column fixed width -->
+        <div class="left_main_panel">
+
+            <div class="container-fluid">
+
+                <div ng-hide="loggedIn">
+                    <h1>Welcome to Morph·D·Base Demo! </h1>
+
+                    <p class="css-paragraph1"> This page shows the current development of our efforts.
+                        Although we tested it thoroughly, we are expecting bug reports and will do our best to fix them.
+                        Morph·D·Base is an open web data base that has been developed to serve scientific research and
+                        education.</p>
+
+                    <p class="css-paragraph1">It provides a platform for storing the detailed documentation of all material,
+                        methods, procedures,
+                        and concepts applied, together with the specific parameters, values, techniques, and instruments
+                        used during morphological
+                        data production.</p>
+
+                    <p class="css-paragraph1">In other words, it's purpose is to provide a publicly available resource for
+                        recording and
+                        documenting morphological metadata.
+                        Moreover, it is also a repository for different types of media files that can be uploaded in order
+                        to serve as support and empirical substantiation of the results of morphological investigations.
+                    </p>
+                    <p>Please refer to our
+                        <a href="https://escience.biowikifarm.net/">wiki page</a> for updates in the current
+                        development.</p>
+
+                </div>
+                <div ng-show="loggedIn">
+
+                    <div class="css-headline1">Morph⋅D⋅Base Prototype</div>
+                    <div class="css-headline2">Interface and Standards for Formalized Morphological Descriptions
+                        eScience-Compliant Standards for Morphology
+                    </div>
+                    <p class="css-paragraph1">Welcome to our MDB prototype. Feel free to test the current status of
+                        our efforts.
+                        While this is work in progress, please keep in mind that some functions are not available or
+                        might not work as expected. Please refer to our
+                        <a href="https://escience.biowikifarm.net/">wiki page</a> for updates in the current
+                        development.</p>
+
+
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="css-headline2">MDB Entries</div>
+                            <br>
+
+                            <div class="col-md-6">
+                                <a href="/entry_specimen" class="btn btn-default" style="width: 300px"
+                                   title="View a sample entry or create a new one"
+                                   style="width: 200px">
+                                    MDB specimen</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="/entry_description" title="Create a description Entry" class="btn btn-default"
+                                   style="width: 300px">MDB description</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <br>
+
+                            <div class="css-headline2">User + Outlook Partonomy</div>
+                            <br>
+                            <div class="col-md-6">
+                                <a href="/user" class="btn btn-default"  title="Show and edit personal profile"
+                                   style="width: 300px"
+                                   id='SC_BASIC_0000000134'
+                                   ng-click='submit("MY_DUMMY_MDB_0000000001", forms.mdbEntry, "SC_BASIC_0000000134")'
+                                   style="width: 200px">My MDB
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="/annotation_part" title="Partonomy view (early development stage)"
+                                   class="btn btn-default" style="width: 300px">
+                                    Mockup: MDB partonomy description</a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+                <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+                <br><br>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <h3>Angular Cookies</h3>
+
+                        <div style="width:100%;">
+                            <pre>Angular Cookies = {{cookies | json}}</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+                <div ng-if="$root.developers.indexOf(currentUser) > -1">
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="css-headline1">Developer Info</h1>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div ng-if="$root.developers.indexOf(currentUser) > -1">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Notification Info</h3>
+
+                            <a class="btn btn-default col-md-3 col-xs-12" style="margin-top: 3px;"
+                               ng-click="NotificationService.showInfo('info')">showInfo</a>
+                            <a class="col-md-1 col-xs-12"></a>
+                            <pre class="col-md-8 col-xs-12">showInfo = {{showInfo | json}}</pre>
+
+                            <a class="btn btn-default col-md-3 col-xs-12" style="margin-top: 3px;"
+                               ng-click="NotificationService.showSuccess('success')">showSuccess</a>
+                            <a class="col-md-1 col-xs-12"></a>
+                            <pre class="col-md-8 col-xs-12">showSuccess = {{showSuccess | json}}</pre>
+                            <a class="btn btn-default col-md-3 col-xs-12" style="margin-top: 3px;"
+                               ng-click="NotificationService.showError('error')">showError</a>
+                            <a class="col-md-1 col-xs-12"></a>
+                            <pre class="col-md-8 col-xs-12">showError = {{showError | json}}</pre>
+                            <pre class="col-md-12 col-xs-12">notification = {{notification | json}}</pre>
+                            <pre ng-if="currentUser == 'hui@ui.de'"
+                                 class="col-md-11 col-xs-12">alerts = {{alerts | json}}</pre>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div ng-if="$root.developers.indexOf(currentUser) > -1">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <h3>Angular Cookies</h3>
+
+                            <div style="width:100%;">
+                                <pre>Angular Cookies = {{cookies | json}}</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin: 3px;">
+                        <pre>knownResA = {{cookies[keywordKnownResourceA] | json}}</pre>
+                        <pre>knownResB = {{cookies[keywordKnownResourceB] | json}}</pre>
+                        <pre>connect.sid = {{cookies["connect.sid"] | json}}</pre>
+                        <pre>WsService.connectSID = {{WsService.connectSID | json}}</pre>
+                    </div>
+
+                </div>
+
+                <div ng-if="$root.developers.indexOf(currentUser) > -1">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Auth test</h3>
+                            <input class="col-md-6 col-xs-12" ng-model="testueid" placeholder="enter UEID"/>
+                            <a class="col-md-1 col-xs-12"></a>
+                            <a class="btn btn-default col-md-4 col-xs-12"
+                               ng-click="AuthService.getUserInfoByUEIDFromDB(testueid)">get User by UEID</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Test Info -->
+
+                <div ng-show="false" ng-if="$root.moreinfo.indexOf(currentUser) > -1">
+                    <br><br>
+
+                    <h1>Development Information</h1>
+
+                    <div class="row" style="margin: 3px;">
+                        <pre>Last message to websocket: = {{WsService.sent | json}}</pre>
+                        <pre>Last message from websocket: = {{WsService.response | json}}</pre>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Main column -->
+        <div class="right_main_panel container-fluid">
+
+            <div ng-hide="loggedIn">
+                <h2>Morph·D·Base: an eScience-Compliant application for Morphology and Taxonomy</h2>
+
+                <p class="css-paragraph1">
+                    Increasing the Sustainability and Accessibility of Morphological Data through Ontology-based
+                    Standardization of Morphological and Taxonomic Descriptions and Graphical Image Content Annotations
+                </p>
+
+                <h2>A prototype for a Semantic Web-Content-Management-Systems</h2>
+
+                <p class="css-paragraph1">
+                    An ontology-controlled application for semantic Web-Content-Management-Systems that is self-describing
+                    and content-independent.
+
+                    The basic application implements a set of default features that will be available in any semantic WCMS
+                    based on the application. These features may include:
+                    <ul class="css-paragraph1">
+                        <li>versioning;
+                        <li>sophisticated access-rights system;
+                        <li>management of users and user groups;
+                        <li>project workspaces;
+                        <li>entry workflow for Web-publishing, with distinct set of states that indicate the publishing progress
+                            of an entry;
+                        <li>provenance tracking;
+                        <li>dynamic forms: input forms can be customized by individual users or by project administrators;
+                        <li>efficient grid editing of bulks of data entries;
+                        <li>SPARQL-driven facetted search;
+                        <li>application GUI for adapting and modifying pre-defined data view templates and data base workflows
+                            and for describing new entry forms and workflows;
+                        <li>Linked-Open-Data ready -> inter-linking of data entries possible. Even between data stored on
+                            different semantic WCMS that are based on this ontology-controlled application;
+                        <li>general Granularity Framework for defining Views and Perspectives on the data that facilitate data
+                            organization and exploring the application’s contents from different point of views.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+
+
+            <div ng-show="loggedIn">
+                <div class="sample">
+                    <img src="/img/sample_images/startseite_latest_literature.jpg"
+                         title="Sample Information - to be integrated in the future">
+                </div>
+                <div class="sample">
+                    <img src="/img/sample_images/startseite_latest_media.jpg"
+                         title="Sample Information - to be integrated in the future">
+                </div>
+                <br><br>
+
+                <div class="sample">
+                    <img src="/img/sample_images/startseite_latest_projects.jpg"
+                         title="Sample Information - to be integrated in the future">
+                </div>
+                <div class="sample">
+                    <img src="/img/sample_images/startseite_latest_specimens.jpg"
+                         title="Sample Information - to be integrated in the future">
+                </div>
+                <br><br>
+
+                <div class="sample">
+                    <img src="/img/sample_images/startseite_latest_taxa.jpg"
+                         title="Sample Information - to be integrated in the future">
+                </div>
+                <div class="sample">
+                    <img src="/img/sample_images/startseite_specimen_updates.jpg"
+                         title="Sample Information - to be integrated in the future">
+                </div>
+
+                <br><br>
+
+            </div>
+
+
+            <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+            <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1 || $rootScope.moreInfo.indexOf(currentUser) > -1" style="margin: 3px;">
+
+                <div layout="row container-fluid">
+                    <div class="col-sm-6" style="padding-left: 0px; padding-right: 5px;">
+                        <pre>WsService.sent[0] = {{WsService.sent[0] | json}}</pre>
+                    </div>
+                    <div class="col-sm-6" style="padding-left: 5px; padding-right: 0px;">
+                        <pre>WsService.response[0] = {{WsService.response[0] | json}}</pre>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Test Info -->
+
+            <div ng-if="$root.moreinfo.indexOf(currentUser) > -1">
+                <br><br>
+
+                <h1>Development Information</h1>
+
+                <div class="row" style="margin: 3px;">
+                    <pre>Last message to websocket: = {{WsService.sent | json}}</pre>
+                    <pre>Last message from websocket: = {{WsService.response | json}}</pre>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

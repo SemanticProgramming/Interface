@@ -1,0 +1,123 @@
+<div class="mdb_document">
+	<!-- scripts loaded in html header -->
+
+	<!-- Top row -->
+	<div class="top_panel container-fluid"></div>
+
+	<!-- Left column fixed width -->
+	<div class="left_main_panel container-fluid">
+
+        <div class="container-fluid">
+            <div style="display: inline-flex;">
+                <a href="/" class="btn btn-default" style="min-width: 2em;">
+                    <span class="glyphicon glyphicon-arrow-left"></span>
+                </a>
+                <h1>Image Annotation
+                    <small>(Demo)</small>
+                </h1>
+            </div>
+
+            <br><br>
+
+            <div layout="row">
+
+                <!--<p>Todo: add am menue to choose different images</p>-->
+                <!--<h3>Tools</h3>-->
+                <form class="form-inline">
+                    <div id="layers">
+                        <label class="col-md-4">Choose Shape &nbsp;</label>
+                        <fieldset>
+                            <fieldset class="drawradio">
+                                <!--<option value="Fhl">Freehand Line</option>
+                                <option value="Fha">Freehand Area</option>-->
+                                <input class="drawrb" type="radio" name="drawtype" id="dpoint" value="Point" />
+                                <label class="drawlabel" for="dpoint"><img src="/exlibs/img/drawpoints.png" width="40px" height="40px" alt="Points"/></label>
+                                <input class="drawrb" type="radio" name="drawtype" id="dline" value="LineString" />
+                                <label class="drawlabel" for="dline"><img src="/exlibs/img/drawline.png" width="40px" height="40px" alt="LineString"/></label>
+                            </fieldset>
+                            <fieldset class="drawradio">
+                                <input class="drawrb" type="radio" name="drawtype" id="dpolygon" value="Polygon" checked="checked"/>
+                                <label class="drawlabel" for="dpolygon"><img src="/exlibs/img/drawpolygon.png" width="40px" height="40px" alt="Polygon"/></label>
+                                <input class="drawrb" type="radio" name="drawtype" id="dcircle" value="Circle" />
+                                <label class="drawlabel" for="dcircle"><img src="/exlibs/img/drawcircle.png" width="40px" height="40px" alt="Circle"/></label>
+                            </fieldset>
+                            <fieldset class="drawradio">
+                                <input class="drawrb" type="radio" name="drawtype" id="dsquare" value="Square" />
+                                <label class="drawlabel" for="dsquare"><img src="/exlibs/img/drawsquare.png" width="40px" height="40px" alt="Square"/></label>
+                                <input class="drawrb" type="radio" name="drawtype" id="dbox" value="Box" />
+                                <label class="drawlabel" for="dbox"><img src="/exlibs/img/drawbox.png" width="40px" height="40px" alt="Box"/></label>
+                            </fieldset>
+                            <fieldset class="drawradio">
+                                <input class="drawrb" type="radio" name="drawtype" id="dedit" value="Edit" />
+                                <label class="drawlabel" for="dedit"><img src="/exlibs/img/drawedit.png" width="40px" height="40px" alt="Edit"/></label>
+                            </fieldset>
+                        </fieldset>
+
+                    </div>
+                    <div>
+                        <label class="col-md-4">Choose object</label>
+                        <select id="layerlist">
+                            <option value="0">Object 0</option>
+                        </select>
+                        &nbsp;<span id="colorindicator">&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+
+
+                    <div>
+                        <label class="col-md-4">Add a new object</label>
+                        <button id='addlayer' type="button">new object
+                        </button>
+                    </div>
+
+                    <!--<div>Todo: for some reason new layers can only be added if window was not reloaded. <br>
+                        Try &lt;strg&gt; + &lt;F5&gt;</div>-->
+                </form>
+
+                <h3 id="ia_help_button">Help&nbsp;<span class="small opener">open/close</span></h3>
+                <fieldset id="ia_help" class="helptext">
+                    <h4>Image navigation</h4>
+                    <ul>
+                        <li>Pan image: press and hold left mouse button</li>
+                        <li>Zoom image: roll mouse wheel to zoom in and out</li>
+                    </ul>
+                    <h4>Keyboard</h4>
+                    <ul>
+                        <li>Del-key: delete selected shape (active object only)</li>
+                        <li>Esc-key: cancel current drawing, change to 'Edit' mode</li>
+                    </ul>
+                    <h4>Draw freehand:</h4>
+                    <ol>
+                        <li>Choose 'Line String' or 'Polygon' tool</li>
+                        <li>Hold 'Shift'-key while drawing</li>
+                    </ol>
+                    <h4>Edit shapes:</h4>
+                    <ol>
+                        <li>Select 'Edit' mode (Esc-key)</li>
+                        <li>Mark shape by clicking into it</li>
+                        <li>Add nodes by click and drag on line between existing nodes</li>
+                        <li>Delete node by clicing on it</li>
+                        <li>Move node by cklick and hold mous button while dragging the node</li>
+                    </ol>
+
+
+                </fieldset>
+            </div>
+        </div>
+	</div>
+
+	<!-- Main column -->
+	<div class="right_main_panel container-fluid">
+		<div id="image-annotator">
+			<h1>Image Annotation demo
+			</h1>
+
+			<div id="spinningLoaderDiv" style="padding: 100px;"><div id="spinningLoader" class="loader" style="margin: 0 auto;"></div></div>
+
+			<div id="map" class="map"></div>
+
+		</div>
+		<div style='clear: both'></div>
+
+	</div>
+
+</div>

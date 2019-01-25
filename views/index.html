@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html id="ng-app" ng-app="mdbApp" lang="en" xmlns:ng="https://angularjs.org">
+<head>
+    <meta charset="utf-8">
+    <title>MDB Prototype</title>
+    <!-- default Angular ui layout & grid & ng tags styles -->
+    <link href="/angular-ui-layout/src/ui-layout.css" type="text/css" rel="stylesheet">
+    <link href="/ng-tags-input/ng-tags-input.css" rel="stylesheet" type="text/css">
+    <!-- jquery -->
+    <link href="/jquery-ui/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet">
+    <link href="/css/mdb.css" type="text/css" rel="stylesheet">
+
+    <link href="/angular-ui-grid/ui-grid.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.1/quill.snow.css">
+
+    <base href="/"/>
+
+    <!-- Angular Tree -->
+    <link rel="stylesheet" href="/angular-ui-tree/dist/angular-ui-tree.min.css" type="text/css">
+
+    <!-- Datetimepicker-->
+    <link rel="stylesheet" href="/bootstrap-ui-datetime-picker/example/style.css" />
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.css" type="text/css">
+
+</head>
+
+<body>
+
+<!-- Header -->
+<div id="header" class="navbar navbar-inverse navbar-fixed-top" ng-controller="HeaderCtrl" role="navigation" ng-include="'partials/header.html'"></div>
+
+<!-- Content -->
+<div id="container" ng-view></div>
+
+<!-- Footer -->
+<div id="footer" class="navbar-fixed-bottom" ng-include="'partials/footer.html'"></div>
+
+<!-- ################### include javascripts ################### -->
+
+<!-- JQuery & UI-->
+<script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/jquery-ui/jquery-ui.js"></script>
+
+<!-- NCBO Autocomplete -->
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://bioportal.bioontology.org/widgets/minified/jquery.ncbo.tree-2.0.2.min.js"></script>
+<script src="https://bioportal.bioontology.org/javascripts/JqueryPlugins/autocomplete/crossdomain_autocomplete.js"></script>
+
+<!-- AngularJS & modules -->
+<script type="text/javascript" src="/angular/angular.js"></script>
+<script type="text/javascript" src="/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="/angular-mocks/angular-mocks.js"></script>
+<script type="text/javascript" src="/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="/angular-cookies/angular-cookies.js"></script>
+<script type="text/javascript" src="/angular-touch/angular-touch.js"></script>
+<script type="text/javascript" src="/angular-sanitize/angular-sanitize.js"></script>
+<script type="text/javascript" src="/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="/ng-tags-input/ng-tags-input.js"></script>
+<script type="text/javascript" src="/angular-animate/angular-animate.js"></script>
+
+<!-- Angular UI, Bootstrap & Angular UI Bootstrap -->
+<script type="text/javascript" src="/angular-ui-grid/ui-grid.js"></script>
+<script type="text/javascript" src="/angular-ui-layout/src/ui-layout.js"></script>
+<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+<!-- Bootstrap-ui-Datetime-picker-->
+<script type="text/javascript" src="/bootstrap-ui-datetime-picker/dist/datetime-picker.js"></script>
+
+<!-- Angular UI Google Maps - Not in use at the moment --><!--
+<script type="text/javascript" src='https://maps.googleapis.com/maps/api/js?key=INSERT YOUR KEY HERE'></script>
+<script type="text/javascript" src='/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
+<script type="text/javascript" src='/angular-google-maps/dist/angular-google-maps.min.js'></script> -->
+
+<!-- Angular websocket -->
+<script type="text/javascript" src="/angular-websocket/dist/angular-websocket.min.js"></script>
+
+<!-- Image Annotator -->
+<script type="text/javascript" src="/exlibs/ol.js"></script>
+<script type="text/javascript" src="/exlibs/olsketchtool.js"></script>
+
+<!-- angular-ui-tree -->
+<script type="text/javascript" src="/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
+
+<!-- General libs-->
+<script type="text/javascript" src="/lodash/lodash.js"></script>
+
+
+<!-- It's a strap! -->
+<script type="text/javascript" src="/angular-strap/dist/angular-strap.js"></script>
+<script type="text/javascript" src="/angular-strap/dist/angular-strap.tpl.js"></script>
+
+<!--local js-->
+<script type="text/javascript" src="/exlibs/utilities.js"></script>
+
+<!-- maybe replace with local resource later -->
+<script src="/exlibs/uuid_1.4.8.min.js"></script>
+<script src="/exlibs/quill.min.js"></script>
+<script src="/exlibs/ng-quill.min.js"></script>
+
+<!-- APP -->
+<script type="text/javascript" src="/js/app.js"></script>
+<script type="text/javascript" src="/js/controllers.js"></script>
+<script type="text/javascript" src="/js/services.js"></script>
+<script type="text/javascript" src="/js/filters.js"></script>
+<script type="text/javascript" src="/js/directives.js"></script>
+<script type="text/javascript" src="/js/test_directives.js"></script>
+
+</body>
+</html>

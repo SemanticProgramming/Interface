@@ -1,0 +1,101 @@
+<div class="mdb_document">
+
+    <!-- Left column fixed width -->
+    <div class="left_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <br>
+
+            <h2>User Groups
+                <small>(debugging)</small>
+            </h2>
+
+
+            <br>
+
+            <div ng-hide="loggedIn"><h2>You are not logged</h2></div>
+
+            <div ng-show="loggedIn"><h2>You are logged</h2>
+
+                <br>
+
+                <div layout="row">
+                    <div style="padding: 10px">
+                        <pre style="vertical-align: top; width:90%; height: 50px;">loggedIn = {{loggedIn | json}}</pre>
+                        <pre style="vertical-align: top; width:90%; height: 50px;">currentUser = {{currentUser | json}}</pre>
+                        <pre style="vertical-align: top; width:90%; height: 150px;">Angular Cookies = {{cookies | json}}</pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Main column -->
+    <div class="right_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+
+            <br>
+
+            <div ng-hide="loggedIn"><h2>You are not logged</h2></div>
+
+            <div ng-show="loggedIn"><h2>You are logged</h2>
+
+                <br>
+
+                <!--$scope.submit = function (formname, form, key, value) {-->
+                <form name='forms.mdbEntry' id='MY_DUMMY_SPECIMEN_0000000001'>
+                    <button type='submit' class='btn btn-default btn-block' id='SC_MDB_BASIC_0000000814'
+                            ng-click='submit("MY_DUMMY_SPECIMEN_0000000001", forms.mdbEntry, "SC_MDB_BASIC_0000000814")'>
+                        create MDB specimen
+                    </button>
+                </form>
+
+                <br>
+
+                <!--$scope.submit = function (formname, form, key, value) {-->
+                <form name='forms.mdbEntry' id='MY_DUMMY_MDB_0000000001'>
+                    <button type='submit' class='btn btn-default btn-block' id='SC_BASIC_0000000134'
+                            ng-click='submit("MY_DUMMY_MDB_0000000001", forms.mdbEntry, "SC_BASIC_0000000134")'>
+                        show my MDB
+                    </button>
+                </form>
+
+                <br>
+
+                <div layout="row">
+                    <pre>knownResA = {{cookies[keywordKnownResourceA] | json}}</pre>
+                    <pre>knownResB = {{cookies[keywordKnownResourceB] | json}}</pre>
+                    <pre>connect.sid = {{cookies["connect.sid"] | json}}</pre>
+                </div>
+
+                <div layout="row">
+                    <div class="col-sm-6">
+                        <br>
+                        <mdb-entry-modal mdbentrymodal="mdbentrymodal" mdbformid='mdbentrymodal.load_overlay_localID' modal-title="title"></mdb-entry-modal>
+                        <a role="button" class="btn btn-success" ng-click="showModalElement('#mdbEntryModal')" data-toggle="modal">Launch Demo Modal</a>
+                        <br><br>
+                        <pre>WsService.sent[0] = {{WsService.sent[0] | json}}</pre>
+                        <pre>mdbentrymodal = {{mdbentrymodal | json}}</pre>
+                    </div>
+                    <div class="col-sm-6">
+                        <pre>WsService.response[0] = {{WsService.response[0] | json}}</pre>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+

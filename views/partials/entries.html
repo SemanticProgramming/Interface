@@ -1,0 +1,173 @@
+<div class="mdb_document">
+
+    <!-- Left column fixed width -->
+    <div class="left_main_panel container-fluid">
+
+        <uib-tabset>
+            <uib-tab ng-repeat="tab in entryTabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+                <!-- html sanitizer: ng-bind-html renders HTML elements - use with care! -->
+                <div ng-bind-html="tab.content">Rendered HTML sting</div>
+                <!--
+                <div ng-if="'specimenEntry' == tab.content">
+                    <pre style="height: 200px">{{tab.content}} = {{specimenEntry | json}}</pre>
+                </div>
+                <div ng-if="'forms.SpecimenDetailsForm' == tab.content">
+                    <pre style="height: 200px">{{tab.content}} = {{forms.SpecimenDetailsForm | json}}</pre>
+                </div>
+                <div ng-if="'SpecimenDetails' == tab.content">
+                    {{tab.content}}
+                    &lt;!&ndash;<pre style="height: 95px">{{tab.content}} = {{forms.SpecimenDetailsForm.decimalLatitude.$viewValue | json}}</pre>
+                    <pre style="height: 95px">{{tab.content}} = {{forms.SpecimenDetailsForm.decimalLongitude.$viewValue | json}}</pre>&ndash;&gt;
+                </div>
+                <div ng-if="'xxx' == tab.content">
+                    {{tab.content}}
+                    &lt;!&ndash;<pre style="height: 200px">{{tab.content}} = {{xxx | json}}</pre>
+                </div>
+                -->
+            </uib-tab>
+        </uib-tabset>
+
+        <div class="row sidebar_container">
+            <div class="sidebar_panel">
+                <div class="sidebar_panel_header">
+                    <div class="col-xs-4">Current Draft Version</div>
+                    <div class="col-xs-4">created on: {{specimenEntry.createdOn}}</div>
+                    <div class="col-xs-4">last updated on: {{specimenEntry.updatedOn}}</div>
+                </div>
+                <div class="sidebar_panel_content">
+                    <div class="col-xs-2">
+                        <span class="glyphicon glyphicon-picture x-large" title="Sampe Image"
+                              data-toggle="tool-tip"></span>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="row">{{specimenEntry.specimenid}}</div>
+                        <div class="row">Sample Project Name</div>
+                    </div>
+                    <div class="col-xs-4  text-right">
+                        <span class="glyphicon glyphicon-globe large"></span>
+                        <span class="glyphicon glyphicon-floppy-open large"></span>
+                        <span class="glyphicon glyphicon-trash large"></span>
+                    </div>
+
+                </div>
+                <div class="sidebar_panel_footer">
+                    <div class="col-xs-12"><b>This Specimen entry should be citated as:</b> www.morphdbase.de/...</div>
+                </div>
+            </div>
+        </div>
+
+        <uib-tabset style="margin-top: 10px">
+            <uib-tab ng-repeat="tab in specimenTabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+                <div ng-if="'acks' == tab.content"></div>
+                <div ng-if="'prov' == tab.content"></div>
+                <div ng-if="'stats' == tab.content"></div>
+                <div ng-if="'history' == tab.content"></div>
+                <div ng-if="'map' == tab.content">
+                    <div id="specimenentrylocationmap.html" class="angular-google-map-container-div"
+                         style="height: 500px">
+                        <div class="angular-google-map-container">
+                            <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true"
+                                                options="map.options" events="map.events" control="googlemap">
+                                <ui-gmap-window coords="MapOptions.markers.selected.coords" show="windowOptions.show"
+                                                options="windowOptions" closeClick="closeClick()">
+                                    <div>Hello</div>
+                                </ui-gmap-window>
+                                <ui-gmap-markers models="markers" idkey="markers.id" coords="'coords'" click="'onClick'"
+                                                 events="markers.events"></ui-gmap-markers>
+                            </ui-gmap-google-map>
+                        </div>
+                        <!--
+                        <div style="margin-top: 480px" class="col-sm-12">
+                            <pre style="height: 100px; width: 100%;">markers = {{markers | json}}</pre>
+                        </div>-->
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+
+    </div>
+
+    <!-- Main column -->
+    <div class="right_main_panel container-fluid">
+        <br>
+
+        <form name="forms.SpecimenDetailsForm">
+            <uib-accordion close-others="oneAtATime">
+                <uib-accordion-group ng-repeat="panel in panels" is-open="panel.isOpen" is-disabled="panel.disabled">
+
+                    <uib-accordion-heading>
+                        <i class="pull-left glyphicon"
+                           ng-class="{'glyphicon-chevron-down': panel.isOpen, 'glyphicon-chevron-right': !panel.isOpen}">
+                            &nbsp;</i>
+                        {{panel.title}}
+                    </uib-accordion-heading>
+
+                    <!--{{panel.content}}-->
+                    <div ng-repeat="attribute in panel.content">
+                        <div class="row">
+                            <label class="col-sm-3">
+                                {{attribute.label}}
+                            </label>
+                            <!-- autocomplete input fields -->
+                            <div class="col-sm-8" ng-if="attribute.autocomplete"> <!--class="col-sm-8 has-feedback"-->
+                                <input name={{attribute.name}} ng-model="specimenEntry[attribute.name]"
+                                       style="width: 85%" type="attribute.type" ng-disabled="attribute.disabled"
+                                       ng-required="true" autocomplete="off" uib-typeahead-select-on-exact="true"
+                                       uib-typeahead="taxon as taxon.classification for taxon in taxonWithLink | filter:{classification:$viewValue} | limitTo:10"
+                                       ng-change="entryChanged(forms.SpecimenDetailsForm)"
+                                       placeholder={{attribute.placeholder}}>
+                                <!--"entryChanged(specimenEntry, 'specimenEntry[attribute.name]')"-->
+                                <p ng-if="specimenEntry[attribute.name].resource"
+                                   class="glyphicon glyphicon-check glyphicon-valid" title="data is valid"
+                                   data-toggle="tooltip"></p>
+                                <a ng-href={{specimenEntry[attribute.name].resource}} target="_blank"
+                                   title="See ITIS report for this species" data-toggle="tooltip">
+                                    <!--style="top: -3px; right: 46px">-->
+                                    <i ng-if="specimenEntry[attribute.name].resource"
+                                       class="glyphicon glyphicon-new-window"></i>
+                                    <!--class="glyphicon glyphicon-new-window form-control-feedback"-->
+                                </a>
+                            </div>
+                            <!-- input fields -->
+                            <div class="col-sm-8" ng-if="!attribute.autocomplete">
+                                <input name={{attribute.name}} ng-model="specimenEntry[attribute.name]"
+                                       style="width: 85%" type="attribute.type" ng-disabled="attribute.disabled"
+                                       ng-required="true" autocomplete="off"
+                                       ng-pattern={{attribute.ngpattern}} pattern={{attribute.pattern}}
+                                       placeholder={{attribute.placeholder}}
+                                       ng-minlength={{attribute.minlength}} ng-maxlength={{attribute.maxlength}}
+                                       ng-change="entryChanged(forms.SpecimenDetailsForm)">
+
+                                <p ng-show="forms.SpecimenDetailsForm.{{attribute.name}}.$valid"
+                                   class="glyphicon glyphicon-check glyphicon-valid" title="data is valid"
+                                   data-toggle="tooltip"></p>
+
+                                <p ng-show="forms.SpecimenDetailsForm.{{attribute.name}}.$error.minlength"
+                                   class="help-block">{{attribute.minerror}}.</p>
+
+                                <p ng-show="forms.SpecimenDetailsForm.{{attribute.name}}.$error.maxlength"
+                                   class="help-block">{{attribute.maxerror}}</p>
+
+                                <p ng-show="forms.SpecimenDetailsForm.{{attribute.name}}.$error.pattern"
+                                   class="help-block">{{attribute.patternerror}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </uib-accordion-group>
+                <br>
+
+                <h3 ng-if="$root.developers.indexOf(currentUser) > -1">Debug Info: Specimen Entry JSON</h3>
+                <pre ng-if="$root.developers.indexOf(currentUser) > -1">{{specimenEntry| json}}</pre>
+                <!--
+                <br>
+                <pre>forms.SpecimenDetailsForm = {{forms.SpecimenDetailsForm| json}}</pre>
+                <pre>forms.SpecimenDetailsForm.determination.$valid = {{forms.SpecimenDetailsForm.determination.$valid| json}}</pre><br>
+                <pre>forms.SpecimenDetailsForm.determination.$modelValue.classification = {{forms.SpecimenDetailsForm.determination.$modelValue.classification | json}}</pre><br>
+                <pre>forms.SpecimenDetailsForm.determination.$modelValue.resource = {{forms.SpecimenDetailsForm.determination.$modelValue.resource | json}}</pre>
+                -->
+            </uib-accordion>
+        </form>
+    </div>
+
+</div>

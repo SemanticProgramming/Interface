@@ -1,0 +1,195 @@
+<div class="mdb_document">
+  <!--  <div ui-layout="{ flow : 'column' }">
+        <div ui-layout-container size="20%" min-size="0%" style="background-color: #696969;" class="layout_panel"></div>
+        <div ui-layout-container size="70%" min-size="70%" max-size="100%" class="layout_panel">
+            <div ui-layout="{ flow : 'row' }">
+                <div ui-layout-container size="10%" min-size="0%" style="background-color: steelblue;" class="layout_panel">Links
+                </div>
+                <div ui-layout-container size="90%" min-size="70%" max-size="100%" style="background-color: #d3d3d3; padding: 15px" class="layout_panel">
+
+                </div>
+            </div>
+        </div>
+        <div ui-layout-container size="10%" min-size="0%" style="background-color: #696969;">Links</div>
+    </div>-->
+    <!-- Left column fixed width -->
+    <div class="left_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <h2>Annotations
+                <small>(Demo of bioontology.org annotator)</small>
+            </h2>
+
+            <h3>Parameter</h3>
+            <ul>
+                <li><b>URL:</b> http://data.bioontology.org/annotator</li>
+                <li><b>apikey:</b> NCBO api key (Beispiel hier: Christians Key 8b5b7825-538d-40e0-9e9e-5ab9274a9aeb)</li>
+                <li><b>text:</b>URL-encodeder Text bis zu 500 Zeichen</li>
+                <li><b>ontologies:</b>Lister der Ontologien (NCBO Kürzel). Wenn leer, werden ALLE ontologien durchsucht.
+                </li>
+                <li><b>expand_class_hierarchy</b>: In Subklassen suchen? Erst einmal immer auf "true"</li>
+                <li><b>lass_hierarchy_max_level: </b> In wie vielen Stufen von Subklassen soll gesucht werden. 3 - 5 ist ein
+                    guter Wert.
+                </li>
+                <li><b>format: </b>json oder XML. Lässt man den Parameter weg, ist es "human readable"</li>
+                <li><b>longest_only, exclude_numbers und true&exclude_synonyms: </b> Werden von uns erst einmal fest gesetzt
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main column -->
+    <div class="right_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <h1>Annotation demo
+                <small>processing by application</small>
+            </h1>
+
+            <form name="forms.annotateText">
+
+                <!--<div layout="row" id="autoAnnotate" mw-annotator="{}" annotator-permissions="{user: currentUser}" annotator-plugins="[{name: 'Websocket', options: wsOptions}]">-->
+                <div layout="row" id="autoAnnotate" mw-annotator="{}" annotator-permissions="{user: currentUser}" annotator-plugins="[]">
+                    <!--<textarea id="text" ng-model="annotationForm.text" maxlength="500" style="height: 100px"></textarea>-->
+                    <div contenteditable id="divtextarea">{{annotationForm.text}}</div>
+                </div>
+
+                <tags-input ng-model="tags" display-property="name" placeholder="Type here to select ontologies or leave blank to use all" replace-spaces-with-dashes="false">
+                    <auto-complete source="loadOntologyTags($query)"
+                                   min-length="0"
+                                   load-on-focus="true"
+                                   load-on-empty="true"
+                                   max-results-to-show="10"></auto-complete>
+                </tags-input>
+
+                <p>
+                    <input name="longest_only" id="longest_only" ng-model="annotationForm.longest_only" value="false" type="checkbox" style="width: 20px;">
+                    <label for="longest_only">Match Longest Only</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="mappings" id="mappings_all" ng-model="annotationForm.mappings_all" value="false" type="checkbox" style="width: 20px;">
+                    <label for="mappings_all">Include Mappings</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="exclude_numbers" id="exclude_numbers" ng-model="annotationForm.exclude_numbers" value="false" type="checkbox" style="width: 20px;">
+                    <label for="exclude_numbers">Exclude Numbers</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="whole_word_only" id="whole_word_only" ng-model="annotationForm.whole_word_only" value="true" type="checkbox" style="width: 20px;">
+                    <label for="whole_word_only">Whole words only</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="exclude_synonyms" id="exclude_synonyms" ng-model="annotationForm.exclude_synonyms" value="false" type="checkbox" style="width: 20px;">
+                    <label for="exclude_synonyms">Exclude Synonyms</label>
+                </p>
+                <p>
+                    <b>&nbsp;Include Ancestors Up To Level:</b>
+                    &nbsp;&nbsp;
+                    <select name="class_hierarchy_max_level" id="class_hierarchy_max_level" ng-model="annotationForm.class_hierarchy_max_level" style="width: 100px;"><option selected="selected" value="3">3</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="999">All</option></select>
+                </p>
+
+                <button class="btn btn-primary" ng-click="setTestValues()" style="width: 32%">Set test values</button> &nbsp;&nbsp;
+                <button class="btn btn-primary" ng-click="clearValues()" style="width: 32%">Clear values</button> &nbsp;&nbsp;
+                <button class="btn btn-primary" data-toggle="modal" data-target="#mdbAnnoSelectionModal" style="width: 32%">Open modal</button>
+
+                <br><br>
+
+                <button class="btn btn-primary" value="Annotate!" ng-click="checkAnnotations()" style="width: 100%">Annotate!</button>
+
+            </form>
+            <br>
+
+            <!--
+                    <br><br>
+                    <input type="text" ng-model="searchtext" />
+                    <button ng-click="searchFirst(searchtext)">FirstText</button>
+                    <button ng-click="nextSearch()">NextSearch</button>
+                    <button ng-click="preSearch()">PreviousSearch</button>
+                    <div id="content">hello I need to search text from the contend .On click of search it search the first word.
+                    </div>
+                    <br><br>
+            -->
+
+            <pre>annotationForm = {{annotationForm|json}}</pre>
+            <br>
+            <pre>chosen ontologies = {{tags|json}}</pre>
+
+            <!--- ##### MODAL mdbAnnoSelectionModal ##############################################################################--->
+            <div class="modal fade" id="mdbAnnoSelectionModal" tabindex="-1" role="dialog" aria-labelledby="mdbAnnotationSelectionModal" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Please, select from potential annotations:</h4>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="row">
+
+                                <div class="col-sm-3">
+                                    <div id="modaldivtextarea" style="height: 455px">{{annotationForm.modaltext}}</div>
+                                </div>
+
+                                <div class="col-sm-7">
+                                    <!--
+                                    <button type="button" class="btn btn-primary" ng-click="toggleMultiSelect()">Toggle multiSelect</button>  <strong>MultiSelect:</strong> <span ng-bind="gridApi.grid.options.multiSelect"></span>
+                                    <button type="button" class="btn btn-primary" ng-click="toggleRow1()">Toggle Row 0</button>
+                                    <br/>
+                                    <br/>
+                                    <button type="button" class="btn btn-primary" ng-click="toggleModifierKeysToMultiSelect()">Toggle modifierKeysToMultiSelect</button>  <strong>ModifierKeysToMultiSelect:</strong> <span ng-bind="gridApi.grid.options.modifierKeysToMultiSelect"> </span>
+                                    <br/>
+                                    <br/>
+                                    <button type="button" class="btn btn-primary" ng-disabled="!gridApi.grid.options.multiSelect" ng-click="selectAll()">Select All</button>
+                                    <button type="button" class="btn btn-primary" ng-click="clearAll()">Clear All</button>
+                                    <button type="button" class="btn btn-primary" ng-click="setSelectable()">Set Selectable</button>
+                                    <button type="button" class="btn btn-primary" ng-click="toggleFullRowSelection()">Toggle full row selection</button>
+                                    <button type="button" class="btn btn-primary" ng-click="refreshGrid()">Refresh grid</button>
+
+                                    <br/>
+                                    <br/>
+                                    -->
+                                    <button type="button" class="btn btn-primary" ng-click="selectAll()">Select All</button>
+                                    <button type="button" class="btn btn-primary" ng-click="clearAll()">Clear All</button>
+                                    <br/>
+                                    <br/>
+                                    <div ui-grid="gridOptions" ui-grid-selection ui-grid-auto-resize ui-grid-resize-columns ui-grid-move-columns class="grid"></div>
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <div class="">Definition for selected row</div>
+                                    <div id="modaldivdefinition" style="height: 450px">{{lastSelectedRow.definition}}</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" ng-click="saveAnnotations()">Save changes</button>
+                        </div>
+
+                        <!--<br><br><pre>gridOptions.data = {{gridOptions.data | json}}</pre>-->
+
+                    </div>
+                </div>
+            </div>
+            <!--- ##### MODAL mdbAnnoSelectionModal ##############################################################################--->
+
+            <br>
+            <pre>gridOptions.data = {{gridOptions.data | json}}</pre>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4620 @@
+// ********************************************************************************************
+// ** MDB basic theme (version 0.2)
+// **
+// ** Usage:
+// ** to create a custom theme for you installation, edit the variables below
+// ** to generate a layout of MDB fitting your needs.
+// **
+// ** More customisation options will follow in the future. Contact us if you need special
+// ** variables.
+// *********************************************************************************************/
+
+/* INFO z-indexes:
+@zindex-tab-navigation:    100;
+@zindex-navbar:            1000;
+@zindex-dropdown:          1000;
+@zindex-popover:           1060;
+@zindex-tooltip:           1070;
+@zindex-navbar-fixed:      1030;
+@zindex-modal-background:  1040;
+@zindex-modal:             1050;
+@zindex-dropdown-menue:    1070;
+@zindex-ncbo-tree-flyout:  1080;
+
+*/
+@zindex-navbar-fixed: 1055;
+@zindex-alert: 1060;
+@zindex-dropdown-menue: 1070;
+@zindex-ncbo-tree-flyout: 1080;
+@zindex-tab-navigation: 100;
+
+// ************************************
+// Layout Colors
+// ************************************
+
+@MDB-lighter-grey: #f4f4f4;
+@MDB-light-grey: #eaeaea;
+@MDB-grey: #d8d9d8;
+@MDB-dark-grey: #b3b3b3;
+@MDB-darker-grey: #393939;
+@MDB-black: #000000;
+@MDB-white: #ffffff;
+@MDB-light-blue: #bcd1e6;
+@MDB-middle-blue: #5fa7d0;
+@MDB-blue: #2875c1;
+@MDB-dark-blue: #345568;
+@MDB-turquoise: #00bfc6;
+@MDB-light-green: #96e7ab;
+@MDB-green: #28b64d;
+@MDB-dark-green: #248d21;
+@MDB-orange: #f4a754;
+@MDB-light-red: #f6b5b0;
+@MDB-red: #ed6b62;
+@MDB-dark-red: #a52e2b;
+@MDB-navi: #2b3a3e;
+
+@MDB-header: @MDB-white;
+
+@MDB-neon: @MDB-red;
+@MDB-input-border: @MDB-dark-grey;
+@MDB-valid: @MDB-green;
+
+//Functional colors
+@MDB-color-previously-published: @MDB-light-blue;
+@MDB-color-current-published: @MDB-turquoise;
+@MDB-color-saved-draft: @MDB-orange;
+@MDB-color-current-draft: @MDB-red;
+@MDB-color-deleted-draft: @MDB-light-grey;
+@MDB-color-bin-draft: @MDB-dark-grey;
+@MDB-color-user-entry: @MDB-dark-grey;
+@MDB-color-morphological-description: @MDB-middle-blue;
+@MDB-color-morphological-description-dark: @MDB-dark-blue;
+
+
+// ************************************
+// Overwriting Bootstrap less variables
+// ************************************
+
+@brand-primary: @MDB-dark-blue;
+@brand-success: #009245;
+@brand-info: #0071BC;
+@brand-warning: #C80000;
+@brand-danger: #C80000;
+
+//@state-success-bg: @MDB-green;
+@state-success-bg: @brand-success;
+@state-success-text: @MDB-white;
+@state-success-border: @MDB-darker-grey;
+
+@state-info-bg: @brand-info;
+@state-info-text: @MDB-white;
+@state-info-border: @MDB-darker-grey;
+
+@state-warning-bg: @MDB-orange;
+@state-warning-text: @MDB-black;
+@state-warning-border: @MDB-darker-grey;
+
+@state-danger-bg: @brand-danger;
+@state-danger-text: @MDB-white;
+@state-danger-border: @MDB-darker-grey;
+
+@alert-padding: 0;
+@alert-border-radius: 0 0 4px 4px;
+// alert message boxes should be displayed below header (margin-top: 58px)
+@alert-link-font-weight: bold;
+
+// ************************************
+// Some general MDB definitions:
+// ************************************
+
+//
+// FONTS:
+//-------
+
+// we use Roboto as proportional font to formate code and debugging  output
+@import url("https://fonts.googleapis.com/css?family=Roboto Mono");
+@MDB-default-font: Arial, Helvetica, sans-serif;
+// font used unless defined otherwise
+@MDB-heading-font: @MDB-default-font;
+// font used in h1 - h5 (currently the default font)
+@MDB-monospace-font: "Roboto Mono", monospace;
+// font to display code (currently for developer debug output)
+@MDB-base-font-size: 10px;
+// font size, on which all other fonts are based (em)
+
+// include MDB icon font
+@import "mdb_iconfont.less";
+
+//
+// MIX IN CLASSES (layout only)
+//
+
+// Elements with round corners (like input fields, textareas). Change to 0 to deactivate round corners on all elements
+@MDB-input-field-radius: 8px;
+
+@MDB-entry-header-upper-lower-height: 40px;
+@MDB-entry-header-radius: 26px;
+@MDB-entry-header-middle-height: 72px;
+@MDB-entry-header-box-shadow: 0 0 2px 2px rgba(255, 255, 255, 1),
+  0 -1px 6px 4px rgba(255, 255, 255, 1), 0 4px 4px 3px rgba(1, 1, 1, 1);
+
+a {
+  color: @MDB-blue;
+}
+a:focus,
+a:hover {
+  color: @MDB-turquoise;
+}
+
+.RoundedInput {
+  border-radius: @MDB-input-field-radius;
+}
+
+.RoundedInput_left_only {
+  // top l, top r, bottom r, bottom l
+  border-radius: @MDB-input-field-radius 0 0 @MDB-input-field-radius;
+}
+
+.RoundedInput_right_only {
+  border-radius: 0 @MDB-input-field-radius @MDB-input-field-radius 0;
+}
+
+//
+// Standards
+//
+
+// default font and size - other font sizes are based on this size
+body {
+  font-family: @MDB-default-font;
+  font-size: @MDB-base-font-size;
+}
+
+pre,
+code,
+tt {
+  font-family: @MDB-monospace-font;
+}
+
+// Changing browser default appearance
+
+input {
+  height: 21px;
+  border-radius: 8px;
+  border-color: 1px solid @MDB-input-border;
+  padding: 0 8px 0 8px !important; //prevent accuisition of padding settings from angualr-form-control
+  margin-bottom: 7px;
+  margin-right: 13px;
+  background-color: @MDB-white;
+}
+
+select {
+  background-image: url("/img/sample_images/arrow_drop_down.png");
+  padding-right: 25px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 12px;
+}
+
+//
+// COLORS:
+//--------
+
+// header
+
+.navbar-fixed {
+  z-index: @zindex-navbar-fixed;
+}
+
+.navbar-inverse {
+  background-color: @MDB-header !important;
+  // special Layout for top navigation (My MDB, etc.)
+  .mdb-navbar .navbar-nav > li > a {
+    padding-top: 10px;
+    line-height: 27px;
+    font-size: 1.4em;
+    color: @MDB-black;
+    &:hover {
+      color: @MDB-darker-grey;
+      //text-decoration: underline
+    }
+    &:focus {
+      color: @MDB-darker-grey;
+      //text-decoration: underline
+    }
+  }
+  .btn-link {
+    color: @MDB-black;
+  }
+  .btn-link:hover {
+    color: @MDB-darker-grey !important;
+  }
+}
+
+// font color of open dropdown (dark background)
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  color: @MDB-grey !important;
+  background-color: @MDB-darker-grey;
+}
+
+// special navigation -> login, logged-in and imprint
+.mdb-navbar {
+  float: right;
+}
+
+.navbar-fixed-top .navbar-collapse {
+  max-height: 50px;
+}
+
+.mdb-navbar.navbar-collapse {
+  border: none;
+  float: right;
+  margin-top: 0;
+  margin-right: 0;
+}
+
+.mdb-navbar.navbar-collapse.collapse .nav > li:first-child {
+  border-left: 1px solid @MDB-dark-grey;
+}
+
+.mdb-navbar.navbar-collapse.collapse .nav > li:last-child {
+  border-left: none;
+}
+
+.mdb-navbar.navbar-collapse.collapse .nav > li {
+  box-sizing: border-box;
+  background-color: white;
+  text-align: center;
+  height: 45px;
+  border-right: 1px solid @MDB-dark-grey;
+}
+
+.mdb-navbar.navbar-collapse.in {
+  overflow: visible;
+}
+
+.mdb-navbar.navbar-collapse.in .nav {
+  text-align: right;
+  list-style-position: inside;
+  background: @MDB-white;
+  width: auto;
+  margin-top: 60px;
+  margin-right: -70px;
+  > li {
+    border: none;
+    width: auto;
+    a {
+      text-decoration: none;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+// dropdown
+
+.mdb-navbar .nav .create-dropdown {
+  width: 135px;
+  .dropdown-menu {
+    z-index: @zindex-dropdown-menue;
+    right: auto;
+    margin-top: 12px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    .btn {
+      background-color: @MDB-white;
+    }
+    .btn.disabled,
+    .btn[disabled] {
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
+    a:hover {
+      text-decoration: none;
+      i {
+        text-decoration: none;
+      }
+    }
+    i {
+      position: relative;
+      top: 4px;
+      :hover {
+        text-decoration: none;
+      }
+    }
+    .fa {
+      top: -2px;
+      margin-right: -15px;
+      margin-left: -7px;
+    }
+  }
+}
+
+// auth dropdown
+.mdb-navbar .nav .auth-dropdown {
+  width: 155px;
+  // image size of user image
+  .img-circle {
+    width: 23px;
+  }
+  .btn {background-color:white;}
+
+  .dropdown-menu {
+    width: auto;
+    right: auto;
+    margin: 12px 0 0 0;
+    text-align: center;
+    padding: 25px;
+    z-index: @zindex-dropdown-menue;
+    // TODO: adjust?
+    .css-headline2 {
+      min-width: 0;
+    }
+    // "you are logged as" in dropdown
+    .who-am-i {
+      margin: 0 0 20px 0;
+      white-space: nowrap;
+      padding: 2px 12px;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 1.4;
+      color: @MDB-black;
+    }
+  }
+}
+
+.dropdown {
+  a:hover {
+    text-decoration: none;
+    color: @MDB-black;
+  }
+}
+
+//logout, help, notifications and websocket status
+.mdb-navbar .nav .navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
+}
+
+//hamburger menue
+.navbar-inverse .navbar-toggle {
+  .icon-bar {
+    background-color: @MDB-darker-grey;
+  }
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:active,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: @MDB-darker-grey;
+  .icon-bar {
+    background-color: @MDB-white;
+  }
+}
+
+// sidebar background color
+@sidebar_left-background-color: @MDB-lighter-grey;
+
+// sidebar font color
+@sidebar_left-color: @MDB-darker-grey;
+
+@valid-color: @MDB-valid;
+
+//
+// SIZES:
+//-------
+
+// gap between container elements
+@gap: 2px;
+
+// for frames with rounded borders (containers)
+@border-color: @MDB-darker-grey;
+@border-radius: 26px;
+
+// width of left sidebar on Screen > 1200px. If min-with = max-width -> fixed width
+@sidebar_left-min-width: 670px;
+@sidebar_left-max-width: 40%;
+
+// height of the footer
+@footer-height: 25px;
+
+///
+/// Overwriting bootstrap default layout
+///
+
+@state-success-text: @MDB-white;
+@state-success-bg: @brand-success;
+
+@state-info-text: @MDB-white;
+@state-info-bg: @brand-info;
+
+@state-warning-text: @MDB-darker-grey;
+@state-warning-bg: @brand-warning;
+
+@state-danger-text: @MDB-white;
+@state-danger-bg: @brand-danger;
+
+.btn {
+  margin-right: 0;
+  //padding: 2px 12px;
+  padding: 2px 18px;
+}
+
+///
+/// CUSTOM FOR ALL PANELS:
+///
+
+.panel {
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+  // flexbox model was replaced by fixed width element
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  //align-items: stretch;
+  //align-content: flex-start;
+  //justify-content: flex-start;
+  height: auto;
+  div {
+    //flex-grow: 1;
+    //flex-shrink: 1;
+    //justify-content: flex-start;
+    //flex-basis: inherit;
+    margin: 0 0;
+  }
+  //div + div {
+  //  margin-left: 10px
+  //}
+}
+
+//
+// BACKGROUND-COLORS:
+//-------
+.css-bg-color-previously-published {
+  background-color: @MDB-color-previously-published !important;
+}
+
+.css-bg-color-current-published {
+  background-color: @MDB-color-current-published !important;
+}
+
+.css-bg-color-saved-draft {
+  background-color: @MDB-color-saved-draft !important;
+}
+
+.css-bg-color-current-draft {
+  background-color: @MDB-color-current-draft !important;
+}
+
+.css-bg-color-deleted-draft {
+  background-color: @MDB-color-deleted-draft !important;
+}
+
+.css-bg-color-bin-draft {
+  background-color: @MDB-color-bin-draft !important;
+}
+
+.css-bg-color-user-entry {
+  background-color: @MDB-color-user-entry !important;
+}
+
+//
+// PANELS WITH BACKGROUNDS:
+//-------
+
+// SC_BASIC_0000001162
+.css-bg-white {
+  .panel;
+  background: @MDB-white;
+}
+
+// SC_BASIC_0000001173 (does not have a border any more)
+.css-bg-white-bordered {
+  .css-bg-white;
+  border: 0;
+}
+
+.css-bg-bordered-blue {
+  .panel;
+  background: transparent;
+  border: 2px solid @MDB-light-blue;
+}
+
+// SC_BASIC_0000001083
+.css-bg-white-transparent-bordered-round {
+  .css-bg-white;
+  border: 2px solid @MDB-light-grey;
+  border-radius: 10px;
+  //opacity: 0.5; => all children do inherit opacity
+  background: rgba(255, 255, 255, 0.5);
+  //top, right, bottom, left
+  margin: 0 10px 10px 0 !important;
+  //margin: 0 20px 10px -20px !important;
+  //padding-left: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+  .css-delete-btn {
+    margin-top: -5px;
+    margin-left: -5px;
+  }
+}
+
+// SC_BASIC_0000001202
+.css-bg-lighter-grey {
+  .panel;
+  background: @MDB-lighter-grey;
+}
+
+// SC_BASIC_0000001100
+.css-bg-lighter-grey-bordered {
+  .css-bg-lighter-grey;
+  border: 1px, @MDB-light-grey;
+}
+
+// SC_BASIC_0000001214
+.css-bg-light-grey {
+  .panel;
+  background: @MDB-light-grey;
+}
+
+// SC_BASIC_0000001172
+.css-bg-dark-grey {
+  .panel;
+  background: @MDB-dark-grey;
+}
+
+// SC_BASIC_0000001224
+.css-bg-light-blue {
+  .panel;
+  background: @MDB-light-blue;
+}
+
+// SC_BASIC_0000001209
+.css-bg-turquoise {
+  .panel;
+  background: @MDB-turquoise;
+}
+
+.css-bg-blue {
+  .panel;
+  background: @MDB-blue;
+}
+
+// SC_BASIC_0000001175
+.css-bg-light-green {
+  .panel;
+  background: @MDB-light-green;
+}
+
+// SC_BASIC_0000001186
+.css-bg-light-red {
+  .panel;
+  background: @MDB-light-red;
+}
+
+// SC_BASIC_0000001164
+.css-bg-red {
+  .panel;
+  background: @MDB-red;
+}
+
+// SC_BASIC_0000001154
+.css-bg-orange {
+  .panel;
+  background: @MDB-orange;
+}
+
+// SC_BASIC_0000001136
+.div {
+}
+
+// workaround
+.css-div {
+  .panel;
+  border: 0 solid transparent;
+  margin-bottom: 0;
+}
+
+// SC_BASIC_0000001220
+.css-sort-div {
+}
+
+// SC_BASIC_0000001116
+.css-dragable-div {
+  min-height: 10px;
+  min-width: 20px;
+  background-color: cornflowerblue;
+  border: dotted 2px darkblue;
+}
+
+.css-geo-div {
+  // TODO: dummy
+  //border: 2px solid #808080;
+}
+
+// SC_BASIC_0000001038
+.css-map-div {
+  // TODO: dummy
+
+  //border: 2px solid #808080;
+}
+
+// GUI_COMPONENT_0000000221
+.css-accordion-div {
+}
+
+// SC_BASIC_0000001081
+.css-MDB-left-div {
+}
+
+//SC_BASIC_0000001044
+.css-MDB-right-div {
+}
+
+//GUI_COMPONENT_0000000319
+.css-file-upload {
+}
+
+.workaroundpanel, #SC_BASIC_0000000976_1, #SC_BASIC_0000000128_1, #SC_BASIC_0000000706_1, #SC_BASIC_0000000701_1 {
+  // TODO: das irgendwie noch geschmeidig in unser CSS Konzept einsetzen
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+//TODO: remove deprecated CSS-Classes after next reset of the jena tdb
+#SC_MDB_S_0000000257_1, #SC_BASIC_0000000661_1, #SC_BASIC_0000000662_1 {
+  // TODO: das irgendwie noch geschmeidig in unser CSS Konzept einsetzen
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.new_row {
+  margin-left: 0 !important;
+  page-break-before: always; //correct CSS 2.1  - works with FF
+  break-before: always; //correct CSS 3 - unsupported in most browsers
+  flex-basis: 100%; // hack for Chrome
+  -webkit-region-break-inside: always; //hack for IE?
+  //&::before {
+  //  content: 'new row below';
+  //  border: 1px solid red;
+  //}
+}
+
+.panel-collapse {
+  //accordion content stats in new row
+  .new_row;
+  background-color: @MDB-lighter-grey;
+}
+
+.no_new_row {
+}
+
+.entry_component {
+  clear: both;
+}
+
+//copied from bootstrap, so we can use it as a mix-in class
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+select {
+  height: 23px;
+  border-radius: 14px;
+  border-color: 1px solid @MDB-input-border;
+  padding-left: 10px;
+  margin-bottom: 12px;
+}
+
+//
+// TODO: Experimental: special ontology generated elements get explicit layout
+//
+
+// TODO: Must be changed to be generic for all entries.
+
+div[x-wrapper-for="SC_BASIC_0000000703_1"] {
+  display: block !important;
+}
+
+//TODO: remove deprecated CSS-Classes after next reset of the jena tdb
+#SC_BASIC_0000000617_1 {
+  border: 1px solid @state-info-bg;
+  width: 100%;
+  margin: 0 0 15px 0;
+  padding: 10px;
+}
+
+#SC_BASIC_0000000999_1 {
+
+}
+
+.required-info:after {
+  color: @MDB-red;
+  content: "required";
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin: 12px 0 0 -28px !important;
+  position: absolute;
+}
+
+.css-dropdown + .required-info:after {
+  margin: 4px 0 0 -28px !important;
+}
+
+.css-search-input + .required-info:after {
+  margin: 14px 0 0 -28px !important;
+}
+
+//Class is set by anguar, if valid=true
+.requirement_fullfilled:after {
+  color: @MDB-dark-grey;
+}
+
+// Special rule: no "required" for login form not working due to special characters in ID
+#Ontologies\/SOCCOMAS\/SCBasic#SC_BASIC_0000001206 {
+  content: "";
+}
+
+//
+// Classes of the MDB Design Catalogue
+//------------------------------------
+
+// empty classes are not in use or are not described yet. Note the section "currently unused" at the end.
+// These classes are described in the design catalogue but not used in the ontology so far.
+
+// GUI_COMPONENT_0000000001
+.resource-selection-module {
+}
+
+// GUI_COMPONENT_0000000002
+.crosslink-selection-module {
+}
+
+// GUI_COMPONENT_0000000003
+.MDB-user-entry {
+}
+
+// GUI_COMPONENT_0000000004
+.MDB-user-group_entry {
+}
+
+// GUI_COMPONENT_0000000005
+.background {
+}
+
+// GUI_COMPONENT_0000000007
+font {
+}
+
+//SC_BASIC_0000001183
+.css-headline1 {
+  font-weight: bold;
+  font-size: 1.8em;
+  width: 500px;
+  margin: 0 0 13px 0 !important;
+}
+
+//SC_BASIC_0000001097
+.css-headline2 {
+  font-weight: bold;
+  font-size: 1.4em;
+  min-width: 180px;
+  margin: 0 0 12px 0 !important;
+}
+
+//SC_BASIC_0000001078
+.css-headline3 {
+  font-weight: bold;
+  font-size: 1.6em;
+  min-width: 446px;
+  margin: 0 0 10px 0 !important;
+}
+
+//SC_BASIC_0000001039
+.css-headline4 {
+  font-size: 1.6em;
+  margin: 34px 0 0 0;
+}
+
+//SC_BASIC_0000001073 // SC_BASIC_0000001073 (we assume that a p without a special class uses the css-paragraph1 layout)
+.css-paragraph1, 
+p {
+  font-size: 1.2em;
+  margin: 10px 0 9px 0;
+  line-height: 2.2em;
+}
+
+// Lists do not have a special layout yet
+#content ul,
+ol {
+  font-size: 1.2em;
+}
+
+//SC_BASIC_0000001174
+.css-paragraph2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+// SC_BASIC_0000001076
+.css-label1 {
+  font-weight: bold;
+  font-size: 12px;
+  margin: 10px 0 9px 0;
+  display: block;
+  min-width: 180px;
+  line-height: 1.65em;
+}
+
+// SC_BASIC_0000001055
+.css-resource-label {
+  font-weight: bold;
+  font-size: 12px;
+  margin: 10px 0 9px 0;
+  display: block;
+  min-width: 180px;
+  line-height: 1.65em;
+}
+
+// GUI_COMPONENT_0000000612
+.css-part-label {
+  color: @MDB-middle-blue;
+  font-weight: bold;
+  padding-left: 10px;
+  width: 250px;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 5px;
+  flex: 1;
+  cursor: default;
+}
+
+.css-label1-link {
+  .css-label1;
+  color: @MDB-black;
+  //text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    color: @MDB-darker-grey;
+  }
+}
+
+// SC_BASIC_0000001051
+.css-label2 {
+  font-size: 12px;
+  margin: 0;
+  line-height: 3.25em;
+}
+
+// SC_BASIC_0000001132 (DEPRICATED)
+.css-label3 {
+  font-size: 10pt; // 1em
+  letter-spacing: 0.5em;
+  margin: 2px 1px 2px 1px;
+}
+
+// SC_BASIC_0000001189
+.css-label4 {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 2px 0;
+}
+
+// SC_BASIC_0000001161
+.css-label5 {
+  font-size: 1.1em;
+  margin: 2px 0;
+}
+
+// SC_BASIC_0000001178
+.css-label6 {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin: 53px 0 19px 0;
+}
+
+// SC_BASIC_0000001108
+.css-label7 {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+// SC_BASIC_0000001060
+.css-label8 {
+  font-size: 1em;
+  margin: 4px 0 0 0;
+  font-style: italic;
+}
+
+// SC_BASIC_0000001053
+.css-label9 {
+  font-size: 1em;
+  margin: 4px 0 0 0;
+}
+
+// GUI_COMPONENT_0000000009
+//window {
+//
+//}
+// GUI_COMPONENT_0000000010
+.search-and-select-MDB-entry-ID {
+}
+
+// GUI_COMPONENT_0000000011
+button {
+}
+
+// transition buttons
+[class^="css-icon-search"],
+[class*="css-icon-search"] {
+  width: 27px;
+  height: 27px;
+  background: linear-gradient(to bottom, @MDB-white, @MDB-dark-grey);
+  border-color: @MDB-black;
+  border-radius: inherit;
+  margin: 0 0 0 -1px;
+  padding: 0;
+}
+
+// icon size for e.g. version icons in panel header
+[class^="css-icon-"],
+[class*="css-icon-"] {
+  font-size: 28px;
+}
+
+// GUI_COMPONENT_0000000012
+.add-search-link-button {
+}
+
+// SC_BASIC_0000001153
+.css-icon-search-literature-btn {
+  margin: 0 0 0 -1px;
+  .css-btn;
+}
+
+.css-icon-search-literature-btn .path1:before {
+  content: "\e912";
+  margin: -18px 0 0 -15px;
+  position: absolute;
+}
+
+.css-icon-search-literature-btn .path2:before {
+  content: "\e92e";
+  color: rgb(242, 242, 242);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+.css-icon-search-literature-btn .path3:before {
+  content: "\e92f";
+  color: rgb(0, 0, 0);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+// GUI_COMPONENT_0000000014
+.DB-matrix-entry {
+}
+
+// SC_MDB_BASIC_0000001105
+.css-icon-search-media-btn {
+  margin: 0 0 0 -1px;
+  .css-btn;
+}
+
+.css-icon-search-media-btn .path1:before {
+  content: "\e91b";
+  margin: -18px 0 0 -15px;
+  position: absolute;
+}
+
+.css-icon-search-media-btn .path2:before {
+  content: "\e92e";
+  color: rgb(242, 242, 242);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+.css-icon-search-media-btn .path3:before {
+  content: "\e92f";
+  color: rgb(0, 0, 0);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+// GUI_COMPONENT_0000000016
+.morphological-description-entry {
+}
+
+// SC_MDB_BASIC_0000001114
+.css-icon-search-specimen-btn {
+  margin: 0 0 0 -1px;
+  .css-btn;
+}
+
+.css-icon-search-specimen-btn .path1:before {
+  content: "\e930";
+  margin: -18px 0 0 -15px;
+  position: absolute;
+}
+
+.css-icon-search-specimen-btn .path2:before {
+  content: "\e92e";
+  color: rgb(242, 242, 242);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+.css-icon-search-specimen-btn .path3:before {
+  content: "\e92f";
+  color: rgb(0, 0, 0);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+// GUI_COMPONENT_0000000018
+.MDB-taxon-entry {
+}
+
+// GUI_COMPONENT_0000000019
+.MDB-taxonomic-description-entry {
+}
+
+// GUI_COMPONENT_0000000020
+.add-MDB-entry-component-button {
+}
+
+// GUI_COMPONENT_0000000021
+.delete-MDB-entry-component-button {
+}
+
+// GUI_COMPONENT_0000000022
+.add-icon {
+}
+
+// SC_BASIC_0000001165
+.css-delete-btn {
+  padding: 0;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  background-color: @MDB-red;
+  color: @MDB-white;
+  border-width: 0;
+  font-weight: bold;
+  position: absolute;
+  right: 25px;
+  line-height: 1em;
+}
+
+// special close button to be used in css-tab1 (tabs)
+.css-delete-btn-tab {
+  float: right;
+  .css-delete-btn {
+    position: inherit;
+    margin-left: 5px;
+  }
+}
+
+// GUI_COMPONENT_0000000024
+.delete-btn {
+}
+
+// GUI_COMPONENT_0000000025
+.delete-MDB-crosslink-button {
+}
+
+// SC_BASIC_0000001116
+.css-dragable-div {
+}
+
+// GUI_COMPONENT_0000000027
+.create-MDB-entry-button {
+}
+
+// GUI_COMPONENT_0000000028
+.css-create-annotation-btn {
+}
+
+// GUI_COMPONENT_0000000029
+.css-create-literature-btn {
+}
+
+// GUI_COMPONENT_0000000030
+.css-create-matrix-btn {
+}
+
+// GUI_COMPONENT_0000000031
+.css-create-media-btn {
+}
+
+// GUI_COMPONENT_0000000032
+.css-create-morphological-description-btn {
+}
+
+// GUI_COMPONENT_0000000033
+.css-create-specimen-btn {
+}
+
+// GUI_COMPONENT_0000000034
+.css-create-taxon-btn {
+}
+
+// GUI_COMPONENT_0000000035
+.css-create-taxonomical-description-btn {
+}
+
+// GUI_COMPONENT_0000000036
+.transition-workflow-button {
+}
+
+// transition buttons
+[class^="css-icon-transition-btn"],
+[class*="css-icon-transition-btn"] {
+  width: 40px;
+  height: 40px;
+  border: 2px solid @MDB-black;
+  border-radius: 3px; // inherit;
+  margin: 13px 5px 0 0;
+}
+
+// SC_BASIC_0000001149
+.css-icon-transition-btn-backup {
+  background: linear-gradient(to bottom, @MDB-white, @MDB-orange);
+  .css-btn;
+  font-size: 25px;
+}
+
+.css-icon-transition-btn-backup .path1:before {
+  content: "\e92b";
+  color: rgb(255, 255, 255);
+  margin: -18px 0 0 -11px;
+  position: absolute;
+}
+
+.css-icon-transition-btn-backup .path2:before {
+  content: "\e92c";
+  color: rgb(0, 0, 0);
+  margin: -18px 0 0 -11px;
+  position: absolute;
+}
+
+.css-icon-transition-btn-backup .mdb-iconlabel-backup:before {
+  content: "\e900";
+  margin: 7px 0 0 -18px;
+  position: absolute;
+  font-size: 11px;
+  color: rgb(0, 0, 0);
+}
+
+// SC_BASIC_0000001113
+.css-icon-transition-btn-revise {
+  background: linear-gradient(to bottom, @MDB-white, @MDB-red);
+  .css-btn;
+  font-size: 25px;
+}
+
+.css-icon-transition-btn-revise .path1:before {
+  content: "\e905";
+  margin: -18px 0 0 -11px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-transition-btn-revise .path2:before {
+  content: "\e906";
+  margin: -18px 0 0 -11px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-transition-btn-revise .mdb-iconlabel-revise:before {
+  content: "\e905";
+  margin: 7px 0 0 -18px;
+  position: absolute;
+  font-size: 11px;
+  color: rgb(0, 0, 0);
+}
+
+// SC_BASIC_0000001109
+.css-icon-transition-btn-delete {
+  background: linear-gradient(to bottom, @MDB-white, @MDB-grey);
+  .css-btn;
+  font-size: 25px;
+}
+
+.css-icon-transition-btn-delete .path1:before {
+  content: "\e933";
+  margin: -18px 0 0 -13px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-transition-btn-delete .path2:before {
+  content: "\e934";
+  margin: -18px 0 0 -13px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-transition-btn-delete .mdb-iconlabel-delete:before {
+  content: "\e901";
+  margin: 7px 0 0 -18px;
+  position: absolute;
+  font-size: 11px;
+  color: rgb(0, 0, 0);
+}
+
+// SC_BASIC_0000001049
+.css-icon-transition-btn-tobin {
+  background: linear-gradient(to bottom, @MDB-white, @MDB-dark-grey);
+  .css-btn;
+  font-size: 25px;
+}
+
+.css-icon-transition-btn-tobin .path1:before {
+  content: "\e927";
+  margin: -18px 0 0 -13px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-transition-btn-tobin .path2:before {
+  content: "\e928";
+  margin: -18px 0 0 -13px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-transition-btn-tobin .path3:before {
+  content: "\e929";
+  margin: -18px 0 0 -13px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-transition-btn-tobin .path4:before {
+  content: "\e92a";
+  margin: -18px 0 0 -13px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-transition-btn-tobin .mdb-iconlabel-tobin:before {
+  content: "\e904";
+  margin: 7px 0 0 -18px;
+  position: absolute;
+  font-size: 11px;
+  color: rgb(0, 0, 0);
+}
+
+// SC_BASIC_0000001064
+.css-icon-transition-btn-publish {
+  background: linear-gradient(
+    to bottom,
+    @MDB-white,
+    @MDB-color-current-published
+  );
+  .css-btn;
+  font-size: 25px;
+}
+
+.css-icon-transition-btn-publish .path1:before {
+  content: "\e907";
+  margin: -18px 0 0 -13px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-transition-btn-publish .path2:before {
+  content: "\e908";
+  margin: -18px 0 0 -13px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-transition-btn-publish .path3:before {
+  content: "\e909";
+  margin: -18px 0 0 -13px;
+  position: absolute;
+  color: rgb(241, 212, 13);
+}
+
+.css-icon-transition-btn-publish .mdb-iconlabel-publish:before {
+  content: "\e902";
+  margin: 7px 0 0 -18px;
+  position: absolute;
+  font-size: 11px;
+  color: rgb(0, 0, 0);
+}
+
+//// GUI_COMPONENT_0000000042
+//1_GUI_COMPONENT__TRANSITION_WORKFLOW_BUTTON: recycle as current (revision) draft {
+//}
+
+// SC_BASIC_0000001222
+.css-icon-transition-btn-restore {
+  background: linear-gradient(to bottom, @MDB-white, @MDB-red);
+  .css-btn;
+  font-size: 25px;
+}
+
+.css-icon-transition-btn-restore .path1:before {
+  content: "\e905";
+  margin: -18px 0 0 -11px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-transition-btn-restore .path2:before {
+  content: "\e906";
+  margin: -18px 0 0 -11px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-transition-btn-restore .mdb-iconlabel-restore:before {
+  content: "\e903";
+  margin: 7px 0 0 -18px;
+  position: absolute;
+  font-size: 11px;
+  color: rgb(0, 0, 0);
+}
+
+// GUI_COMPONENT_0000000044
+.check_box {
+}
+
+// SC_BASIC_0000001188
+//GUI_COMPONENT__BUTTON: checkbox-checked-active {
+//}
+
+// GUI_COMPONENT_0000000046
+.tab-group {
+}
+
+// GUI_COMPONENT_0000000047
+.tab-element {
+}
+
+// GUI_COMPONENT_0000000048
+.mixed-tab-group {
+}
+
+// GUI_COMPONENT_0000000049
+.core-tab-element {
+}
+
+// GUI_COMPONENT_0000000050
+.simple-tab-element {
+}
+
+// GUI_COMPONENT_0000000051
+.icon {
+}
+
+// SC_MDB_BASIC_0000001103
+.css-specimen-icon {
+}
+
+.css-icon-specimen-icon:before {
+  content: "\e930";
+}
+
+.css-icon-partonomy-icon {
+  margin-right: 20px;
+  margin-left: 2px;
+  margin-top: -10px;
+}
+
+.css-icon-partonomy-icon:before {
+  content: "\e939";
+  color: #b3b3b3;
+}
+
+.partonomy-icon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin: 3px 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.css-icon-formal-description-icon:before {
+  content: "\e93a";
+  color: #345568;
+}
+
+.css-icon-metadata-icon:before {
+  content: "\e93b";
+  color: #345568;
+}
+
+.css-icon-text-icon {
+  color: #345568;
+}
+
+.css-icon-text-icon:before {
+  content: "\e93c";
+}
+
+.css-icon-image-icon {
+  color: #345568;
+}
+
+.css-icon-image-icon:before {
+  content: "\e93d";
+}
+
+.css-icon-triple-icon:before {
+  content: "\e93e";
+  color: #345568;
+}
+
+// GUI_COMPONENT_0000000053
+.check-box-group {
+}
+
+// GUI_COMPONENT_0000000054
+.simple-check-box-group {
+}
+
+// GUI_COMPONENT_0000000059
+.vertical-scroll-simple-panel {
+}
+
+// GUI_COMPONENT_0000000060
+.dynamic-label {
+}
+
+// GUI_COMPONENT_0000000061
+.horizontal-scroll-bordered-panel {
+}
+
+// GUI_COMPONENT_0000000062
+.navigation-menu-element {
+}
+
+// GUI_COMPONENT_0000000063
+.entry-version-navigation {
+}
+
+// GUI_COMPONENT_0000000064
+.drop-down {
+}
+
+// GUI_COMPONENT_0000000065
+.entry-version-number {
+}
+
+// SC_BASIC_0000001204
+.css-dropdown {
+  background-image: url("/img/sample_images/arrow_drop_down.png");
+  background-size: 10px 10px;
+  background-position: 98%;
+  height: 21px;
+  min-width: 300px; // width of input field
+  max-width: 50em; // prevent long strings to mess up layout
+  background-color: @MDB-light-grey;
+  border: 1px solid @MDB-dark-grey;
+  border-radius: 8px;
+  margin: 4px 3px 3px 3px;
+}
+
+// SC_BASIC_0000001069
+.css-dropdown-right {
+  .css-dropdown;
+  //min-width: 135px;
+  //width: 135px;
+  //max-width: 150px;
+  width: 165px;
+  min-width: 165px;
+  max-width: 165px;
+  border-radius: 0 8px 8px 0;
+  margin: 4px 3px 3px -4px;
+}
+
+.css-dropdown-right2 {
+  .css-dropdown-right;
+  width: 194px;
+  min-width: 194px;
+  max-width: 194px;
+}
+
+.css-dropdown-right3 {
+  .css-dropdown-right;
+  width: 233px;
+  min-width: 233px;
+  max-width: 233px;
+}
+
+// GUI_COMPONENT_0000000067
+.icon-drop-down-list {
+}
+
+// SC_BASIC_0000001183
+h1 {
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+@css-toggle-btn-width: 60px;
+@css-toggle-btn-height: 25px;
+//@css-toggle-btn-uncheckedColor: @MDB-green;
+//@css-toggle-btn-uncheckedBorderColor: @MDB-dark-green;
+//@css-toggle-btn-checkedColor: @MDB-red;
+//@css-toggle-btn-checkedBorderColor: @MDB-dark-red;
+@css-toggle-btn-checkedColor: @MDB-green;
+@css-toggle-btn-checkedBorderColor: @MDB-dark-green;
+@css-toggle-btn-uncheckedColor: @MDB-red;
+@css-toggle-btn-uncheckedBorderColor: @MDB-dark-red;
+@css-toggle-btn-transitionSpeed: 0.5s;
+
+// SC_BASIC_0000001196
+.css-toggle-btn {
+  width: @css-toggle-btn-width;
+  height: @css-toggle-btn-height;
+  border-radius: @css-toggle-btn-height;
+  border: 3px solid @MDB-grey;
+  background: @MDB-grey;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin: 5px;
+  input {
+    display: none;
+  }
+  i {
+    width: @css-toggle-btn-height - 6;
+    height: @css-toggle-btn-height - 6;
+    border-radius: @css-toggle-btn-height - 2;
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 3px solid grey;
+    background: white;
+  }
+  input + i {
+    border: 3px solid @css-toggle-btn-uncheckedBorderColor;
+  }
+  input + i + span {
+    display: block;
+  }
+  input + i + span:after {
+    content: " ";
+    display: block;
+    width: @css-toggle-btn-width; //@css-toggle-btn-width - 20;
+    padding-right: 20px;
+    height: @css-toggle-btn-height;
+    line-height: @css-toggle-btn-height;
+    background: @css-toggle-btn-uncheckedColor;
+    font-size: @css-toggle-btn-height / 2;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    text-align: right;
+    .css-toggle-btn-transition(@css-toggle-btn-transitionSpeed);
+  }
+  input:checked + i {
+    left: @css-toggle-btn-width - @css-toggle-btn-height; // - 2;
+    border: 3px solid @css-toggle-btn-checkedBorderColor;
+  }
+  input:checked + i + span:after {
+    background: @css-toggle-btn-checkedColor;
+    width: @css-toggle-btn-width - 2; //@css-toggle-btn-width - 20;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 20px;
+  }
+}
+
+.css-toggle-btn-transition(@speed) {
+  -webkit-transition: all @speed ease;
+  -moz-transition: all @speed ease;
+  -o-transition: all @speed ease;
+  transition: all @speed ease;
+}
+
+// GUI_COMPONENT_0000000070
+.css-history-btn {
+}
+
+// GUI_COMPONENT_0000000071
+.entry-status-icon {
+}
+
+// SC_BASIC_0000001096
+.css-icon-current-draft-icon {
+  //  margin: 1px;
+  //  padding: 2px;
+}
+
+.css-icon-current-draft-icon .path1:before {
+  content: "\e905";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-current-draft-icon .path2:before {
+  content: "\e906";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  //margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+// SC_BASIC_0000001106
+.css-icon-current-published-icon {
+}
+
+.css-icon-current-published-icon .path1:before {
+  content: "\e907";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-current-published-icon .path2:before {
+  content: "\e908";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  //margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-current-published-icon .path3:before {
+  content: "\e909";
+  //margin-left: -1em;
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(241, 212, 13);
+}
+
+// SC_BASIC_0000001071
+.css-trash-icon {
+}
+
+.css-icon-deleted-draft-icon {
+}
+
+.css-icon-deleted-draft-icon .path1:before {
+  content: "\e933";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-deleted-draft-icon .path2:before {
+  content: "\e934";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+// SC_BASIC_0000001080
+.css-previously-published-icon {
+}
+
+.css-icon-previously-published-icon {
+}
+
+.css-icon-previously-published-icon .path1:before {
+  content: "\e925";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-previously-published-icon .path2:before {
+  content: "\e926";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  //margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+// SC_BASIC_0000001041
+.css-recycle-bin-icon {
+}
+
+.css-icon-recycle-bin-iconn {
+}
+
+.css-icon-recycle-bin-icon .path1:before {
+  content: "\e927";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-recycle-bin-icon .path2:before {
+  content: "\e928";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-recycle-bin-icon .path3:before {
+  content: "\e929";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-recycle-bin-icon .path4:before {
+  content: "\e92a";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+// SC_BASIC_0000001056
+.css-saved-draft-icon {
+}
+
+.css-icon-saved-draft-icon {
+}
+
+.css-icon-saved-draft-icon .path1:before {
+  content: "\e92b";
+  margin: -20px 0 0 -14px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-saved-draft-icon .path2:before {
+  content: "\e92c";
+  margin: -20px 0 0 -14px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+// SC_BASIC_0000001101
+.css-user-icon:before {
+  content: "\e936";
+}
+
+// SC_BASIC_0000001101
+.css-icon-user-icon {
+}
+
+.css-icon-user-icon .path1:before {
+  content: "\e936";
+  margin: -18px 0 0 -14px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+// GUI_COMPONENT_0000000078
+.horizontal-scroll-simple-panel {
+}
+
+// GUI_COMPONENT_0000000079
+.vertical-horizontal-scroll-bordered-panel {
+}
+
+// GUI_COMPONENT_0000000080
+.linked-panel {
+}
+
+// GUI_COMPONENT_0000000081
+.bordered-linked-panel {
+}
+
+// GUI_COMPONENT_0000000082
+.ruler {
+
+}
+
+// GUI_COMPONENT_0000000083
+.css-panel-resize-handle-horizontal {
+
+}
+
+// GUI_COMPONENT_0000000084
+.crosslink-panel {
+
+}
+
+// GUI_COMPONENT_0000000085
+.anatomical-description-entry {
+
+}
+
+// GUI_COMPONENT_0000000086
+.annotation-entry {
+
+}
+
+// GUI_COMPONENT_0000000087
+.literature-entry {
+
+}
+
+// GUI_COMPONENT_0000000088
+.matrix-entry {
+
+}
+
+// GUI_COMPONENT_0000000089
+.media-entry {
+
+}
+
+// GUI_COMPONENT_0000000090
+.project-entry {
+
+}
+
+// GUI_COMPONENT_0000000091
+.specimen-entry {
+
+}
+
+// GUI_COMPONENT_0000000092
+.taxon-entry {
+
+}
+
+// GUI_COMPONENT_0000000093
+.taxonomical-description-entry {
+
+}
+
+// GUI_COMPONENT_0000000094
+.user-entry {
+
+}
+
+// GUI_COMPONENT_0000000095
+.user-group-entry {
+
+}
+
+// GUI_COMPONENT_0000000096
+.external-link-panel {
+
+}
+
+// GUI_COMPONENT_0000000097
+.literature-external-link {
+
+}
+
+// GUI_COMPONENT_0000000098
+.external-link {
+
+}
+
+// GUI_COMPONENT_0000000099
+.hover-panel {
+
+}
+
+// GUI_COMPONENT_0000000100
+.simple-panel {
+
+}
+
+// GUI_COMPONENT_0000000101
+.MDB-literature-entry {
+
+}
+
+// GUI_COMPONENT_0000000103
+.vertical-horizontal-scroll-simple-panel {
+
+}
+
+// GUI_COMPONENT_0000000104
+.drag-and-drop-panel {
+
+}
+
+// GUI_COMPONENT_0000000105
+.simple-drag-and-drop-panel {
+
+}
+
+// GUI_COMPONENT_0000000106
+.input-module {
+
+}
+
+// GUI_COMPONENT_0000000107
+.hybrid-input-module {
+
+}
+
+// GUI_COMPONENT_0000000108
+.agent-resource-selection-or-literal-input {
+
+}
+
+// GUI_COMPONENT_0000000109
+.external-link-button {
+
+}
+
+// SC_BASIC_0000001144
+.css-icon-add-external-link-btn {
+  width: 27px;
+  height: 27px;
+  background: linear-gradient(to bottom, @MDB-white, @MDB-dark-grey);
+  border-color: @MDB-black;
+  border-radius: inherit;
+  margin: 0 0 0 -1px;
+  padding: 0;
+  .css-btn;
+}
+
+.css-icon-add-external-link-btn:after {
+  content: "\e90e";
+  margin: -18px 0 0 -15px;
+  position: absolute;
+}
+
+// GUI_COMPONENT_0000000111
+.checkbox-unchecked-inactive {
+
+}
+
+// GUI_COMPONENT_0000000112
+.input-type {
+
+}
+
+// SC_BASIC_0000001093
+.css-data-input-narrow {
+  .css-data-input_master;
+  .RoundedInput;
+}
+
+// SC_BASIC_0000001102
+.css-data-input {
+  .css-data-input_master;
+  .RoundedInput;
+  width: 300px;
+}
+
+// GUI_COMPONENT_0000000115
+.information-button {
+
+}
+
+// GUI_COMPONENT_0000000116
+.hovered-information-button {
+  color: @MDB-darker-grey;
+}
+
+//we use the bootstrap classes, so we overwrite bootsrap with the style from the catalog
+.btn:hover {
+  .hovered-information-button
+}
+
+// GUI_COMPONENT_0000000117
+.separator {
+
+}
+
+// GUI_COMPONENT_0000000118
+.horizontal-broken-line {
+
+}
+
+// SC_BASIC_0000001171
+.css-textarea {
+  width: 300px;
+  height: 54px;
+  background: @MDB-white;
+  font-size: 1.2em;
+  margin: 4px 3px 3px 3px;
+  border: 1px solid #b3b3b3;
+  padding: @MDB-input-field-radius;
+  .RoundedInput;
+}
+
+// GUI_COMPONENT_0000000121
+.display-module {
+
+}
+
+// GUI_COMPONENT_0000000122
+.entry-history-table {
+
+}
+
+// GUI_COMPONENT_0000000123
+.entry-history-table {
+
+}
+
+// GUI_COMPONENT_0000000124
+.entry-crosslinks-target-and-source-lists {
+
+}
+
+// GUI_COMPONENT_0000000125
+.entry-crosslinks-target-and-source-lists {
+
+}
+
+// GUI_COMPONENT_0000000126
+.create-person-button {
+
+}
+
+// GUI_COMPONENT_0000000127
+.create-organization-button {
+
+}
+
+// GUI_COMPONENT_0000000128
+.CREATE_PERSON_BUTTON-simple {
+
+}
+
+// GUI_COMPONENT_0000000129
+.CREATE_ORGANIZATION_BUTTON-simple {
+
+}
+
+// GUI_COMPONENT_0000000130
+.agent-selection-table-module {
+
+}
+
+// GUI_COMPONENT_0000000131
+.AGENT_SELECTOR-user-selection-table {
+
+}
+
+// GUI_COMPONENT_0000000132
+.AGENT_SELECTOR-agent-selection-table {
+
+}
+
+// GUI_COMPONENT_0000000133
+.user-group-selection-table {
+
+}
+
+// GUI_COMPONENT_0000000134
+.cancel-button {
+
+}
+
+// GUI_COMPONENT_0000000135
+.CANCEL_BUTTON-simple {
+
+}
+
+// GUI_COMPONENT_0000000136
+.ENTRY_COMPONENT_BUTTON-simple {
+
+}
+
+// GUI_COMPONENT_0000000137
+.sliding-panel {
+
+}
+
+// GUI_COMPONENT_0000000138
+.SLIDING_PANEL-round-edged-right-slide-dark-body {
+
+}
+
+// SC_BASIC_0000001225
+.glowing-label {
+
+}
+
+// SC_BASIC_0000001180
+.css-labeled-btn {
+  .btn;
+  background: @MDB-lighter-grey;
+  border: 1px solid @MDB-grey;
+  padding: 0 18px;
+  min-width: 10em;
+  color: black;
+  margin: 2px 3px 0 3px;
+  //inner-shadow: -90°, 2px
+  //-moz-box-shadow:    inset 0 -2px @MDB-dark-grey;
+  //-webkit-box-shadow: inset 0 -2px @MDB-dark-grey;
+  //box-shadow:         inset 0 -2px @MDB-dark-grey;
+  &:hover, &:active, &:focus {
+    color: @MDB-dark-red
+  }
+  &:active, &:focus {
+    color: @MDB-dark-grey
+  }
+}
+
+// SC_BASIC_0000001061
+.css-to-description-btn {
+  background: @MDB-grey;
+  color: @MDB-white;
+  height: 32px;
+  border: 3px solid @MDB-grey;
+  border-radius: 10px;
+  padding: 0 18px;
+  margin: 15px 0 25px 20px;
+  min-width: 10em;
+}
+
+/*.css-to-description-btn {
+  .css-btn;
+  background: @MDB-grey;
+  height: 30px;
+  width: 163px;
+  border: 2px solid @MDB-grey;
+  border-radius: 6px;
+  padding: 0 18px;
+  margin: 15px 0 25px 45px;
+//  padding-left: 40px;
+//  padding-bottom: 5px;
+  i {
+    margin-left: -12px;
+  }
+}*/
+
+.css-to-description-btn .path1 {
+  background: @MDB-black;
+  color: @MDB-grey;
+  height: 26px;
+  width: 30px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin-left: -18px;
+  padding-top: 1px;
+}
+
+/*.css-to-description-btn .path1:before {
+  content: "\e939";
+  font-size: large;
+  color: @MDB-grey;
+}*/
+
+//.css-version-inner
+.css-to-description-btn .path2 {
+  .css-label1;
+  background: @MDB-middle-blue;
+  color: @MDB-white;
+  height: 26px;
+  width: 125px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  min-width: 150px;
+  font-size: 15px;
+  margin: -26px -18px 0 12px;
+  padding: 3px;
+}
+
+// GUI_COMPONENT_0000000142
+.text-input-module {
+
+}
+
+// SC_BASIC_0000001156
+.sign-up-form {
+
+}
+
+// GUI_COMPONENT_0000000144
+.image-panel {
+
+}
+
+// GUI_COMPONENT_0000000146
+.file-upload-module {
+
+}
+
+// GUI_COMPONENT_0000000147
+.local-single-media-file-selection-and-upload-module {
+
+}
+
+// GUI_COMPONENT_0000000148
+.css-create-usergroup-btn {
+
+}
+
+// SC_BASIC_0000001121
+.autocomplete-text-field-input {
+
+}
+
+// GUI_COMPONENT_0000000150
+.css-external-link-icon {
+
+}
+
+// GUI_COMPONENT_0000000151
+.sort-by-panel {
+
+}
+
+// SC_BASIC_0000001220
+.css-sort-div {
+
+}
+
+// GUI_COMPONENT_0000000153
+.MDB-message {
+
+}
+
+// GUI_COMPONENT_0000000154
+.logo-image {
+
+}
+
+// GUI_COMPONENT_0000000155
+.MDB-hyperlink {
+
+}
+
+// GUI_COMPONENT_0000000156
+.generic-user-image {
+
+}
+
+// GUI_COMPONENT_0000000157
+.generic-logo-image {
+
+}
+
+// GUI_COMPONENT_0000000158
+.MDB-message-input {
+
+}
+
+// GUI_COMPONENT_0000000159
+.searched-text-field-input {
+
+}
+
+// GUI_COMPONENT_0000000160
+.crosslink-icon {
+
+}
+
+// GUI_COMPONENT_0000000161
+.crosslink-icon-literature {
+
+}
+
+// GUI_COMPONENT_0000000162
+.crosslink-icon-matrix {
+
+}
+
+// GUI_COMPONENT_0000000163
+.crosslink-icon-media {
+
+}
+
+// GUI_COMPONENT_0000000164
+.crosslink-icon-specimen {
+
+}
+
+// GUI_COMPONENT_0000000165
+.crosslink-icon-taxon {
+
+}
+
+// GUI_COMPONENT_0000000166
+.external-link-URL-module {
+
+}
+
+// GUI_COMPONENT_0000000167
+.EXTERNAL_LINK_URL_MODULE-simple {
+
+}
+
+// GUI_COMPONENT_0000000169
+.entry-provenance-panel {
+
+}
+
+// GUI_COMPONENT_0000000170
+.entry-provenance-panel {
+
+}
+
+// GUI_COMPONENT_0000000171
+.entry-statistics-panel {
+
+}
+
+// GUI_COMPONENT_0000000172
+.entry-statistics-panel {
+
+}
+
+// GUI_COMPONENT_0000000173
+.entry-geographics-panel {
+
+}
+
+// GUI_COMPONENT_0000000174
+.entry-geographics-panel {
+
+}
+
+// SC_BASIC_0000001206
+.log-in-form {
+
+}
+
+// GUI_COMPONENT_0000000176
+.MDB-start-page {
+
+}
+
+// GUI_COMPONENT_0000000177
+.MDB-start-page {
+
+}
+
+// GUI_COMPONENT_0000000178
+.css-icon-literature-icon:before {
+  content: "\e912";
+}
+
+// GUI_COMPONENT_0000000179
+.css-icon-matrix-icon:before {
+  content: "\e91a";
+}
+
+// GUI_COMPONENT_0000000180
+.css-icon-media-icon:before {
+  content: "\e91b";
+}
+
+// SC_MDB_BASIC_0000001123
+.css-icon-morphological-description-icon:before {
+  content: "\e91c";
+}
+
+// GUI_COMPONENT_0000000182
+.css-icon-taxon-icon:before {
+  content: "\e931";
+}
+
+// GUI_COMPONENT_0000000183
+.css-icon-taxonomical-description-icon:before {
+  content: "\e932";
+}
+
+// GUI_COMPONENT_0000000184
+.basic-MDB-module {
+
+}
+
+// SC_BASIC_0000001042
+.specify-required-information {
+
+}
+
+// SC_BASIC_0000001059
+.module-to-browse-and-select-from-given-ontology {
+
+}
+
+// GUI_COMPONENT_0000000187
+.radio-button {
+}
+
+// SC_BASIC_0000001218
+.radio-button-on {
+
+}
+
+// GUI_COMPONENT_0000000189
+.radio-button-off {
+
+}
+
+.css-radio-button {
+  margin: 5px 3px 0 5px !important;
+}
+
+// GUI_COMPONENT_0000000190
+.composite-text-field-1 {
+
+}
+
+// GUI_COMPONENT_0000000190
+.composite-text-field-2 {
+
+}
+
+// GUI_COMPONENT_0000000190
+.composite-text-field-3 {
+
+}
+
+// SC_BASIC_0000001097
+h2 {
+  font-weight: bold;
+  font-size: 1.4em;
+
+}
+
+// GUI_COMPONENT_0000000194
+.browse-ontology {
+
+}
+
+// SC_BASIC_0000001072
+.css-crosslink-icon {
+}
+
+.css-icon-crosslink-icon {
+  display: flex;
+}
+
+.css-icon-crosslink-icon:before {
+  content: "\e904";
+  margin-top: -13px;
+}
+
+// SC_BASIC_0000001079
+.css-expand-collapse-btn {
+  float: left;
+  .css-expand-arrow;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background-color: transparent;
+  margin: 5px 5px 0 0;
+}
+
+.css-expand-collapse-btn-closed {
+  transform: rotate(-90deg);
+  margin-top: 5px;
+}
+
+// GUI_COMPONENT_0000000197
+.css-expand-arrow {
+  //Todo: create custom arrow
+  background-image: url("/img/sample_images/arrow_drop_down.png");
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+// GUI_COMPONENT_0000000198
+.checkbox-unchecked-active {
+
+}
+
+// GUI_COMPONENT_0000000199
+.editing-status-icon {
+
+}
+
+// GUI_COMPONENT_0000000200
+.css-editing-status-selector-middle-edit-on {
+
+}
+
+// GUI_COMPONENT_0000000201
+.css-editing-status-selector-middle-edit-off {
+
+}
+
+// GUI_COMPONENT_0000000202
+.css-editing-status-selector-left-done-on {
+
+}
+
+// GUI_COMPONENT_0000000203
+.css-editing-status-selector-left-done-off {
+
+}
+
+// GUI_COMPONENT_0000000204
+.css-editing-status-selector-right-not-on {
+
+}
+
+// GUI_COMPONENT_0000000205
+.css-editing-status-selector-right-not-off {
+
+}
+
+// GUI_COMPONENT_0000000206
+.MDB-taxonomic-description-entry {
+
+}
+
+// GUI_COMPONENT_0000000207
+.MDB-matrix-entry {
+
+}
+
+// GUI_COMPONENT_0000000208
+.CROSSLINK_SELECTOR-MDB-media-entry {
+
+}
+
+// GUI_COMPONENT_0000000209
+.CROSSLINK_SELECTOR-MDB-morphological-description-entry {
+
+}
+
+// GUI_COMPONENT_0000000210
+.CROSSLINK_SELECTOR-MDB-specimen-entry {
+
+}
+
+// GUI_COMPONENT_0000000211
+.CROSSLINK_SELECTOR-MDB-taxon-entry {
+
+}
+
+// GUI_COMPONENT_0000000212
+.media-entry-image {
+
+}
+
+// GUI_COMPONENT_0000000213
+.media-entry-image-thumbnail {
+
+}
+
+// GUI_COMPONENT_0000000214
+.user-image-thumbnail {
+
+}
+
+// GUI_COMPONENT_0000000215
+.agent-entry {
+
+}
+
+// GUI_COMPONENT_0000000216
+.MDB-project-entry {
+
+}
+
+.css-btn {
+  position: relative;
+}
+
+// SC_BASIC_0000001199
+.css-icon-search-user-btn {
+  .css-btn;
+  margin: 0 0 0 -1px;
+}
+
+.css-icon-search-user-btn .path1:before {
+  content: "\e936";
+  margin: -18px 0 0 -15px;
+  position: absolute;
+}
+
+.css-icon-search-user-btn .path2:before {
+  content: "\e92e";
+  color: rgb(242, 242, 242);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+.css-icon-search-user-btn .path3:before {
+  content: "\e92f";
+  color: rgb(0, 0, 0);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+// SC_BASIC_0000001213
+.css-search-usergroup-btn {
+  .css-btn;
+}
+
+.css-search-usergroup-btn .path1:before {
+  content: "\e935";
+  margin: -18px 0 0 -15px;
+  position: absolute;
+}
+
+.css-search-usergroup-btn .path2:before {
+  content: "\e92e";
+  color: rgb(242, 242, 242);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+.css-search-usergroup-btn .path3:before {
+  content: "\e92f";
+  color: rgb(0, 0, 0);
+  margin: -15px 0 0 -8px;
+  position: absolute;
+}
+
+// GUI_COMPONENT_0000000219
+.person-entry {
+
+}
+
+// GUI_COMPONENT_0000000220
+.person-resource-selection-or-literal-input {
+
+}
+
+// GUI_COMPONENT_0000000221
+.css-drag-container-div {
+
+}
+
+// GUI_COMPONENT_0000000222
+.other-input-field {
+
+}
+
+// GUI_COMPONENT_0000000223
+.time-input {
+
+}
+
+// GUI_COMPONENT_0000000224
+.date-input {
+
+}
+
+// GUI_COMPONENT_0000000225
+.date-time-input {
+
+}
+
+// SC_BASIC_0000001078
+h3 {
+  font-weight: bold;
+  font-size: 1.6em;
+}
+
+// SC_BASIC_0000001039
+h4 {
+  font-weight: normal;
+  font-size: 1.6em;
+}
+
+// GUI_COMPONENT_0000000231
+.css-usergroup-icon {
+
+}
+
+// GUI_COMPONENT_0000000232
+.shape {
+
+}
+
+// GUI_COMPONENT_0000000233
+.css-user-frame1 {
+
+}
+
+// GUI_COMPONENT_0000000234
+.css-user-frame2 {
+
+}
+
+// SC_BASIC_0000001104
+.css-user-frame3 {
+
+}
+
+.css-picture-frame-specimen {
+  background-image: url(/img/tmp/SC_MDB_BASIC_0000000033.svg);
+  background-size: 50px;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  margin: 0 0 0 5px !important;
+}
+
+.css-picture-frame-morphological-description {
+  background-image: url(/img/tmp/SC_MDB_BASIC_0000000030.svg);
+  background-size: 50px;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  margin: 0 0 0 5px !important;
+}
+
+// SC_BASIC_0000001068
+.css-data-input-left {
+  .css-data-input_master;
+  width: 271px;
+  .RoundedInput_left_only;
+}
+
+// GUI_COMPONENT_0000000238
+.css-btn3 {
+
+}
+
+// GUI_COMPONENT_0000000240
+.css-btn2 {
+
+}
+
+// SC_BASIC_0000001170
+.css-search-input {
+  height: 27px;
+  width: 273px; //300 - width of button
+  background: @MDB-white;
+  border: 1px solid @MDB-dark-grey;
+  border-radius: inherit;
+  margin: 0 0 3px 3px;
+}
+
+//this is the "master" input field. All other css-data-input_xy classes are derived from this one.
+.css-data-input_master {
+  height: 21px;
+  width: 135px;
+  background: @MDB-white;
+  border: 1px solid @MDB-dark-grey;
+  border-radius: 0;
+  margin: 4px 3px 3px 4px;
+  font-size: 1.2em;
+}
+
+// SC_BASIC_0000001146
+.css-data-input-middle-narrow {
+  .css-data-input_master;
+  width: 67px;
+}
+
+// SC_BASIC_0000001118
+.css-data-input-middle {
+  .css-data-input_master;
+  margin: 4px 3px 0px -4px;
+}
+
+// SC_BASIC_0000001125
+.css-data-input-left-narrow {
+  .css-data-input_master;
+  .RoundedInput_left_only;
+}
+
+.css-data-input-right-narrow {
+  .css-data-input_master;
+  .RoundedInput_right_only;
+  margin: 4px 3px 3px -4px;
+}
+
+// SC_BASIC_0000001091
+.css-data-input-left-narrow3 {
+  .css-data-input_master;
+  .RoundedInput_left_only;
+  width: 67px;
+}
+
+// SC_BASIC_0000001105
+.css-data-input-left-narrow2 {
+  .css-data-input_master;
+  .RoundedInput_left_only;
+  width: 106px;
+}
+
+// SC_BASIC_0000001105 + SC_BASIC_0000001187
+.css-data-input-left-narrow2-icon-date-selector-btn-group {
+  display: flex;
+}
+
+// SC_BASIC_0000001105 + SC_BASIC_0000001187
+.css-data-input-left-narrow2-icon-time-selector-btn-group {
+  display: flex;
+}
+
+// SC_BASIC_0000001099
+.css-creative-commons-dropdown {
+  .css-dropdown;
+  min-width: 113px;
+  //max-width: 113px;
+  height: 29px;
+  width: 15px;
+  background-color: @MDB-white;
+  border: solid 1px @MDB-black;
+  margin: 12px 0 7px 0;
+}
+
+// GUI_COMPONENT_0000000250
+.css-head-dropdown {
+
+}
+
+// GUI_COMPONENT_0000000251
+.css-search-dropdown-left {
+  height: 21px;
+  background: @MDB-dark-grey;
+  border: 1px solid @MDB-black;
+  border-top-left-radius: 11px;
+  border-bottom-left-radius: 11px;
+  margin: 4px 3px 3px 3px;
+}
+
+// GUI_COMPONENT_0000000252
+.css-search-dropdown-right {
+  height: 21px;
+  border: 1px solid @MDB-dark-grey;
+  border-top-right-radius: 11px;
+  border-bottom-right-radius: 11px;
+  margin: 4px 3px 3px 3px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+0,d0d0d0+100 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #ffffff 0%,
+    #ffffff 0%,
+    #d0d0d0 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #ffffff 0%,
+    #ffffff 0%,
+    #d0d0d0 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 0%,
+    #d0d0d0 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d0d0d0', GradientType=0); /* IE6-9 */
+}
+
+// GUI_COMPONENT_0000000253
+.css-head-btn {
+
+}
+
+// GUI_COMPONENT_0000000254
+.css-head-dropdown-btn {
+  height: 48px;
+  background: @MDB-white;
+  margin: 4px 3px 3px 3px;
+}
+
+// SC_BASIC_0000001150
+.css-tab1 {
+  font-size: 12px;
+  height: 32px;
+  position: relative;
+  color: @MDB-darker-grey;
+  background: @MDB-grey;
+  border-bottom: 0;
+  border-top-right-radius: 11px;
+  border-top-left-radius: 11px;
+  padding: 9px;
+  margin: 4px 3px;
+  min-width: 80px;
+  text-align: center;
+  cursor: pointer;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  &:hover {
+    color: @MDB-black;
+    background: @MDB-dark-grey;
+  }
+}
+
+// highlight active tabs
+.is-active {
+  background: @MDB-white !important;
+  cursor: default;
+  border: solid 1px @MDB-grey;
+  color: @MDB-black;
+}
+
+// GUI_COMPONENT_0000000256
+.css-picture-frame-media-crosslink {
+
+}
+
+// GUI_COMPONENT_0000000257
+.css-picture-frame-literature-crosslink {
+
+}
+
+// GUI_COMPONENT_0000000258
+.css-cc-by {
+
+}
+
+// GUI_COMPONENT_0000000259
+.css-cc-by-nd {
+
+}
+
+// GUI_COMPONENT_0000000260
+.css-cc-by-nc {
+
+}
+
+// GUI_COMPONENT_0000000261
+.css-cc-by-nc-nd {
+
+}
+
+// GUI_COMPONENT_0000000262
+.css-cc-by-nc-sa {
+
+}
+
+// GUI_COMPONENT_0000000263
+.css-cc-by-sa {
+
+}
+
+// SC_BASIC_0000001157
+//.css-version-outer
+.css-version {
+  .css-btn;
+  height: 28px;
+  width: 163px;
+  border-radius: 12px;
+  padding-left: 40px;
+  padding-bottom: 5px;
+  border: 1px solid @MDB-white;
+  i {
+    margin-left: -12px;
+    line-height: 0.95em;
+  }
+}
+
+//.css-version-inner
+.css-version .path1 {
+  height: 21px;
+  width: 119px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background: @MDB-white;
+}
+
+// GUI_COMPONENT_0000000265
+.css-version-selector {
+
+}
+
+// GUI_COMPONENT_0000000268
+.invisble-div {
+
+}
+
+// GUI_COMPONENT_0000000269
+.checkbox-checked-inactive {
+
+}
+
+// SC_BASIC_0000001050
+.css-icon-search-btn {
+  width: 27px;
+  height: 27px;
+  background: linear-gradient(to bottom, @MDB-white, @MDB-dark-grey);
+  border-color: @MDB-black;
+  border-radius: inherit;
+  margin: 0 5px 0 -1px;
+  padding: 0;
+  .css-btn;
+}
+
+.css-icon-search-btn:after {
+  content: "\e92d";
+  margin: -19px 0 0 -14px;
+  position: absolute;
+}
+
+// GUI_COMPONENT_0000000271
+.css-toggle-btn-on {
+
+}
+
+// GUI_COMPONENT_0000000272
+.css-toggle-btn-off {
+
+}
+
+// SC_BASIC_0000001221
+.css-icon-long-lat-selector-btn {
+  width: 27px;
+  height: 21px;
+  background: @MDB-black;
+  .RoundedInput_right_only;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin: 4px 0 0 -4px;
+  .css-btn;
+}
+
+/*.css-icon-long-lat-selector-btn:after {
+  content: "\e922";
+  margin: -21px 0 0 -16px;
+  position: absolute;
+  color: @MDB-white;
+}*/
+
+.css-icon-long-lat-selector-btn .path1:before {
+  content: "\e922";
+  margin: -19px 0 0 -16px;
+  position: absolute;
+  color: rgb(233, 31, 38);
+}
+
+.css-icon-long-lat-selector-btn .path2:before {
+  content: "\e923";
+  margin: -19px 0 0 -16px;
+  position: absolute;
+  color: rgb(178, 178, 178);
+}
+
+.css-icon-long-lat-selector-btn .path3:before {
+  content: "\e924";
+  margin: -19px 0 0 -16px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+// GUI_COMPONENT_0000000274
+.css-time-selector-btn {
+}
+
+// SC_BASIC_0000001141
+.css-icon-time-selector-btn {
+  width: 27px;
+  height: 21px;
+  background: @MDB-black;
+  .RoundedInput_right_only;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin: 4px 0 0 -4px;
+  .css-btn;
+}
+
+.css-icon-time-selector-btn:after {
+  content: "\e901";
+  margin: -21px 0 0 -16px;
+  position: absolute;
+  color: @MDB-white;
+}
+
+// SC_BASIC_0000001187
+.css-icon-date-selector-btn {
+  width: 27px;
+  height: 21px;
+  background: @MDB-black;
+  .RoundedInput_right_only;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin: 4px 0 0 -4px;
+  .css-btn;
+}
+
+.css-icon-date-selector-btn:after {
+  content: "\e900";
+  margin: -21px 0 0 -16px;
+  position: absolute;
+  color: @MDB-white;
+}
+
+// GUI_COMPONENT_0000000276
+.css-head-mdb-home-btn {
+
+}
+
+// GUI_COMPONENT_0000000279
+.css-panel-resize-handle-vertical {
+
+}
+
+//.css-paragraph1, p {
+//  margin: 10px 0 9px 0;
+//}
+
+// GUI_COMPONENT_0000000281
+.css-auto-vertical-scrollbar {
+
+}
+
+// GUI_COMPONENT_0000000282
+.css-auto-vertical-horizontal-scrollbar {
+
+}
+
+// GUI_COMPONENT_0000000283
+.css-auto-horizontal-scrollbar {
+
+}
+
+// SC_BASIC_0000001205
+.css-table-of-contents {
+
+}
+
+// transition buttons
+[class^="css-editing-status-selector"],
+[class*="css-editing-status-selector"] {
+  position: relative;
+  font-family: "mdb_iconfont_28px" !important;
+  font-size: 2.8em;
+  width: 22px;
+  height: 20px;
+  background: linear-gradient(to bottom, @MDB-white, @MDB-dark-grey);
+  border: solid 2px @MDB-dark-grey;
+  float: left;
+  text-align: center;
+}
+
+// SC_BASIC_0000001217
+.css-editing-status-selector-left-toggle-btn {
+  border-right: none;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+.css-editing-status-selector-left-toggle-btn:hover {
+  color: @MDB-green;
+}
+
+.css-editing-status-selector-left-toggle-btn:after {
+  content: "\e90a";
+  margin: -28px 0 0 -15px;
+  position: absolute;
+}
+
+.css-editing-status-selector-left-toggle-btn-off {
+  color: @MDB-dark-grey;
+}
+
+.css-editing-status-selector-left-toggle-btn-on {
+  color: @MDB-green;
+}
+
+// SC_BASIC_0000001179
+.css-editing-status-selector-middle-toggle-btn {
+  border-right: none;
+  border-left: none;
+}
+
+.css-editing-status-selector-middle-toggle-btn:hover {
+  color: @MDB-red;
+}
+
+.css-editing-status-selector-middle-toggle-btn:after {
+  content: "\e90b";
+  margin: -28px 0 0 -15px;
+  position: absolute;
+}
+
+.css-editing-status-selector-middle-toggle-btn-off {
+  color: @MDB-dark-grey;
+}
+
+.css-editing-status-selector-middle-toggle-btn-on {
+  color: @MDB-red;
+}
+
+// SC_BASIC_0000001195
+.css-editing-status-selector-right-toggle-btn {
+  border-left: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.css-editing-status-selector-right-toggle-btn:hover {
+  color: @MDB-red;
+}
+
+.css-editing-status-selector-right-toggle-btn:after {
+  content: "\e90c";
+  margin: -28px 0 0 -15px;
+  position: absolute;
+}
+
+.css-editing-status-selector-right-toggle-btn-off {
+  color: @MDB-dark-grey;
+}
+
+.css-editing-status-selector-right-toggle-btn-on {
+  color: @MDB-red;
+}
+
+.css-icon-help-icon .path1:before {
+  content: "\e90f";
+  color: rgb(0, 0, 0);
+}
+
+.css-icon-help-icon .path2:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-help-icon .path3:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.css-icon-logout-icon:before {
+  content: "\e919";
+}
+
+.css-icon-negated-icon:before {
+  content: "\e93f";
+  color: @MDB-dark-red;
+  margin-left: 17px;
+}
+
+.css-icon-not-negated-icon:before {
+  content: "\e93f";
+  color: @MDB-dark-grey;
+  margin-left: 17px;
+}
+
+// SC_BASIC_0000001200
+.css-not-toggle-icon {
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin: -4px 0 0 -20px;
+  input {
+    display: none;
+  }
+  input + i {
+    display: block;
+  }
+}
+
+// SC_BASIC_0000001155
+.css-picture-frame {
+  width: 58px;
+  height: 58px;
+  background-color: @MDB-grey;
+}
+
+//
+// currently unused, but in catalogue
+//
+
+#SC_BASIC_0000000707_1 {
+  /*width: 400px;*/
+  width: 100%;
+}
+
+//TODO: remove deprecated CSS-Classes after next reset of the jena tdb
+#SC_BASIC_0000000656_1 {
+  width: 400px;
+}
+
+// SandraTest
+
+//Annotator Test
+.annotator-hl {
+  background: rgba(55, 133, 148, 0.3) none repeat scroll 0 0;
+}
+
+// datepicker
+.full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
+}
+
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
+}
+
+// Angular Tree
+
+.angular-ui-tree-handle {
+  background: #f8faff;
+  //border: 1px solid #dae2ea;
+  color: #7c9eb2;
+  padding: 10px 10px;
+}
+
+.angular-ui-tree-handle:hover {
+  //color: @MDB-dark-green;
+  background: @MDB-dark-grey;
+  border-color: @MDB-orange;
+}
+
+.angular-ui-tree-placeholder {
+  background: @MDB-darker-grey;
+  border: 2px dashed @MDB-black;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+tr.angular-ui-tree-empty {
+  height: 100px
+}
+
+.group-title {
+  background-color: @MDB-dark-grey !important;
+  color: #FFF !important;
+}
+
+//// description page ///////////////////////////////////////////////////////////////
+
+.description-bg-white {
+  background: @MDB-white;
+  border-color: @MDB-light-grey;
+  border-radius: 2px;
+  box-shadow: none;
+  padding: 5px;
+}
+
+.description-bg-grey {
+  background: @MDB-light-grey;
+  border-radius: 0;
+  box-shadow: none;
+  height: auto;
+}
+
+.description-bg-blue {
+  background: @MDB-color-morphological-description;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.description_widget {
+  height: 100%;
+  background: @MDB-white;
+  display: -webkit-flex;
+  display: flex;
+  //  -webkit-flex-wrap: wrap;  Safari 6.1+
+  //  flex-wrap: wrap;
+  //  overflow: scroll;
+}
+
+.description_left_main_panel {
+  background-color: black;
+  height: 100%;
+  padding: 0 15px;
+  //max-width: 450px;
+  flex: 1;
+  -webkit-flex: 1;
+  > div:nth-of-type(2) {
+    height: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+.description_breadcrumb_panel {
+  height: 55px;
+  background: black;
+  margin-top: -2px;
+  padding-top: 15px;
+  display: flex;
+}
+
+.mdb-description-breadcrumb-input {
+  flex-grow: 1;
+  height: 30px;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.description_property_panel {
+  height: 30px;
+  background: black;
+  margin-top: 0;
+  padding-top: 15px;
+  display: flex;
+}
+
+.description_property_icon_frame {
+  margin-right: 16px;
+  margin-left: 2px;
+  margin-top: -10px;
+  background-color: @MDB-white;
+  width: 27px;
+  height: 27px;
+}
+
+.description_property_icon {
+  margin-right: 20px;
+  margin-left: 1px;
+  margin-top: 1px;
+  width: 25px;
+  height: 25px;
+  border: 1px solid @MDB-black;
+}
+
+.description_right_main_panel {
+  //margin-bottom: @gap;
+  height: 100%;
+  width: 100%;
+  border: solid @MDB-light-grey 4px;
+  flex: 3;
+  -webkit-flex: 3;
+}
+
+.description_title_panel {
+  height: 45px;
+  min-height: 45px;
+  background: @MDB-color-morphological-description;
+  padding-top: 10px;
+  padding-left: 20px;
+  color: @MDB-white;
+  > div:first-of-type {
+    min-width: 300px;
+  }
+  > img {
+    margin: -7px 10px 0px -12px;
+    border: solid 1px @MDB-black;
+  }
+}
+
+.description_active_part_panel {
+  .description-bg-blue;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  //justify-content: normal; //space-between;
+  border-radius: 0 20px 20px 0;
+  width: 650px;
+  margin: 5px 0 5px 3px;
+  padding: 0 0 0 7px;
+  .css-search-input {
+    margin: 0;
+    border-radius: 0 !important;
+    width: 200px;
+  }
+  .btn {
+    border-radius: 0 !important;
+    margin: 0 20px 0 0;
+  }
+  > img {
+    border: solid 1px @MDB-black;
+  }
+
+  .css-data-input {
+    margin-top: 17px;
+    margin-left: 30px;
+  }
+  .css-label1 {
+    margin-right: 30px;
+    margin-left: 50px;
+  }
+  .css-label1-link {
+    margin-right: 30px;
+    margin-left: 50px;
+  }
+}
+
+.description_header {
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+
+  .description_header_nav {
+    -webkit-flex: 1;
+    flex: 1;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    margin: -35px 0 0 0;
+    overflow: hidden;
+    //height: 99%;
+    > div {
+      height: 100%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      .nav-tabs {
+        margin: 0 0 20px 440px;
+        border: none;
+        color: @MDB-color-morphological-description-dark;
+        display: -webkit-flex;
+        display: flex;
+        i {
+          //font-size: medium;
+        }
+        li {
+          border: none;
+          font-size: 1.1em;
+          padding: 0;
+          background: transparent;
+          text-align: center;
+          max-width: 165px;
+          color: @MDB-color-morphological-description-dark;
+          flex: 1;
+        }
+        a {
+          border-radius: 10px 10px 0 0;
+          padding: 10px 5px;
+          border: none;
+          height: 35px;
+          color: @MDB-color-morphological-description-dark;
+        }
+        a:focus,
+        a:hover,
+        a:focus {
+          background: @MDB-light-grey;
+          opacity: 0.7;
+          color: @MDB-color-morphological-description-dark;
+        }
+        li.active > a,
+        li.active > a:hover,
+        li.active > a:focus {
+          background: @MDB-white;
+          color: @MDB-color-morphological-description-dark;
+          opacity: 1;
+          font-weight: bold;
+        }
+        .css-paragraph1 {
+          margin: 3px 0 9px 0;
+        }
+      }
+      .tab-content {
+        -webkit-flex: 1;
+        flex: 1;
+        //height: 94%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .tab-pane {
+          height: 100%;
+          > div {
+            height: 100%;
+          }
+        }
+        .css-headline1 {
+          &:focus,
+          &:hover,
+          &:active {
+            color: @MDB-black;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .description_header_nav_tab_heading {
+    display: inline-flex;
+    margin: -10px 0;
+    padding: 0 0;
+  }
+}
+
+.description-accordion {
+  padding: 0 15px;
+  .description-formal-description-panels {
+    .panel-default {
+      border: none;
+      //margin: 5px;
+    }
+    .panel-heading {
+      color: #333333;
+      background-color: transparent;
+      border: none;
+      height: 40px;
+      padding: 0;
+      a {
+        &:focus, &:hover, &:active {
+          color: @MDB-black;
+          text-decoration: none;
+        }
+      }
+      .css-expand-collapse-btn {
+        margin: 0 5px 0 0;
+      }
+      .mdb-icon {
+        top: -13px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .panel-collapse {
+      background-color: transparent;
+      border: none;
+    }
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+      border-top-color: transparent;
+    }
+    .panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
+      border: none;
+    }
+  }
+}
+
+.description-formal-description-haspart {
+  background: @MDB-light-grey;
+  box-shadow: none;
+  display: inline-flex;
+  margin-top: 10px;
+  width: 65%;
+  height: 25px;
+  border-radius: 0 15px 15px 0;
+  > img {
+    border: solid 1px @MDB-middle-blue;
+  }
+  .hasTitle, .css-resource-label {
+    color: @MDB-middle-blue;
+    font-weight: bold;
+    padding-left: 10px;
+    width: 250px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 5px;
+    flex: 1;
+    cursor: default;
+  }
+  .typeOf {
+    color: @MDB-black;
+    padding-left: 10px;
+    width: 300px;
+    margin-top: 5px;
+    flex: 2;
+
+  }
+  .btn-small {
+    background: transparent;
+  }
+  .removePart {
+    color: white;
+    background-color: @MDB-red;
+    font-size: small;
+    border-radius: 3px;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    border: none;
+    padding: 0;
+    margin: 5px;
+  }
+}
+
+.css-search-input_typeOf {
+  height: 27px;
+  width: 273px;
+  background: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 0;
+  margin: 1px 3px 3px 3px;
+}
+
+.description-formal-description-newpart {
+  background: @MDB-dark-grey;
+  box-shadow: none;
+  display: inline-flex;
+  margin-top: 10px;
+  width: 65%;
+  height: 40px;
+  border-radius: 0 15px 15px 0;
+  padding: 5px;
+  > img {
+    border: solid 1px @MDB-middle-blue;
+    height: 25px;
+    margin: 2px;
+  }
+  .newTitle {
+    flex: 1;
+  }
+  .typeOf {
+    flex: 2;
+  }
+  .btn-new {
+    background-color: @MDB-green;
+    //border: 3px solid @MDB-grey;
+    border-radius: 15px;
+    height: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 1px;
+    line-height: 1;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.5),
+      0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    &:hover,
+    &:active,
+    &:focus {
+      color: @MDB-dark-grey;
+      background-color: @MDB-dark-green;
+    }
+  }
+  .removePart {
+    color: white;
+    background-color: @MDB-red;
+    font-size: small;
+    border-radius: 3px;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    border: none;
+    padding: 0;
+    margin: 5px;
+  }
+}
+
+.description-text_container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .description-text_top {
+    display: flex;
+    display: -webkit-flex;
+    color: #808080;
+    .css-check {
+      margin: 8px 5px 0 11px;
+    }
+    .css-paragraph1 {
+      font-size: 13px;
+      margin-right: 15px;
+    }
+  }
+  .description-text_main {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    flex: 3;
+  }
+}
+
+.description-text_left {
+  height: 100%;
+  width: 60%;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.description-text_right {
+  height: 100%;
+  width: 40%;
+  margin-left: 5px;
+  font-size: 10pt;
+  .ui-grid-top-panel {
+    height: 30px;
+  }
+  //DEPRICATED
+  //.grid {
+  //  height: 99%; //98vh;
+  //  border: 2px solid #d4d4d4;
+  //}
+}
+
+.description-text_annotation_box {
+  border: 2px solid #d4d4d4;
+  box-sizing: content-box;
+  min-height: 100px;
+  //display: flex;
+  flex-direction: column;
+  padding:5px;
+}
+
+.description-text_annotation_box_top {
+  margin-bottom: 8px;
+  flex: 2;
+}
+.description-text_annotation_box_bottom {
+  margin-bottom: 7px;
+  flex: 1;
+  height:200px;
+}
+
+// overwriting default (= scroll) of ui-grid.css
+.ui-grid-viewport {
+  overflow: auto !important;
+}
+
+/* --- Tree --- */
+
+.angular-ui-tree {
+  width: 100%;
+}
+
+.angular-ui-tree-placeholder {
+  background: @MDB-dark-grey;
+  border: 2px dashed @MDB-darker-grey;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: @MDB-input-field-radius;
+}
+
+.angular-ui-tree-nodes {
+  width: 100%;
+  cursor: pointer;
+  .angular-ui-tree-nodes {
+    padding-left: 25px !important;
+  }
+}
+
+.angular-ui-tree .angular-ui-tree-node:before {
+  border-left: 2px dotted @MDB-black;
+  //height:100%;
+  width: 1px;
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: -20px;
+  bottom: 22px;
+  left: 4px;
+  z-index: 1;
+}
+
+.angular-ui-tree .angular-ui-tree-node:last-child:before {
+  height: 38px;
+}
+
+.angular-ui-tree > .angular-ui-tree-nodes > .angular-ui-tree-node:before,
+.angular-ui-tree > .angular-ui-tree-nodes > .angular-ui-tree-node:after {
+  border: 0;
+}
+
+.angular-ui-tree-node {
+  width: 100%;
+}
+
+.angular-ui-tree-node .active {
+  background: @MDB-color-morphological-description;
+  color: @MDB-light-grey;
+}
+
+.angular-ui-tree-node .active:hover {
+  background: @MDB-blue;
+  color: @MDB-light-grey;
+}
+
+.angular-ui-tree-node-content {
+  background: @MDB-light-grey;
+  color: @MDB-color-morphological-description;
+  width: 100%;
+  height: 27px;
+  margin: 5px 10px 5px 20px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  overflow: hidden;
+  z-index: 2;
+  .glyphicon {
+    background: transparent;
+  }
+  > .tree-node-icon {
+    float: left;
+    width: 27px;
+    height: 27px;
+    margin-right: 10px;
+    background: @MDB-white;
+    border: 1px solid @MDB-grey;
+    z-index: 2;
+  }
+  > .tree-node-annotations {
+    float: right;
+    width: 60px;
+    font-size: 11pt;
+    display: inline-flex;
+    > .tree-node-annotation-icon {
+      //margin-left: 5px;
+      //padding: 0 8px 0 0px;
+    }
+  }
+  > .tree-node-title {
+    margin-top: 4px;
+    font-size: small;
+    font-weight: bold;
+  }
+}
+
+.angular-ui-tree-node-content::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 1px;
+  width: 20px;
+  height: 0;
+  z-index: 1;
+  border-top: 2px dotted @MDB-black;
+}
+
+.angular-ui-tree-node-content-collapseexpandbtn {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: @MDB-white;
+  border: 1px solid @MDB-black;
+  font-size: xx-small;
+  top: 15px;
+  z-index: 3;
+  .glyphicon {
+    top: -5px;
+    left: -1px;
+  }
+  .glyphicon-plus {
+    left: 0;
+  }
+}
+
+.angular-ui-tree-node-content:hover {
+  background: #cfcfcf;
+  color: @MDB-color-morphological-description;
+}
+
+.nodrop {
+  background-color: #f2dede;
+}
+
+.angular-ui-tree-handle {
+  //  min-height: 10px !important;
+  //  line-height: 10px !important;
+  padding: 0;
+}
+
+.angular-ui-tree-handle:hover {
+  font-weight: bold;
+}
+
+.tree-handle {
+  padding: 10px;
+  background: @MDB-color-morphological-description;
+  color: #FFF;
+  margin-right: 10px;
+
+}
+
+// SC_BASIC_0000001036
+.css-template-div {
+  .css-bg-bordered-blue;
+  position: relative;
+  // template-btn
+  .css-template-btn-top {
+    position: absolute;
+    height: 25px;
+    background: @MDB-light-blue;
+    border: none;
+    border-radius: 0;
+    right: 0;
+    padding: 0 10px 0 15px;
+  }
+  .css-template-btn-bottom {
+    .css-template-btn-top;
+    bottom: 0;
+    padding: 1px 10px 0 15px;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////
+// TODO: Work in progress & temporary fix: angular ng-if or ng-show responds slow (2second delay?)
+// http://stackoverflow.com/questions/26938021/angular-ng-if-or-ng-show-responds-slow-2second-delay
+////////////////////////////////////////////////////////////////////////////////////
+
+.ng-animate.no-animate {
+  transition: 0s none;
+  -webkit-transition: 0s none;
+  animation: 0s none;
+  -webkit-animation: 0s none;
+}
+
+.dropdown-menu {
+  font-size: inherit;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+// TODO: Entry Header
+////////////////////////////////////////////////////////////////////////////////////
+
+// SC_BASIC_0000001185 // TODO: remove workaround for shadow area
+//// TODO: #SC_BASIC_0000000711_1 is workaround, depricated on next ontology update
+//// TODO: #SC_BASIC_0000000655_1 is workaround for testuser "test@test.com"
+.css-entry-header-bg-shadow, #SC_BASIC_0000000711_1, #SC_BASIC_0000000655_1 {
+  box-shadow: @MDB-entry-header-box-shadow;
+  border-radius: @MDB-entry-header-radius;
+  margin: 35px 0 35px 7px !important;
+  width: 98%;
+  > div:first-of-type {
+    // workaround, needed for ng-repeat div (due to structure of mdbComponents)
+    width: 100%;
+    height: @MDB-entry-header-upper-lower-height;
+  }
+  > .new_row {
+    margin-left: 0 !important;
+  }
+}
+
+// SC_BASIC_0000001152
+.css-entry-header-upper-area {
+  height: @MDB-entry-header-upper-lower-height;
+  width: 100%;
+  padding: 0 20px;
+  border-bottom: 1px solid @MDB-black;
+  border-top-left-radius: @border-radius;
+  border-top-right-radius: @border-radius;
+  background-color: transparent;
+  display: flex;
+  div {
+    margin: auto; // center all element vertically
+  }
+  span {
+    line-height: inherit;
+  }
+  input {
+    height: 23px;
+    margin-top: 1px;
+    max-width: 100px;
+  }
+  img {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+// SC_BASIC_0000001140
+.css-entry-header-middle-area {
+  background: @MDB-white;
+  min-height: @MDB-entry-header-middle-height;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+// SC_BASIC_0000001139
+.css-entry-header-lower-area {
+  height: @MDB-entry-header-upper-lower-height;
+  display: flex;
+  width: 100%;
+  //the last dif of an entry panel has a special layout (e.g. background color)
+  border-bottom-left-radius: @border-radius;
+  border-bottom-right-radius: @border-radius;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  padding: 4px 20px 0 30px;
+  div {
+    margin: auto; // center all element vertically
+  }
+  // we overwrite the css-label2 styles here. Maybe create a separate css class for the panel footer?
+  span {
+    line-height: inherit;
+    font-weight: bold;
+  }
+  input {
+    height: 23px;
+    margin-top: 0;
+  }
+  img {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+//// TODO: #SC_BASIC_0000000657_1 is workaround for testuser "test@test.com"
+#SC_BASIC_0000000657_1 {
+  display: none;
+}
+
+// css for entry list
+.mdb-entry-list-page-panel {
+  width: 100%;
+  height: 100%;
+  background: lightgrey;
+  padding: 20px;
+  margin: 20px 0;
+  .mdb-entry-list-div {
+    display: grid;
+    .mdb-entry-list-header {
+      display: inline-flex;
+      padding-left: 5px;
+      padding-top: 2px;
+      padding-right: 10px;
+      margin-top: 10px;
+      width: 60%;
+      height: 35px;
+      .hasImg {
+        width: 32px;
+        color: black;
+        font-size: 1.4em;
+        font-weight: bold;
+        margin: 10px 10px 0 10px;
+      }
+      .hasFirstLabel {
+        color: black;
+        font-size: 1.4em;
+        font-weight: bold;
+        padding-left: 10px;
+        width: auto;
+        margin: 10px 0 0 15px;
+        flex: 1;
+      }
+      .hasLabel {
+        color: black;
+        font-size: 1.4em;
+        font-weight: bold;
+        padding-left: 10px;
+        width: auto;
+        margin: 10px 0 0 3px;
+        flex: 1;
+      }
+    }
+    .mdb-entry-list {
+      background: #f3f3f3;
+      box-shadow: none;
+      display: inline-flex;
+      padding-left: 5px;
+      padding-top: 2px;
+      padding-right: 10px;
+      margin-top: 10px;
+      width: 60%;
+      height: 45px;
+      border-radius: 0 15px 15px 0;
+      border: 2px solid rgba(82, 82, 82, 0.67);
+      .hasType {
+        width: 32px;
+        height: 32px;
+        margin: 0 10px;
+        color: @MDB-dark-grey;
+      }
+      .hasStatus {
+        width: 32px;
+        height: 32px;
+        margin: 0 10px;
+      }
+      .hasLabel {
+        color: black;
+        font-weight: bold;
+        padding-left: 10px;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 3px;
+        margin-top: 10px;
+        flex: 1;
+      }
+      .hasAuthor {
+        color: black;
+        font-weight: bold;
+        padding-left: 10px;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 3px;
+        margin-top: 10px;
+        flex: 1;
+      }
+    }
+  }
+  .mdb-entry-list-grid {
+    font-size: medium;
+    height: 100%;
+    .ui-grid-header .ui-grid-cell-contents {
+      padding: 5px 5px 5px 5px;
+    }
+    .ui-grid-viewport {
+      .ui-grid-row {
+        border-bottom: 1px solid @MDB-dark-grey;
+      }
+      .ui-grid-cell {
+        border-bottom: 1px solid @MDB-dark-grey;
+      }
+      .ui-grid-cell-contents {
+        padding: 9px 5px 5px 5px;
+        .css-icon-crosslink-icon {
+          display: inline-flex;
+          line-height: 0;
+        }
+      }
+      .ui-grid-cell-contents-centered {
+        text-align: center;
+      }
+    }
+    .hasType {
+      margin: -7px 10px 0 10px;
+      color: @MDB-dark-grey;
+    }
+    .hasStatus {
+      margin: -7px 10px 0 10px;
+      color: @MDB-dark-grey;
+    }
+  }
+}
+
+// css for entry list
+.mdb-entry-list-panel {
+  width: 100%;
+  height: 100%;
+  background: @MDB-white;
+  padding: 20px;
+  margin: 20px 0;
+  .mdb-entry-list-div {
+    display: grid;
+    .mdb-entry-list-header {
+      display: inline-flex;
+      padding-left: 5px;
+      padding-top: 2px;
+      padding-right: 10px;
+      margin-top: 10px;
+      width: 60%;
+      height: 35px;
+      .hasImg {
+        width: 32px;
+        color: black;
+        font-size: 1.4em;
+        font-weight: bold;
+        margin: 10px 10px 0 10px;
+      }
+      .hasFirstLabel {
+        color: black;
+        font-size: 1.4em;
+        font-weight: bold;
+        padding-left: 10px;
+        width: auto;
+        margin: 10px 0 0 15px;
+        flex: 1;
+      }
+      .hasLabel {
+        color: black;
+        font-size: 1.4em;
+        font-weight: bold;
+        padding-left: 10px;
+        width: auto;
+        margin: 10px 0 0 3px;
+        flex: 1;
+      }
+    }
+    .mdb-entry-list {
+      background: #f3f3f3;
+      box-shadow: none;
+      display: inline-flex;
+      padding-left: 5px;
+      padding-top: 2px;
+      padding-right: 10px;
+      margin-top: 10px;
+      width: 60%;
+      height: 45px;
+      border-radius: 0 15px 15px 0;
+      border: 2px solid rgba(82, 82, 82, 0.67);
+      .hasType {
+        width: 32px;
+        height: 32px;
+        margin: 0 10px;
+        color: @MDB-dark-grey;
+      }
+      .hasStatus {
+        width: 32px;
+        height: 32px;
+        margin: 0 10px;
+      }
+      .hasLabel {
+        color: black;
+        font-weight: bold;
+        padding-left: 10px;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 3px;
+        margin-top: 10px;
+        flex: 1;
+      }
+      .hasAuthor {
+        color: black;
+        font-weight: bold;
+        padding-left: 10px;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 3px;
+        margin-top: 10px;
+        flex: 1;
+      }
+    }
+  }
+  .mdb-entry-list-grid {
+    font-size: medium;
+    height: 100%;
+    .ui-grid-header .ui-grid-cell-contents {
+      padding: 5px 5px 5px 5px;
+    }
+    .ui-grid-viewport {
+      .ui-grid-row {
+        border-bottom: 1px solid @MDB-dark-grey;
+      }
+      .ui-grid-cell {
+        border-bottom: 1px solid @MDB-dark-grey;
+      }
+      .ui-grid-cell-contents {
+        padding: 9px 5px 5px 5px;
+        .css-icon-crosslink-icon {
+          display: inline-flex;
+          line-height: 0;
+        }
+      }
+      .ui-grid-cell-contents-centered {
+        text-align: center;
+      }
+    }
+    .hasType {
+      margin: -7px 10px 0 10px;
+      color: @MDB-dark-grey;
+    }
+    .hasStatus {
+      margin: -7px 10px 0 10px;
+      color: @MDB-dark-grey;
+    }
+  }
+  .ui-grid-pager-panel {
+    bottom: -5px;
+    padding-bottom: 0;
+    .ui-grid-pager-container {
+      .ui-grid-pager-control {
+      }
+    }
+    button {
+      background: transparent;
+      color: transparent;
+      border: none;
+    }
+    input {
+      background: rgba(0, 0, 0, 0);
+      border: none;
+      margin-bottom: 0;
+      margin-right: 0;
+      font-size: medium;
+    }
+    abbr[title], acronym[title] {
+      cursor: default;
+      border: none;
+      text-decoration: none;
+    }
+  }
+}
+
+/* Text annotator */
+
+.text-annotator {
+  font-size:1.2em;
+  line-height:2em;
+
+  .annotated {
+    color: @MDB-darker-grey;
+    border-bottom: 1px solid @MDB-dark-grey;
+    padding: 2px;
+    white-space: nowrap;
+
+    position: relative;
+
+    &:hover {
+      color:@MDB-black;
+    }
+
+    &.highlighted {
+      background: rgba(232, 142, 12, 0.4) !important;
+    }
+  }
+
+  .fa-info::before {
+    color: @MDB-dark-grey;
+    font-size:0.8em;
+  }
+
+  .annotated.is-selected {
+    border: 1px solid @MDB-orange;
+  }
+
+  .annotated > .annotated {
+      border-bottom: 1px solid @MDB-dark-grey;
+      padding: 0;
+  }
+
+  .annotated > .annotated > .annotated{
+    border-bottom: 1px solid @MDB-darker-grey;
+    padding: 0;
+  }
+
+
+  .annotated.has-definition {
+    color: @MDB-black !important;
+    background: rgba(247,247,7,0.4);
+  }
+
+  .loading-window {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background: white;
+      z-index: 999;
+
+      font-size: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .picker {
+      cursor: pointer;
+      font-size:1em;
+  }
+
+  .picker:hover {
+      color: @MDB-green;
+  }
+
+  .annotated > .annotated > .annotated .picker {
+    border-color: @MDB-grey;
+    bottom: -2px;
+    &:hover {
+      border-color: @MDB-dark-blue;
+    }
+  }
+
+  .tabs {
+    .tab-content {
+    border: 1px solid #d8d9d8;
+    overflow-x: auto;
+    overflow-y: hidden;
+    }
+    .css-tabs1 {
+      min-width:75px !important;  // tabs for onologies can ben mor narrow than normal tabs (100px)
+
+//      margin: 20px 20px !important;
+        &.is-active > a {
+          background: @MDB-blue !important;
+          color: red !important;
+        }
+
+    }
+  }
+
+  .annotator-table {
+    .actions-col {
+      //min-width: 120px;
+    }
+    i.is-selected {
+      background: @MDB-orange;
+      border: 1px solid @MDB-orange;
+    }
+
+    tr.is-active {
+      border: 1px solid @MDB-blue !important;
+      background: @MDB-blue !important;
+      color: white;
+    }
+  }
+}
+
+.ncbo-tree-widget {
+  border: 1px solid @MDB-black;
+  color: @MDB-black;
+  position: fixed;
+  right: -500px;
+  transition: right 0.3s ease;
+  top: 0;
+  z-index: @zindex-ncbo-tree-flyout;
+  background: @MDB-darker-grey;
+  bottom: 0;
+  padding: 15px 10px;
+  box-shadow: 0 0 6px 3px @MDB-black;
+  .btn {
+    margin-right: 1px;
+    &:hover {
+      background-color: @MDB-white;
+      color: @MDB-black;
+    }
+  }
+  .ncboAutocomplete {
+    color: @MDB-black;
+  }
+  .ncbotree-definition {
+    max-width: 400px;
+    white-space: normal;
+    padding: 5px;
+  }
+  #ncbo_select_ontology {
+    display: flex;
+  }
+
+  .close {
+    color: white;
+    height: 100%;
+    width: 9px;
+    float: left;
+    margin-left: -15px;
+    position: relative;
+    top: 50%;
+  }
+  .jsonSuggest {
+    font-size: 1.4em;
+  }
+  .css-label1,
+  .css-headline2 {
+    color: @MDB-lighter-grey;
+    padding-top: 10px;
+  }
+  .css-bg-lighter-grey {
+    font-size: 1.2em;
+    height: 75px;
+    width: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .css-label1-link {
+    background: @MDB-light-grey;
+    width: 350px;
+  }
+  ul.ncboTree {
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: @MDB-light-grey;
+  }
+
+  &.open {
+    right: 0 !important;
+  }
+  .root > ul {
+    background: transparent;
+  }
+}
+
+body.modal-open {
+  .ncbo-tree-widget {
+    right: -1000px;
+
+    &.open {
+      right: -480px !important;
+    }
+  }
+}
+
+.ac_results {
+  background: @MDB-white;
+  border: 1px solid @MDB-dark-grey;
+  ul {
+    list-style-position: inside;
+    list-style-type: none;
+    padding-left: 0;
+    .ac_results_info .item:hover {
+      color: @MDB-dark-blue;
+    }
+    .ac_results_info .definition {
+      color: @MDB-dark-grey;
+    }
+  }
+}

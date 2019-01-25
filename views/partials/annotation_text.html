@@ -1,0 +1,164 @@
+<div class="mdb_document" layout="row">
+
+    <!-- Top row -->
+    <div class="top_panel container-fluid"></div>
+
+    <!-- Left column fixed width -->
+    <div class="left_main_panel">
+
+       <div class="container-fluid">
+
+                <div style="display: inline-flex;">
+                    <h1>Text Annotation (sand alone demo)
+                        <small>(Demo)</small>
+                    </h1>
+                </div>
+
+                <br><br>
+
+                <form name="forms.annotateText">
+
+                    <!--<div layout="row" id="autoAnnotate" mw-annotator="{}" annotator-permissions="{user: currentUser}" annotator-plugins="[{name: 'Websocket', options: wsOptions}]">-->
+                    <!--<div layout="row" id="autoAnnotate" mw-annotator="{}" annotator-permissions="{user: currentUser}" annotator-plugins="[]">-->
+                    <div layout="row" id="autoAnnotate">
+
+                            <!--<textarea id="text" ng-model="annotationForm.text" maxlength="500" style="height: 100px"></textarea>-->
+                            <div contenteditable="true" id="divtextarea" style="height: 200px"></div>
+
+
+                        <tags-input ng-model="ontologytags"
+                                    display-property="name"
+                                    placeholder="Type to get suggestions for ontologies or leave blank to use all  "
+                                    replace-spaces-with-dashes="false">
+                            <auto-complete source="loadOntologyTags($query)"
+                                           min-length="0"
+                                           load-on-focus="true"
+                                           load-on-empty="true"
+                                           max-results-to-show="1000"></auto-complete>
+                        </tags-input>
+
+                        <div class="col-sm-12 container-fluid">
+                            <div class="col-sm-5 container-fluid">
+                                <p>
+                                    <input name="longest_only" id="longest_only" ng-model="annotationForm.longest_only" value="false" type="checkbox" style="width: 20px;">
+                                    <label for="longest_only">Match Longest Only</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </p>
+                                <p>
+                                    <input name="mappings" id="mappings_all" ng-model="annotationForm.mappings_all" value="false" type="checkbox" style="width: 20px;">
+                                    <label for="mappings_all">Include Mappings</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </p>
+                            </div>
+                            <div class="col-sm-7 container-fluid">
+                                <p>
+                                    <input name="exclude_numbers" id="exclude_numbers" ng-model="annotationForm.exclude_numbers" value="false" type="checkbox" style="width: 20px;">
+                                    <label for="exclude_numbers">Exclude Numbers</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </p>
+                                <p>
+                                    <input name="exclude_synonyms" id="exclude_synonyms" ng-model="annotationForm.exclude_synonyms" value="false" type="checkbox" style="width: 20px;">
+                                    <label for="exclude_synonyms">Exclude Synonyms</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 container-fluid" ng-if="$root.developers.indexOf(currentUser) > -1">
+                            <div class="col-sm-5 container-fluid">
+                                <p>
+                                    <input name="whole_word_only" id="whole_word_only" ng-model="annotationForm.whole_word_only" value="true" type="checkbox" style="width: 20px; padding-top: 4px">
+                                    <label for="whole_word_only">Whole words only</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </p>
+                            </div>
+                            <div class="col-sm-7 container-fluid">
+                                <p style="padding-top: 8px;">
+                                    <b>Include Ancestors Up To Level:</b>
+                                    <select name="class_hierarchy_max_level" id="class_hierarchy_max_level" ng-model="annotationForm.class_hierarchy_max_level" style="width: 100px;"><option selected="selected" value="3">3</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="999">All</option></select>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12" style="text-align: center;">
+
+                            <br>
+
+                            <button class="btn btn-primary" ng-click="setTestValues()" style="width: 20%">Example text</button> &nbsp;&nbsp;
+                            <button class="btn btn-primary" ng-click="setDefault()" style="width: 20%">Clear</button> &nbsp;&nbsp;
+                            <button class="btn btn-primary"
+                                    id="annotationLoadingButton"
+                                    ng-click="checkAnnotations()"
+                                    style="width: 50%"
+                                    data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Loading...">Annotate!</button>
+
+
+
+                            <!--<br><br>
+
+                            <div class="annotator-autoadder" style="top: 17px;left: 179px;">
+                                <button class="btn btn-primary" style="width: 100%">Annotator Autoadder function</button>
+                            </div>-->
+
+                        </div>
+
+                        <div class="col-sm-12" style="text-align: center;" ng-if="$root.developers.indexOf(currentUser) > -1">
+                            <br>
+                            <button class="btn btn-primary" ng-click="setTestText()" style="width: 40%">setTestText</button>
+                            <button class="btn btn-primary" ng-click="setTestHTML()" style="width: 40%">setTestHTML</button>
+                        </div>
+                        <div class="col-sm-12" ng-if="$root.developers.indexOf(currentUser) > -1">
+                            <br>
+                            <pre>{{distinctannotationlist|json}}</pre>
+                        </div>
+
+                    </div>
+
+                </form>
+
+        </div>
+    </div>
+
+    <!-- Main column -->
+    <div class="right_main_panel container-fluid">
+
+        <h1>Annotations:</h1>
+
+        <div style="height: 100%">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" style="height: 50%">
+                <br>
+                <div ui-grid="gridOptions" ui-grid-selection ui-grid-auto-resize ui-grid-resize-columns ui-grid-move-columns class="grid"></div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" style="height: 50%">
+                <div class="">Definition</div>
+                <div id="modaldivdefinition" style="height: 400px">{{lastSelectedRow.definition}}</div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="$root.developers.indexOf(currentUser) > -1">
+                <pre>node {{node | json}}</pre>
+                <pre>$scope.autoannotations {{autoannotations | json}}</pre>
+                <pre>$scope.config {{config | json}}</pre>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+

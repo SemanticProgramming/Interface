@@ -1,0 +1,116 @@
+<div class="mdb_document">
+
+    <!-- Top row -->
+    <div class="top_panel container-fluid"></div>
+
+    <!-- Left column fixed width -->
+    <div class="left_main_panel">
+        <div class="container-fluid">
+            <br>
+            <div ng-show="loggedIn">
+
+                <div class="col-md-12" style="display: flex; padding-left: 0px;">
+
+                    <a href="/" class="btn btn-default" style="min-width: 2em; margin-right: 10px;">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                    </a>
+
+                    <form name='forms.mdbEntry' id='MY_DUMMY_SPECIMEN_0000000001'>
+                        <button type='submit' class='btn btn-default btn-block'
+                                title="Create a new specimen entry"
+                                id='SC_MDB_BASIC_0000000814'
+                                ng-click='submit("MY_DUMMY_SPECIMEN_0000000001", forms.mdbEntry, "SC_MDB_BASIC_0000000814")'
+                                data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Loading...">
+                            Create a new MDB specimen entry
+                        </button>
+                    </form>
+
+                    <a class="btn btn-default" title="List all MDB specimen entries." href="/mdb_entry_list/s"
+                       ng-disabled="mdbCreateBtnSubmitting" id='MDB_DATASCHEME_entrylist' style="margin-left:10px">
+                           Browse MDB specimen entries
+                    </a>
+
+<!--                    <div id="mdboverlayid" class="modal fade" data-backdrop="static" data-keyboard="false">
+                        <mdb-overlay mdboverlay="mdboverlay"></mdb-overlay>
+                    </div>-->
+
+                </div>
+
+                <div id="loadingExcuse" class="col-sm-12 css-headline2">Please wait while loading, which can take a moment.</div>
+
+            </div>
+
+
+            <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+            <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1 || $rootScope.moreInfo.indexOf(currentUser) > -1" style="margin: 3px;">
+                <br><br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Session Info</h3>
+                        <div style="width:100%">
+                            <pre>Session Info = {{Authservice.sesInfo | json}}</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Angular Cookies</h3>
+                        <div style="width:100%">
+                            <pre>Angular Cookies = {{cookies | json}}</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin: 3px;">
+                    <pre>knownResA = {{cookies[keywordKnownResourceA] | json}}</pre>
+                    <pre>knownResB = {{cookies[keywordKnownResourceB] | json}}</pre>
+                    <pre>connect.sid = {{cookies["connect.sid"] | json}}</pre>
+                    <pre>WsService.connectSID = {{WsService.connectSID | json}}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main column -->
+    <div class="right_main_panel container-fluid">
+        <div ng-hide="loggedIn">
+            <h2>Please log in to create a new entry.</h2>
+        </div>
+
+
+        <div ng-show="loggedIn">
+            <h2>Please use temporary navigation on the left.</h2>
+        </div>
+
+        <br>
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1" style="margin: 3px;">
+            <div class="row container-fluid">
+                <div class="col-sm-6" style="padding-left: 0; padding-right: 5px;">
+                    <pre>WsService.sent[0] = {{WsService.sent[0] | json}}</pre>
+                </div>
+                <div class="col-sm-6" style="padding-left: 5px; padding-right: 0;">
+                    <pre>WsService.response[0] = {{WsService.response[0] | json}}</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Info -->
+
+        <div ng-if="$root.moreinfo.indexOf(currentUser) > -1">
+            <br><br>
+
+            <h1>Development Information</h1>
+
+            <div class="row" style="margin: 3px;">
+                <pre>Last message to websocket: = {{WsService.sent | json}}</pre>
+                <pre>Last message from websocket: = {{WsService.response | json}}</pre>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

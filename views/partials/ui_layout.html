@@ -1,0 +1,57 @@
+<div class="mdb_document">
+
+    <!-- Left column fixed width -->
+    <div class="left_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <div ui-layout="{ flow : 'row' }">
+                <div ui-layout-container collapsed="true">Oben</div>
+
+                <div ui-layout-container collapsed="layout.mycontainer">Unten</div>
+
+                <br>
+                <h2>layout
+                    <small>(debugging)</small>
+                </h2>
+                <div style="padding: 10px">
+                    <pre style="vertical-align: top; width:90%; height: 50px;">loggedIn = {{loggedIn | json}}</pre>
+                    <pre style="vertical-align: top; width:90%; height: 50px;">currentUser = {{currentUser | json}}</pre>
+                    <pre style="vertical-align: top; width:90%; height: 200px;">Angular Cookies = {{cookies | json}}</pre>
+                    <pre style="vertical-align: top; width:90%; height: 200px;">WsService.sent[0] = {{WsService.sent[0] | json}}</pre>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main column -->
+    <div class="right_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <br>
+
+            <div ng-hide="loggedIn">
+                <h2>You are not logged</h2>
+            </div>
+            <div ng-show="loggedIn">
+
+
+            </div>
+
+            <div ui-layout="{ flow : 'column' }">
+                <div ui-layout-container collapsed="layout.li" size="550px" min-size="0px" style="background-color: #ffff00;">Links</div>
+                <div ui-layout-container collapsed="layout.re" size="550px" min-size="0px" style="background-color: yellowgreen;">Rechts</div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+

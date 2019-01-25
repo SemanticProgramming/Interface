@@ -1,0 +1,379 @@
+<div uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" class="alert alert-{{alert.type}}"
+     dismiss-on-timeout=5000
+     close="closeAlert($index)">
+    <!----> <!--ng-mouseover="stopClose($index)" ng-mouseleave="leaveAlert($index)">-->
+    <div class="alert-content">
+        <div class="alert-icon"><span class="glyphicon glyphicon-bell"></span></div>
+        <!-- <div class="alert-type">{{alert.type}}</div> -->
+        <div class="alert-message">{{alert.msg}}</div>
+    </div>
+</div>
+
+<div ng-show="doc_loading" class="overlay-spinner">
+    <div id="spinningLoader" class="loader no-animate"></div>
+</div>
+
+<a class="navbar-brand active" href="/"><img id="logo" alt="Morph*D*Base" src="/img/logo.png"></a>
+
+<!-- search bar widget -->
+<div id="searchbar" class="mdb-searchbar">
+    <ul>
+        <div class="dropdown">
+            <button class="mdb-searchbar-left-dropdown css-bg-color-current-published dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span class="css-icon-current-published-icon mdb-searchbar-icon" title="Search for published entries">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                    <span class="path3"></span>
+                </span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu mdb-searchbar-icon-ul">
+
+                <li class="mdb-searchbar-icon-list css-bg-color-current-published">
+                    <a href="#" style="height: 22px">
+                           <span class="css-icon-current-published-icon mdb-searchbar-icon" title="Search for current published entries">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                           </span>
+                    </a>
+                </li>
+
+                <li class="mdb-searchbar-icon-list css-bg-color-previously-published">
+                    <a href="#" style="height: 22px">
+                           <span class="css-icon-previously-published-icon mdb-searchbar-icon" title="Search for previously published entries">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                           </span>
+                    </a>
+                </li>
+
+                <li class="mdb-searchbar-icon-list css-bg-color-current-draft">
+                    <a href="#" style="height: 22px">
+                           <span class="css-icon-current-draft-icon mdb-searchbar-icon" title="Search for current draft entries">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                           </span>
+                    </a>
+                </li>
+
+                <li class="mdb-searchbar-icon-list css-bg-color-saved-draft">
+                    <a href="#" style="height: 22px">
+                           <span class="css-icon-saved-draft-icon mdb-searchbar-icon" title="Search for saved draft entries">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                           </span>
+                    </a>
+                </li>
+
+                <li class="mdb-searchbar-icon-list css-bg-color-bin-draft">
+                    <a href="#" style="height: 22px">
+                           <span class="css-icon-bin-draft-icon mdb-searchbar-icon" title="Search for bin draft entries">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                                <span class="path4"></span>
+                           </span>
+                    </a>
+                </li>
+
+                <li class="mdb-searchbar-icon-list css-bg-color-deleted-draft">
+                    <a href="#" style="height: 22px">
+                           <span class="css-icon-deleted-draft-icon mdb-searchbar-icon" title="Search for deleted draft entries">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                           </span>
+                    </a>
+                </li>
+
+               <!-- <li class="mdb-searchbar-icon-list css-bg-color-user-entry">
+                    <a href="#" style="height: 22px">
+                           <span class="css-icon-user-icon mdb-searchbar-icon" title="Search for user entries">
+                                <span class="path1"></span>
+                           </span>
+                    </a>
+                </li>-->
+
+            </ul>
+        </div>
+    </ul>
+
+    <input class="mdb-searchbar-input" type="text">
+
+    <div class="mdb-searchbar-right-dropdown">
+        <span class="css-icon-literature-icon mdb-icon"></span>
+        <span class="css-label4">Literature</span>
+        <b class="caret"></b>
+    </div>
+
+</div>
+
+<div id="navigation-personal-area" class="mdb-navbar navbar-collapse navbar-right" ng-class="isCollapsed ? 'collapse' : 'in'">
+    <ul class="nav navbar-nav">
+
+        <li ng-show="loggedIn" class="dropdown create-dropdown" uib-dropdown is-open="createMenueStatus.isopen">
+            <a href uib-dropdown-toggle>
+                <span title="Create a new entry.">MDB Entries</span>
+                <span class="glyphicon glyphicon-triangle-bottom"></span>
+            </a>
+            <div uib-dropdown-menu>
+                <form name='forms.mdbCreate' id='MY_DUMMY_MDB_0000000007'>
+                    <a type='submit' class='btn btn-link' title="Create a new specimen entry."
+                            ng-disabled="{{mdbCreateBtnSubmitting}}" id='SC_MDB_BASIC_0000000814'
+                            ng-click='submitCreate("MY_DUMMY_SPECIMEN_0000000001", forms.mdbCreate, "SC_MDB_BASIC_0000000814")'
+                            data-loading-text="<i class='css-icon-specimen-icon'></i><i class='fa fa-circle-o-notch fa-spin btn'></i> Loading...">
+                        <i class='css-icon-specimen-icon'></i>  Create Specimen Entry
+                    </a><br>
+                    <!--<a type='submit' class='btn btn-link' title="Taxon entries are not yet available."
+                            disabled id='MDB_DATASCHEME_tax' ng-click=''
+                            data-loading-text="<i class='css-icon-taxon-icon'><i class='fa fa-circle-o-notch fa-spin btn'></i> Loading...">
+                        <i class='css-icon-taxon-icon'></i> create taxon entry
+                    </a><br>-->
+                    <a type='submit' class='btn btn-link' title="Media entries are not yet available."
+                            disabled id='MDB_DATASCHEME_med' ng-click=''
+                            data-loading-text="<i class='css-icon-media-icon'></i><i class='fa fa-circle-o-notch fa-spin btn'></i> Loading...">
+                        <i class='css-icon-media-icon'></i>  Create Media Entry
+                    </a><br>
+                    <a type='submit' class='btn btn-link' title="Create a new morphological description entry."
+                            ng-disabled="mdbCreateBtnSubmitting" id='SC_MDB_BASIC_0000000659'
+                            ng-click='submitCreate("MY_DUMMY_DESCRIPTION_0000000001", forms.mdbCreate, "SC_MDB_BASIC_0000000659")'
+                            data-loading-text="<i class='css-icon-morphological-description-icon'></i><i class='fa fa-circle-o-notch fa-spin btn'></i> Loading...">
+                        <i class='css-icon-morphological-description-icon'></i>  Create Morphological Description Entry
+                    </a><br>
+                    <!--<a type='submit' class='btn btn-link' title="Taxonomical description entries are not yet available."
+                            disabled id='MDB_DATASCHEME_tax_des' ng-click=''
+                            data-loading-text="<i class='css-icon-taxonomical-description-icon'><i class='fa fa-circle-o-notch fa-spin btn'></i> Loading...">
+                        <i class='css-icon-taxonomical-description-icon'></i> create taxonomical description entry
+                    </a><br>-->
+
+                    <hr style="margin: 20px;">
+
+                    <a class="btn btn-link" title="List all MDB entries." href="/mdb_entry_list/all"
+                       ng-disabled="mdbCreateBtnSubmitting" id='MDB_DATASCHEME_entrylist'>
+                    <i class='css-icon-specimen-icon'></i> <i class='css-icon-morphological-description-icon'></i>
+                          Browse Entries
+                    </a>
+                </form>
+            </div>
+
+        </li>
+        <li class="dropdown auth-dropdown" uib-dropdown is-open="authMenueStatus.isopen"> <!--uib-dropdown - transforms a node into a dropdown-->
+            <a href uib-dropdown-toggle>  <!--uib-dropdown-toggle - allows the dropdown to be toggled via click. (optional)-->
+                <img ng-show="loggedIn" class="img img-circle"
+                     src="https://pbs.twimg.com/profile_images/1508599905/image.jpg">
+                <span ng-show="loggedIn" title="{{currentUser}}"> My MDB</span>
+                <span ng-hide="loggedIn" title="Log in or create a new account."> Log in or sign up</span>
+                <span class="glyphicon glyphicon-triangle-bottom"></span>
+            </a>
+
+            <div uib-dropdown-menu>  <!--uib-dropdown-menu - transforms a node into the popup menu.-->
+                <div ng-show="loggedIn">
+                    <!--LOGOUT-------------------------------------------------------------------------------------------------------------------------------------->
+
+                    <form name='forms.mdbEntry' id='MY_DUMMY_MDB_0000000001'>
+                        <div class="who-am-i" id="dropdown-who-am-i">
+                            <span>You are logged in as:<br>
+                                {{currentUser}}
+                            </span>
+                        </div>
+
+                        <!-- UNDER CONSTRUCTION -->
+                        <a href="/user" class="btn btn-link" id='SC_BASIC_0000000134'
+                           ng-click='gotoMyMDB("MY_DUMMY_MDB_0000000001", forms.mdbEntry, "SC_BASIC_0000000134")'>
+                            My Mdb Profile
+                        </a>
+
+                        <br>
+                        <a href="/index" title="Home" class="btn btn-link">Start Page</a>
+                        <br>
+                        <a href="/privacy_policy" class="btn btn-link">Privacy Policy</a>
+                        <br>
+                        <a href="/impressum" class="btn btn-link">Impressum</a>
+                        <br><br>
+                        <a href="/index" ng-click='logout()' id="SC_BASIC_0000000136" class="btn css-labeled-btn">Logout</a>
+
+
+                        <div ng-if="$root.developers.indexOf(currentUser) > -1">
+
+                            <br><hr><br>
+
+
+                            <a href="/admin" class="btn css-labeled-btn" id='SC_BASIC_0000000192'
+                               ng-click='gotoMyMDB("MY_DUMMY_ADMIN_0000000001", forms.mdbEntry, "SC_BASIC_0000000192")'>
+                                Go to admin page
+                            </a>
+                            <br><br>
+
+                            <a href="/annotation_text" class="btn btn-link" >Annotation Text</a>
+                            <br>
+                            <a href="/annotation_image" class="btn btn-link" >Annotation Image</a>
+                            <br>
+                            <a href="/annotation_partonomy" class="btn btn-link" >Annotation Partonomy</a>
+                            <br>
+                            <a href="/morphdescription" class="btn btn-link" >Morphological Description</a>
+                            <br>
+                            <a href="/annotation" class="btn btn-link" >Annotation Test</a>
+                            <br>
+                            <a href="/messages" class="btn btn-link" >Messages</a>
+                            <br>
+                            <a href="/usergroups" class="btn btn-link" >User Groups</a>
+                            <br>
+                            <a href="/websocket" class="btn btn-link" >Websocket Test</a>
+                            <br>
+                            <a href="/formtest" class="btn btn-link" >Form Test</a>
+                            <br>
+                            <a href="/ui_layout" class="btn btn-link" >Layout Test</a>
+                            <br>
+                            <a href="/johnsmith" class="btn btn-link" >John Smith</a>
+                            <br>
+                            <a href="/mdb_page" class="btn btn-link" >Test Page</a>
+                            <br>
+                            <a href="/annotation_parto" class="btn btn-link" >Test Partonomy</a>
+                        </div>
+                    </form>
+
+                </div>
+                <!------------------ LOGGED------------------------------------------------------------------------------------------------------------------------------------------>
+                <div ng-hide="loggedIn" style="text-align: center">
+                    <!--LOGIN & REGISTER---------------------------------------------------------------------------------------------------------------------------->
+
+                    <mdb-authentication-form formname='mdbAuthPanel[0].load_page_localID'
+                                             formlabel='mdbAuthPanel[0].mdbForm_label'
+                                             formitems='mdbAuthPanel[0]'>
+                    </mdb-authentication-form>
+
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="/privacy_policy" title="Imprint/Legals">Privacy Policy</a>
+        </li>
+        <li>
+            <a href="/impressum" title="Imprint/Legals">Impressum</a>
+        </li>
+        <li id="navigation-buttons" class="navigation-buttons">
+            <a ng-show="loggedIn" href="/index" ng-click='logout()' title="Log out to end current session">
+                <span class="css-icon-logout-icon"></span>
+            </a>
+            <a href="/help" title="See our wiki for more information">
+                <span class="css-icon-help-icon"><span class="path1"></span><span class="path2"></span><span
+                        class="path3"></span></span>
+            </a>
+            <a ng-show="loggedIn && isCollapsed" ng-click="toggleNotificationMenu()" id="toggle-notification-history">
+                <span class="glyphicon glyphicon-bell" title="Show last 5 notification"></span>
+            </a>
+            <a ng-hide="loggedIn">
+                <span id="toggle-notification-history-disabled" class="glyphicon glyphicon-bell" title="Show previous notification (you need to be logged in)"></span>
+            </a>
+            <a ng-if="WsService.isConnected" href="/websocket"
+               title="Websocket connected. Click to send SPARQL query direct to SPARQL endpoint. This is a test feature during development. "
+               data-toggle="tooltip">
+                <div class="led led-green"></div>
+            </a>
+            <a ng-if="!WsService.isConnected" href="/websocket"
+               title="Websocket not connected. Without a connection you can not use this application. If the application does not reconnect within one minute, the websocket is probably down. Click to get more information."
+               data-toggle="tooltip">
+                <div class="led led-red"></div>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+<!-- button to toggle navbar on small devices -->
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" title="toggle menue">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+
+<div class="notification-menu" ng-show="notificationMenuOpen">
+    <div class="notifications-wrapper" ng-repeat="notification in storedNotifications | orderBy:'-'">
+        <div class="notification-item notification-{{notification.type}} row">
+            <div class="col-md-1 nicon">
+                <span class="glyphicon glyphicon-bell"></span>
+            </div>
+            <div class="col-md-8 nmessage">
+                {{notification.message}}
+            </div>
+            <div class="col-md-3 ndate">
+                {{notification.timestamp | date: "dd. MMM yyyy HH:mm"}}
+            </div>
+        </div>
+    </div>
+
+    <!-- if there are no notifications -->
+    <div class="notifications-wrapper" ng-if="storedNotifications.length == 0">
+        <div class="notification-item notification-{{notification.type}} row">
+            <div class="col-md-1 nicon">
+                <span class="glyphicon glyphicon-bell"></span>
+            </div>
+            <div class="col-md-8 nmessage">
+                No Notifications found.
+            </div>
+            <div class="col-md-3 ndate">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MDB Overlay -->
+<div id="mdboverlayid" class="modal fade" data-backdrop="static" data-keyboard="false">
+    <mdb-overlay mdboverlay="mdboverlay"></mdb-overlay>
+</div>
+
+
+<!-- MDB Search Overlay -->
+<div ng-if="currentUser == 'sandra@mdb.de'"><!--$root.developers.indexOf(currentUser) > -1">-->
+    <div class="mdb-search-overlay" ng-class="{in: searchOverlayOpened}">
+
+        <div style="width: 100%; height: 100%; display: flex">
+
+            <div style="width: 22px"> <!--class="col-xs-1">--> <!-- required for floating -->
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-left">
+                    <li ng-click="showMDBEntryList()"><a href="#search" data-toggle="tab">Search</a></li>
+                    <li class="disabled"><a>Taxonomy</a></li> <!--<a href="#taxonomy" data-toggle="tab">Taxonomy</a></li>-->
+                    <li class="disabled"><a>Ontology terms</a></li> <!--<a href="#messages" data-toggle="tab">Ontology terms</a></li>-->
+                    <li class="disabled"><a>Grid edit</a></li> <!--<a href="#gridedit" data-toggle="tab">Grid edit</a></li>-->
+                    <li class="disabled"><a></a></li><!--<a href="#blanko" data-toggle="tab"></a></li>-->
+                </ul>
+            </div>
+
+            <div style="width: 16px; display: flex;" onclick="window.soverlay()">
+                <div style="width: 2px; background: black"></div><div style="width: 2px; background: #525252"></div>
+                <div style="width: 2px; background: black"></div><div style="width: 2px; background: #525252"></div>
+                <div style="width: 2px; background: black"></div><div style="width: 2px; background: #525252"></div>
+            </div>
+            <div style="flex: 1; background: white;"> <!--class="col-xs-11" >-->
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="search"><mdb-entry-list></mdb-entry-list></div>
+                    <div class="tab-pane" id="taxonomy">Taxonomy Tab.</div>
+                    <div class="tab-pane" id="gridedit">Grid edit Tab.</div>
+                    <div class="tab-pane" id="blanko"></div>
+                </div>
+            </div>
+
+            <div class="overlay-close-btn">
+                <span class="glyphicon glyphicon-remove" onclick="window.soverlay()"></span>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- remove this later, only for testing -->
+<script>
+    window.soverlay = function() {
+        let $scope = angular.element(".mdb-search-overlay").scope();
+        $scope.searchOverlayOpened = !($scope.searchOverlayOpened || false);
+        $scope.$apply()
+
+    }
+</script>

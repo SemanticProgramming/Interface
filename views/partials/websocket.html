@@ -1,0 +1,119 @@
+<div class="mdb_document">
+
+    <!-- Left column fixed width -->
+    <div class="left_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div style="padding: 10px" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <h2>Test page
+                <small>(debugging)</small>
+            </h2>
+            <br>
+
+            <div><!-- ng-show="loggedIn">-->
+                    <div>
+                        <pre style="vertical-align: top; width:99%; height: 50px;">loggedIn = {{loggedIn | json}}</pre>
+                        <pre style="vertical-align: top; width:99%; height: 50px;">currentUser = {{currentUser | json}}</pre>
+                        <pre style="vertical-align: top; width:99%; height: 150px;">Angular Cookies = {{cookies | json}}</pre>
+                    </div>
+                    <div>
+                        <pre>WsService.sent[0] = {{WsService.sent[0] | json}}</pre>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main column -->
+    <div class="right_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <div>
+            <br>
+            <ng-form name="queryForm">
+                <div layout="column" style="padding: 10px; background-color: #999999">
+                    <div layout="row">
+                        <div style="width: 150px">
+                            <label for="queryinputData">Query:</label>
+                        </div>
+                        <div>
+                            <textarea ng-model="query.sparql" id="queryinputData" rows="9" cols="50"
+                                      style="vertical-align: top; width: 100%; height: 230px;"></textarea>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div layout="row" style="width: 100%" class="well">
+                        <label>SPARQL Querys (some examples are depricated) :</label><br>
+                        <button ng-click="setSparql(defaultPConstructQuery)" style="width: 23%">Set Construct SPARQL Query ?p</button>
+                        <button ng-click="setSparql(defaultConstructQuery)" style="width: 26%">Set Construct SPARQL Query rdf:type</button>
+                        <button ng-click="setSparql(defaultSelectCountSpecimenQuery)" style="width: 26%">Set Select Specimen SPARQL Query</button>
+                        <button ng-click="setSparql(defaultUserQuery)" style="width: 23%">Set Default User SPARQL Query</button>
+                        <br>
+                        <label for="inputFormat" style="display:inline">Select Output Format:</label>
+                        <!-- Choose output format for the SPARQL-Query -->
+                        <select id="inputFormat" ng-model="query.format" value="JSONLD">
+                            <option value="JSONLD">JSON-LD</option>
+                            <option value="RDF/XML">RDF/XML</option>
+                            <option value="TURTLE">TURTLE</option>
+                            <option value="N-TRIPLES">N-TRIPLES</option>
+                            <option value="RDF/XML-ABBREV">RDF/XML-ABBREV</option>
+                            <option value="RDFJSON">RDF/JSON</option>
+                        </select>
+                        <br>
+                        <button ng-click="sendSparql()" style="width: 100%">Send SPARQL to mdb_core_workspace</button>
+                        <br>
+                        <button ng-click="sendSparqlToAdmin()" style="width: 100%">Send SPARQL to mdb_admin_workspace</button>
+                        <br>
+                        <button ng-click="sendSparqlToOntology()" style="width: 100%">Send SPARQL to MDB_ontology_workspace</button>
+                        <br>
+                        <button ng-click="sendSparqlToDraft()" style="width: 100%">Send SPARQL to mdb_draft_workspace</button>
+                        <br>
+                        <button ng-click="sendSparqlToPublish()" style="width: 100%">Send SPARQL to mdb_published_workspace</button>
+                        <br>
+                        <button ng-click="sendSparqlToExOntologies()" style="width: 100%">Send SPARQL to external_ontologies directory</button>
+                    </div>
+                    <div layout="row" style="width: 100%" class="well">
+                        <label>General Querys:</label><br>
+                        <button ng-click="setSparql(registerDocumentQuery)" style="width: 24%">Set RegisterPanel Query</button>
+                        <button ng-click="setSparql(loginDocumentQuery)" style="width: 24%">Set LoginPanel Query</button>
+                        <button ng-click="setSparql(signUpUserQuery)" style="width: 24%">Set SignUp User Query</button>
+                        <button ng-click="setSparql(fixLogout)" style="width: 24%">Set Fix Logout Query</button>
+                        <br><br>
+                        <button ng-click="sendQuery()" style="width: 100%">Send Query</button>
+                    </div>
+
+                    <div layout="row">
+                        <div style="width: 100%">
+                            <label for="outputData" style="display:inline">Jena TDB Output:</label>
+                        </div>
+                        <div>
+                            <textarea ng-model="WsService.response[0].output_message" id="outputData" rows="5" cols="50"
+                                      style="vertical-align: top; width: 100%; height: 100px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </ng-form>
+            <br>
+
+            <div layout="row" style="width: 100%">
+                <div style="width: 100%">
+                    <pre>WsService.response[0].connectSID = {{WsService.response[0].connectSID | json}}</pre>
+                </div>
+                <div style="width: 100%">
+                    <pre>WsService.response[0].load_page_localID = {{WsService.response[0].load_page_localID | json}}</pre>
+                </div>
+                <div style="width: 100%">
+                    <pre>WsService.response[0].data = {{WsService.response[0].data | json}}</pre>
+                </div>
+                <div style="width: 100%">
+                    <pre>WsService = {{WsService | json}}</pre>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>

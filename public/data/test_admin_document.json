@@ -1,0 +1,173 @@
+{
+  "connectSID": "s:42-HALLOHIERALARMEINS1ELF-TTESTT.SANDRASGANZPERSOENLICHEMDBPROTOTYPSESSIONID",
+  "mdbueid": "fd30a6da",
+  "http://www.soccomas.org/Ontologies/SOCCOMAS/SprO#SPRO_0000000148": "http://www.morphdbase.de/resource/fd30a6da#SC_BASIC_0000001483_84",
+  "http://www.soccomas.org/Ontologies/SOCCOMAS/SprO#SPRO_0000000321": "http://www.morphdbase.de/resource/fd30a6da#TimeInterval_84",
+  "data": [
+    {
+      "SPRO_0000000111": "1",
+      "SPRO_0000000069": [
+        {
+          "SPRO_0000000111": "1",
+          "SPRO_0000000069": [
+            {
+              "SPRO_0000000111": "1",
+              "SPRO_0000000080": "Admin Page",
+              "localID": "MDB_DATASCHEME_0000002328",
+              "SPRO_0000000414": "MDB_DATASCHEME_0000002299",
+              "SPRO_0000000999": "SC_BASIC_0000001183"
+            }
+          ],
+          "localID": "MDB_DATASCHEME_0000002299",
+          "SPRO_0000000414": "MDB_DATASCHEME_0000002293",
+          "SPRO_0000000999": "SC_BASIC_0000001173"
+        },
+        {
+          "SPRO_0000000186": "true",
+          "SPRO_0000000111": "2",
+          "SPRO_0000000069": [
+            {
+              "SPRO_0000000111": "1",
+              "SPRO_0000000069": [
+                {
+                  "SPRO_0000000111": "1",
+                  "SPRO_0000000791": "SPRO_0000000090",
+                  "localID": "MDB_DATASCHEME_0000002308",
+                  "SPRO_0000000414": "MDB_DATASCHEME_0000002307",
+                  "SPRO_0000000999": "SC_BASIC_0000001079"
+                },
+                {
+                  "SPRO_0000000111": "2",
+                  "SPRO_0000000080": "Default Compositions",
+                  "localID": "MDB_DATASCHEME_0000002326",
+                  "SPRO_0000000414": "MDB_DATASCHEME_0000002307",
+                  "SPRO_0000000999": "SC_BASIC_0000001183"
+                }
+              ],
+              "localID": "MDB_DATASCHEME_0000002307",
+              "SPRO_0000000414": "MDB_DATASCHEME_0000002297",
+              "SPRO_0000000999": "SC_BASIC_0000001136"
+            },
+            {
+              "SPRO_0000000186": "true",
+              "SPRO_0000000111": "2",
+              "SPRO_0000000069": [
+                {
+                  "SPRO_0000000111": "1",
+                  "SPRO_0000000069": [
+                    {
+                      "SPRO_0000000111": "1",
+                      "SPRO_0000000080": "update all default compositions",
+                      "SPRO_0000000791": "SPRO_0000000463",
+                      "localID": "MDB_DATASCHEME_0000002324",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000002305",
+                      "SPRO_0000000999": "SC_BASIC_0000001180"
+                    }
+                  ],
+                  "localID": "MDB_DATASCHEME_0000002305",
+                  "SPRO_0000000414": "MDB_DATASCHEME_0000002295",
+                  "SPRO_0000000999": "SC_BASIC_0000001136"
+                },
+                {
+                  "SPRO_0000000186": "true",
+                  "SPRO_0000000111": "2",
+                  "SPRO_0000000069": [
+                    {
+                      "SPRO_0000000111": "1",
+                      "SPRO_0000000080": "Compositions shared by all data entries",
+                      "localID": "MDB_DATASCHEME_0000002322",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000002303",
+                      "SPRO_0000000999": "SC_BASIC_0000001097"
+                    },
+                    {
+                      "SPRO_0000000186": "true",
+                      "SPRO_0000000111": "2",
+                      "SPRO_0000000920": "true",
+                      "SPRO_0000000080": "update core composition",
+                      "SPRO_0000000791": "SPRO_0000000463",
+                      "localID": "MDB_DATASCHEME_0000002320",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000002303",
+                      "SPRO_0000000999": "SC_BASIC_0000001180"
+                    },
+                    {
+                      "SPRO_0000000111": "3",
+                      "SPRO_0000000080": "update mandatory entry compositions",
+                      "SPRO_0000000791": "SPRO_0000000463",
+                      "localID": "MDB_DATASCHEME_0000002318",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000002303",
+                      "SPRO_0000000999": "SC_BASIC_0000001180"
+                    }
+                  ],
+                  "SPRO_0000000920": "true",
+                  "localID": "MDB_DATASCHEME_0000002303",
+                  "SPRO_0000000414": "MDB_DATASCHEME_0000002295",
+                  "SPRO_0000000999": "SC_BASIC_0000001136"
+                },
+                {
+                  "SPRO_0000000186": "true",
+                  "SPRO_0000000111": "3",
+                  "SPRO_0000000069": [
+                    {
+                      "SPRO_0000000111": "1",
+                      "SPRO_0000000080": "Entry type specific compositions",
+                      "localID": "MDB_DATASCHEME_0000002316",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000002301",
+                      "SPRO_0000000999": "SC_BASIC_0000001097"
+                    },
+                    {
+                      "SPRO_0000000186": "true",
+                      "SPRO_0000000111": "2",
+                      "SPRO_0000000080": "update specimen entry composition",
+                      "SPRO_0000000920": "true",
+                      "SPRO_0000000791": "SPRO_0000000463",
+                      "localID": "MDB_DATASCHEME_0000002314",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000002301",
+                      "SPRO_0000000999": "SC_BASIC_0000001180"
+                    },
+                    {
+                      "SPRO_0000000111": "3",
+                      "SPRO_0000000080": "update morphological description entry composition",
+                      "SPRO_0000000791": "SPRO_0000000463",
+                      "localID": "MDB_DATASCHEME_0000002310",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000002301",
+                      "SPRO_0000000999": "SC_BASIC_0000001180"
+                    },
+                    {
+                      "SPRO_0000000186": "true",
+                      "SPRO_0000000111": "4",
+                      "SPRO_0000000080": "update user entry composition",
+                      "SPRO_0000000920": "true",
+                      "SPRO_0000000791": "SPRO_0000000463",
+                      "localID": "MDB_DATASCHEME_0000002312",
+                      "SPRO_0000000414": "MDB_DATASCHEME_0000002301",
+                      "SPRO_0000000999": "SC_BASIC_0000001180"
+                    }
+                  ],
+                  "SPRO_0000000920": "true",
+                  "localID": "MDB_DATASCHEME_0000002301",
+                  "SPRO_0000000414": "MDB_DATASCHEME_0000002295",
+                  "SPRO_0000000999": "SC_BASIC_0000001136"
+                }
+              ],
+              "SPRO_0000000920": "true",
+              "localID": "MDB_DATASCHEME_0000002295",
+              "SPRO_0000000414": "MDB_DATASCHEME_0000002297",
+              "SPRO_0000000999": "SC_BASIC_0000001136"
+            }
+          ],
+          "SPRO_0000000920": "true",
+          "localID": "MDB_DATASCHEME_0000002297",
+          "SPRO_0000000414": "MDB_DATASCHEME_0000002293",
+          "SPRO_0000000999": "SC_BASIC_0000001173"
+        }
+      ],
+      "localID": "MDB_DATASCHEME_0000002293",
+      "SPRO_0000000999": "SC_BASIC_0000001136"
+    }
+  ],
+  "load_page": "http://www.morphdbase.de/Ontologies/GUIComponent#SC_BASIC_0000001208",
+  "load_page_localID": "Ontologies/GUIComponent#SC_BASIC_0000001208",
+  "html_form": "MY_DUMMY_ADMIN_0000000001",
+  "localID": "SC_BASIC_0000000192",
+  "mdbueid_uri": "http://www.morphdbase.de/resource/fd30a6da"
+}

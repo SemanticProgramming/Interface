@@ -1,0 +1,58 @@
+<div class="mdb_document">
+
+    <!-------------- Left column fixed width -->
+    <div class="left_main_panel container-fluid">
+
+       <!-------------- shown only for developers in $rootScope.developers ---------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+
+            <div ui-layout="{ flow : 'row' }">
+
+                <h2> debugging info</h2>
+
+                <div style="padding: 10px">
+                    <pre style="vertical-align: top; width:90%; height: 50px;">loggedIn = {{loggedIn | json}}</pre>
+                    <pre style="vertical-align: top; width:90%; height: 50px;">currentUser = {{currentUser | json}}</pre>
+                    <pre style="vertical-align: top; width:90%; height: 200px;">Angular Cookies = {{cookies | json}}</pre>
+                    <pre style="vertical-align: top; width:90%; height: 200px;">WsService.sent[0] = {{WsService.sent[0] | json}}</pre>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-------------- Main column------------------------------------------------------>;
+     <div class="right_main_panel container-fluid">
+
+         <!-------------- shown only for developers in $rootScope.developers ------------------------------------------------------>
+         <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+             <br>
+
+             <div ng-hide="loggedIn">
+                 <h2>You are not logged</h2>
+             </div>
+
+             <div ng-show="loggedIn">
+                 <h2>You are logged in as {{currentUser}}.</h2>
+                 <br>
+                 <span class="css-icon-specimen-icon"></span><br>
+                 <span class="mdb-icon icon-specimen-icon"></span><br>
+                 <br>
+                 <span class="css-icon-user-icon">
+                     <span class="path1"></span>
+                 </span><br>
+                 <span class="mdb-icon css-user-icon"></span><br>
+                 <br>
+                 <span class="mdb-icon icon-current-draft-icon"></span><br>
+                 <span class="mdb-icon icon-calendar-icon"></span><br>
+                 <span class="mdb-icon icon-drop-down-list"></span><br>
+
+             </div>
+         </div>
+
+     </div>
+
+ </div>

@@ -1,0 +1,133 @@
+<div class="mdb_document">
+
+    <!-- Left column fixed width -->
+    <div class="left_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <br>
+            <h2>Form test page <small>(debugging)</small> </h2>
+            <br>
+            <div>
+                <div>
+                    <div style="padding: 10px; display: flex; font-size: 12pt; height: 30px">
+                        <input style="height: inherit" ng-model="find.uueid">
+                        <button class="btn btn-default btn-block"  style="height: inherit" ng-click="getUserByUEIDFromDB(find.uueid)">get user by UEID from MongoDB</button>
+                    </div>
+                    <br><br>
+                    <div style="padding: 10px; display: flex; font-size: 12pt; height: 30px">
+                        <input style="height: inherit" ng-model="find.ueid">
+                        <button class="btn btn-default btn-block"  style="height: inherit" ng-click="getUserInfoByUEIDFromDB(find.ueid)">get user info by UEID from MongoDB</button>
+                    </div>
+                    <br><br>
+                    <div style="padding: 10px; display: flex; font-size: 12pt; height: 30px">
+                        <input style="height: inherit" ng-model="find.uname">
+                        <button class="btn btn-default btn-block"  style="height: inherit" ng-click="getUserInfoByUsernameFromDB(find.uname)">get user info by username from MongoDB</button>
+                    </div>
+                    <br><br>
+                    <div style="padding: 10px; display: flex; font-size: 12pt; height: 30px">
+                        <input style="height: inherit" ng-model="remove.ueid">
+                        <button class="btn btn-default btn-block"  style="height: inherit" ng-click="removeUserByUEIDFromDB(remove.ueid)">remove user by UEID from MongoDB</button>
+                    </div>
+                    <br><br>
+                    <div style="padding: 10px; display: flex; font-size: 12pt; height: 30px">
+                        <input style="height: inherit" ng-model="remove.username">
+                        <button class="btn btn-default btn-block" style="height: inherit" ng-click="removeUserByUsernameFromDB(remove.username)">remove user by username from MongoDB</button>
+                    </div>
+                    <br><br>
+                    <div style="padding: 10px; display: flex; font-size: 12pt; height: 30px">
+                        <input style="height: inherit" ng-model="mdbueid.test">
+                        <button class="btn btn-default btn-block" style="height: inherit" ng-click="generateMDBUEID(mdbueid.test)">generate MDBUEID</button>
+                    </div>
+                    <br><br>
+                    <!--<div style="padding: 10px">
+                        <button class="btn btn-default btn-block" ng-click="checkIfMDBUEIDisUnique('2d5fefe1')">check MDBUEID '2d5fefe1'</button>
+                    </div>-->
+                    <div style="padding: 10px">
+                        <button class="btn btn-default btn-block" ng-click="sendGenerateDocRequest('login')">generate login panel</button>
+                    </div>
+                    <div style="padding: 10px">
+                        <button class="btn btn-default btn-block" ng-click="sendGenerateDocRequest('register')">generate register panel</button>
+                    </div>
+                </div>
+
+
+                <!---------------------------------------------------------------------------->
+                <!---- REGISTER ------------------------------------------------------------>
+                <!---------------------------------------------------------------------------->
+                <div class="row">
+
+                    <div class="col-sm-4"></div>
+
+                    <div class="col-sm-4">
+
+                        <mdb-authentication-form formname='mdbAuthPanel[0].load_page_localID'
+                                  formlabel='mdbAuthPanel[0].mdbForm_label'
+                                  formitems='mdbAuthPanel[0]'>
+                        </mdb-authentication-form>
+                        <br><br>
+                    </div>
+
+                    <div class="col-sm-4"></div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <pre>mdbAuthPanel[0] {{mdbAuthPanel[0]|json}}</pre>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Main column -->
+    <div class="right_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+
+            <br>
+            <div ng-hide="loggedIn">
+                <h2>You are not logged in.</h2>
+            </div>
+
+            <div id="toggle" class="btn btn-danger btn-block" style="height: 50px">adsfdsf</div>
+            <br><br>
+
+            <div layout="row"> <!--<div ng-show="loggedIn">-->
+                <div layout="row">
+                    <div>
+                        <pre>WsService.response[0].connectSID = {{WsService.response[0].connectSID | json}}</pre>
+                    </div>
+                    <div>
+                        <pre>Angular Cookies = {{cookies | json}}</pre>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div class="col-sm-6">
+                        <pre>WsService.sent[0] = {{WsService.sent[0] | json}}</pre>
+                    </div>
+                    <div class="col-sm-6">
+                        <pre>WsService.response[0] = {{WsService.response[0] | json}}</pre>
+                    </div>
+                </div>
+                <div>
+                    <pre>WsService.response[0].data = {{WsService.response[0].data | json}}</pre>
+                </div>
+                <div>
+                    <pre>WsService = {{WsService | json}}</pre>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

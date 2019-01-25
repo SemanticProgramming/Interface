@@ -1,0 +1,57 @@
+<div class="mdb_document">
+
+    <!-- Left column fixed width -->
+    <div class="left_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <br>
+            <h2>Colleagues
+                <small>(debugging)</small>
+            </h2>
+        </div>
+
+    </div>
+
+    <!-- Main column -->
+    <div class="right_main_panel container-fluid">
+
+        <!-------------- shown only for developers in $rootScope.developers ----------------------------------------------------------------------------------->
+        <div class="row" ng-if="$root.developers.indexOf(currentUser) > -1">
+
+            <br>
+
+            <div ng-hide="loggedIn">
+                <h2>You are not logged</h2>
+            </div>
+
+            <div ng-show="loggedIn">
+                <h2>You are logged</h2>
+
+                <div layout="row">
+                    <div style="padding: 10px">
+                        <pre style="vertical-align: top; width:90%; height: 100px;">loggedIn = {{loggedIn | json}}</pre>
+                    </div>
+
+                </div>
+                <div layout="row">
+                    <div style="padding: 10px">
+                        <pre style="vertical-align: top; width:90%; height: 100px;">currentUser = {{currentUser | json}}</pre>
+                    </div>
+
+                </div>
+                <div layout="row">
+                    <div style="padding: 10px">
+                        <pre style="vertical-align: top; width:90%; height: 100px;">theData = {{theData | json}}</pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

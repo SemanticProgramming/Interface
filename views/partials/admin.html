@@ -1,0 +1,10 @@
+<div ng-if="$root.developers.indexOf(currentUser) > -1">
+    <div class=\"col-sm-12\" style="text-align: center;" ng-show=\"nopage\">
+        <br>
+        <label style="width: 10%" >type: &nbsp;</label>
+        <input ng-model="localPageParams.overlay" style="width: 20%" placeholder="type">
+        <button class="btn btn-primary" ng-click="sendOverlayRequestToWebsocket()" style="width: 15%">Sent Type Request to Websocket</button>
+        <br><br>
+    </div>
+    <mdb-page></mdb-page>
+</div>

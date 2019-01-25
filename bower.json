@@ -1,0 +1,39 @@
+{
+  "name": "mdb-prototype",
+  "version": "0.0.2",
+  "dependencies": {
+    "angular": "1.6.*",
+    "angular-route": "1.6.x",
+    "angular-cookies": "1.6.x",
+    "angular-animate": "1.6.x",
+    "angular-touch": "1.6.x",
+    "angular-sanitize": "1.6.x",
+    "angular-resource": "1.6.*",
+    "jquery": "2.2.x",
+    "bootstrap": "3.3.7",
+    "angular-bootstrap": "~2.5.0",
+    "jquery-ui": "~1.12.*",
+    "angular-ui-grid": "*.*.*",
+    "angular-ui-router": "*",
+    "angular-ui-layout": "1.*.*",
+    "angular-simple-logger": "*.*.*",
+    "angular-websocket": "2.0.*",
+    "angular-strap": "^2.3.12",
+    "lodash": "4.*.*",
+    "event": "*",
+    "ng-tags-input": "^3.1.1",
+    "angular-ui-tree": "2.*.*",
+    "font-awesome": "^4.7.0",
+    "bootstrap-vertical-tabs": "^1.2.2",
+    "angular-datatables": "~5.0.0",
+    "bootstrap-ui-datetime-picker": "^2.6.*"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.6.x"
+  },
+  "analytics": false,
+  "resolutions": {
+    "angular": "1.6.*",
+    "angular-bootstrap": "~2.5.0"
+  }
+}
