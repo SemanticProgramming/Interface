@@ -13,7 +13,7 @@ This repository contains the Interface for Semantic Programming based on the Sem
 
 
 
-#### Server requirements:
+## Server requirements:
 We are using the MEAN stack:
 
 - **M**ongoDB, a NoSQL database
