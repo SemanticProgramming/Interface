@@ -1,4 +1,17 @@
-# MDB Prototype
+# Interface (customized for MDB Prototype)
+
+We develop a Semantic Programming Ontology (SPrO; https://github.com/SemanticProgramming/SPrO) that is used for software programming. SPrO can be used like a programming language with which one can control a data-centric Semantic Web application by describing it within a corresponding source code ontology. With the terms from SPrO you can describe the graphical user interface (GUI), data representations, user interactions, and all workflow processes of a Semantic Web application. The Java Interpreter (https://github.com/SemanticProgramming/Interpreter) functions as an interpreter that dynamically interprets and executes the descriptions in a source code ontology by interpreting them as declarative specifications. This Interface provides the interface. It has been customized to meet the requirements for semantic Morph·D·Base (https://github.com/SemanticProgramming/SemMorphDBase).
+
+Further information on the project is available at http://escience.biowikifarm.net - feel free to contact us at 
+dev@morphdbase.de
+
+This repository contains the Interface for Semantic Programming based on the Semantic Programming Ontology (SPrO). For Semantic Programming you also need the Semantic Programming Ontology (SPrO; https://github.com/SemanticProgramming/SPrO) and the Java Interpreter (https://github.com/SemanticProgramming/Interpreter). Basic functionalities are described in the SOCCOMAS source code ontology (SC-Basic; https://github.com/SemanticProgramming/SOCCOMAS) and can be re-used for your Semantic Web application.
+
+**Please be aware that this project is ongoing research! This code is for demonstration purposes only. Do not use
+ in production environment!**
+ 
+
+
 
 #### Server requirements:
 We are using the MEAN stack:
