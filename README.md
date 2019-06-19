@@ -2,6 +2,14 @@
 
 We develop a Semantic Programming Ontology (SPrO; https://github.com/SemanticProgramming/SPrO) that is used for software programming. SPrO can be used like a programming language with which one can control a data-centric Semantic Web application by describing it within a corresponding source code ontology. With the terms from SPrO you can describe the graphical user interface (GUI), data representations, user interactions, and all workflow processes of a Semantic Web application. The Java Interpreter (https://github.com/SemanticProgramming/Interpreter) functions as an interpreter that dynamically interprets and executes the descriptions in a source code ontology by interpreting them as declarative specifications. This Interface provides the interface. It has been customized to meet the requirements for semantic Morph·D·Base (https://github.com/SemanticProgramming/SemMorphDBase).
 
+Currently, the following general functions have been implemented:
+* creation of all relevant HTML/CSS entities based on the design guidelines catalogue of semantic Morph·D·Base;
+* automated generation of the GUI based on the specifications in the source code ontologies;
+* message system: error and success messages from the WebSocket are displayed in the GUI;
+* dynamic updating of the GUI based on user-actions and WebSocket triggers;
+* data binding: changes in the GUI are send back to the WebSocket for validation and storage.
+
+
 Further information on the project is available at http://escience.biowikifarm.net - feel free to contact us at 
 dev@morphdbase.de
 
