@@ -8,6 +8,7 @@ Currently, the following **general functions** have been implemented:
 * message system: error and success messages from the WebSocket are displayed in the GUI;
 * dynamic updating of the GUI based on user-actions and WebSocket triggers;
 * data binding: changes in the GUI are send back to the WebSocket for validation and storage.
+
 In addition to these general functions, the following tools have been developed, which will be used in the new module for **formalized morphological descriptions** in Morph·D·Base: 
 * partonomy tool: partonomy browser that not only allows describing an organism as the collection of its parts but also provides a navigation tree to the different sections of the description (see 2.3.4); 
 * text annotation tool: uses about 100 ontologies provided by the NCBO BioPortal (see http://bioportal.bioontology.org/) for automated text annotation;
